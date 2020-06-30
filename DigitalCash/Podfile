@@ -1,0 +1,28 @@
+# Uncomment the next line to define a global platform for your project
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+platform :ios, '9.0'
+
+target 'DigitalCash' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for DigitalCash
+
+pod 'JXCategoryView'
+pod 'TYCyclePagerView'
+pod 'AFNetworking', '<= 3.2.1'
+pod 'Masonry', '~> 1.1.0'
+pod 'MJRefresh', '~> 3.2.0'
+pod 'SDWebImage', '~> 5.0.6'
+pod 'MBProgressHUD', '~> 1.1.0'
+pod 'SVProgressHUD', '~> 2.2.5'
+pod 'Mantle', '~> 2.1.0'
+pod 'ZXCountDownView'
+pod 'IQKeyboardManager'
+pod 'YPNavigationBarTransition'
+pod 'JXPagingView/Pager'
+pod 'TZImagePickerController'
+pod 'Alamofire', '~> 4.9.1'
+pod 'FSCalendar'
+
+end

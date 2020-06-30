@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "圆角矩形 10(4).png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "圆角矩形 10@2x(4).png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "圆角矩形 10@3x(4).png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

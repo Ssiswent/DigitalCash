@@ -1,0 +1,16 @@
+//
+//  PrefixHeader.pch
+//  futures
+//
+//  Created by Ssiswent on 2020/5/13.
+//  Copyright © 2020 Francis. All rights reserved.
+//
+
+#import "MacroHeader.h"
+#import "MacroQiHuo.h"
+#import "UIColor+Hex.h"
+#import "UIImage+OriginalImage.h"
+#import "YPNavigationController+Configure.h"
+
+#define kScaleFrom_iPhone8_Width(x) (x * (SCREEN_WIDTH/375))
+#define kScaleFrom_iPhone8_Height(x) (x * (SCREEN_HEIGHT/667))
