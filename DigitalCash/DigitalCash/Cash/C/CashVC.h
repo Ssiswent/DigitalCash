@@ -5,11 +5,11 @@
 //  Created by Ssiswent on 2020/6/30.
 //
 
-#import <UIKit/UIKit.h>
+#import "CZ_NEWMarketVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CashVC : UIViewController
+@interface CashVC : CZ_NEWMarketVC
 
 @end
 

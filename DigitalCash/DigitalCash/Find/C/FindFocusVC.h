@@ -1,5 +1,5 @@
 //
-//  FindVC.h
+//  FindFocusVC.h
 //  DigitalCash
 //
 //  Created by Ssiswent on 2020/6/30.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FindVC : ContentBaseViewController
+@interface FindFocusVC : ContentBaseViewController<JXCategoryListContentViewDelegate>
 
 @end
 

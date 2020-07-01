@@ -16,8 +16,6 @@
 #import "NetWork.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 
-#import "CustomTBC.h"
-
 #define ColorBlue [UIColor colorWithRed:113/255.0 green:103/255.0 blue:252/255.0 alpha:1/1.0]
 @interface CZ_NEWMarketVC ()<UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate>{
     QHLoctionModel *loM;
@@ -93,15 +91,14 @@ static NSString *cellid = @"cellID";
     [self.view addSubview:self.makeTbv];
     [self.makeTbv mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(self.view);
-        make.top.mas_equalTo(10);
+        make.top.mas_equalTo(kScaleFrom_iPhone8_Height(70));
         if ([self->_navTitle isEqualToString:@"实时行情"]) {
-           
         make.bottom.mas_equalTo(self.view.mas_bottom).offset(-kSafeBottomHeight);
         }else{
             make.bottom.mas_equalTo(self.view.mas_bottom).offset(-10);
         }
     }];
-    self.title = @"行情列表";
+//    self.title = @"行情列表";
 //    [self.view addSubview:self.topDown];
     
 //    [super backNavigationStyle:RGB(150, 174, 255)];
@@ -137,7 +134,6 @@ static NSString *cellid = @"cellID";
 //    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:UIColor.whiteColor}];
     self.tabBarController.delegate = self;
 //    [self navigationSetUp];
-    [CustomTBC setTabBarHidden:YES TabBarVC:self.tabBarController];
 }
 
 #pragma mark - 数据请求

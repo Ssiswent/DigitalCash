@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		B08D5E707E5028EF6315B058 /* Pods_DigitalCash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1E371C1891CC3A27929151 /* Pods_DigitalCash.framework */; };
+		CBA411CF24AC32C2005065B1 /* TalkListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA411CE24AC32C2005065B1 /* TalkListModel.m */; };
+		CBA411D324AC38E4005065B1 /* FindTalkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA411D124AC38E4005065B1 /* FindTalkCell.m */; };
+		CBA411D424AC38E4005065B1 /* FindTalkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA411D224AC38E4005065B1 /* FindTalkCell.xib */; };
+		CBAF971F24AC701D00C9C98B /* FindRecommendFocusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAF971D24AC701D00C9C98B /* FindRecommendFocusCell.m */; };
+		CBAF972024AC701D00C9C98B /* FindRecommendFocusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAF971E24AC701D00C9C98B /* FindRecommendFocusCell.xib */; };
+		CBAF972424AC7AEC00C9C98B /* FindRecommendCollctionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAF972224AC7AEC00C9C98B /* FindRecommendCollctionCell.m */; };
+		CBAF972524AC7AEC00C9C98B /* FindRecommendCollctionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAF972324AC7AEC00C9C98B /* FindRecommendCollctionCell.xib */; };
 		CBFF7EF824AACFCC00E8B527 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFF7EF724AACFCC00E8B527 /* AppDelegate.m */; };
 		CBFF7F0324AACFCD00E8B527 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBFF7F0224AACFCD00E8B527 /* Assets.xcassets */; };
 		CBFF7F0624AACFCD00E8B527 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBFF7F0424AACFCD00E8B527 /* LaunchScreen.storyboard */; };
@@ -65,7 +72,6 @@
 		CBFF7FCB24AAD46200E8B527 /* CashVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFF7FC924AAD46200E8B527 /* CashVC.m */; };
 		CBFF7FCC24AAD46200E8B527 /* CashVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBFF7FCA24AAD46200E8B527 /* CashVC.xib */; };
 		CBFF7FD024AAD47200E8B527 /* FindVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFF7FCE24AAD47200E8B527 /* FindVC.m */; };
-		CBFF7FD124AAD47200E8B527 /* FindVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBFF7FCF24AAD47200E8B527 /* FindVC.xib */; };
 		CBFF7FD524AAD49D00E8B527 /* MineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFF7FD324AAD49D00E8B527 /* MineVC.m */; };
 		CBFF7FD624AAD49D00E8B527 /* MineVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBFF7FD424AAD49D00E8B527 /* MineVC.xib */; };
 		CBFF7FDD24AAE61500E8B527 /* FourBtnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFF7FDB24AAE61500E8B527 /* FourBtnCell.m */; };
@@ -89,11 +95,26 @@
 		CBFF800F24AB33A800E8B527 /* MineUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFF800B24AB33A800E8B527 /* MineUserModel.m */; };
 		CBFF801024AB33A800E8B527 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFF800C24AB33A800E8B527 /* UserModel.m */; };
 		CBFF801324AB33F200E8B527 /* TalkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFF801124AB33F100E8B527 /* TalkModel.m */; };
+		CBFF801724AB43D700E8B527 /* FindRecommendVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFF801524AB43D600E8B527 /* FindRecommendVC.m */; };
+		CBFF801824AB43D700E8B527 /* FindRecommendVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBFF801624AB43D600E8B527 /* FindRecommendVC.xib */; };
+		CBFF801C24AB440500E8B527 /* FindFocusVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFF801A24AB440500E8B527 /* FindFocusVC.m */; };
+		CBFF801D24AB440500E8B527 /* FindFocusVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBFF801B24AB440500E8B527 /* FindFocusVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		10FA712E7BD45300A9195F61 /* Pods-DigitalCash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalCash.debug.xcconfig"; path = "Target Support Files/Pods-DigitalCash/Pods-DigitalCash.debug.xcconfig"; sourceTree = "<group>"; };
 		CA1E371C1891CC3A27929151 /* Pods_DigitalCash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigitalCash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBA411CD24AC32C2005065B1 /* TalkListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkListModel.h; sourceTree = "<group>"; };
+		CBA411CE24AC32C2005065B1 /* TalkListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkListModel.m; sourceTree = "<group>"; };
+		CBA411D024AC38E4005065B1 /* FindTalkCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindTalkCell.h; sourceTree = "<group>"; };
+		CBA411D124AC38E4005065B1 /* FindTalkCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindTalkCell.m; sourceTree = "<group>"; };
+		CBA411D224AC38E4005065B1 /* FindTalkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindTalkCell.xib; sourceTree = "<group>"; };
+		CBAF971C24AC701D00C9C98B /* FindRecommendFocusCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindRecommendFocusCell.h; sourceTree = "<group>"; };
+		CBAF971D24AC701D00C9C98B /* FindRecommendFocusCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindRecommendFocusCell.m; sourceTree = "<group>"; };
+		CBAF971E24AC701D00C9C98B /* FindRecommendFocusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindRecommendFocusCell.xib; sourceTree = "<group>"; };
+		CBAF972124AC7AEC00C9C98B /* FindRecommendCollctionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindRecommendCollctionCell.h; sourceTree = "<group>"; };
+		CBAF972224AC7AEC00C9C98B /* FindRecommendCollctionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindRecommendCollctionCell.m; sourceTree = "<group>"; };
+		CBAF972324AC7AEC00C9C98B /* FindRecommendCollctionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindRecommendCollctionCell.xib; sourceTree = "<group>"; };
 		CBFF7EF324AACFCC00E8B527 /* DigitalCash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalCash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFF7EF624AACFCC00E8B527 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CBFF7EF724AACFCC00E8B527 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -213,7 +234,6 @@
 		CBFF7FCA24AAD46200E8B527 /* CashVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CashVC.xib; sourceTree = "<group>"; };
 		CBFF7FCD24AAD47200E8B527 /* FindVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindVC.h; sourceTree = "<group>"; };
 		CBFF7FCE24AAD47200E8B527 /* FindVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindVC.m; sourceTree = "<group>"; };
-		CBFF7FCF24AAD47200E8B527 /* FindVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindVC.xib; sourceTree = "<group>"; };
 		CBFF7FD224AAD49D00E8B527 /* MineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineVC.h; sourceTree = "<group>"; };
 		CBFF7FD324AAD49D00E8B527 /* MineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineVC.m; sourceTree = "<group>"; };
 		CBFF7FD424AAD49D00E8B527 /* MineVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineVC.xib; sourceTree = "<group>"; };
@@ -251,6 +271,12 @@
 		CBFF800E24AB33A800E8B527 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		CBFF801124AB33F100E8B527 /* TalkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkModel.m; sourceTree = "<group>"; };
 		CBFF801224AB33F100E8B527 /* TalkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkModel.h; sourceTree = "<group>"; };
+		CBFF801424AB43D600E8B527 /* FindRecommendVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindRecommendVC.h; sourceTree = "<group>"; };
+		CBFF801524AB43D600E8B527 /* FindRecommendVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindRecommendVC.m; sourceTree = "<group>"; };
+		CBFF801624AB43D600E8B527 /* FindRecommendVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindRecommendVC.xib; sourceTree = "<group>"; };
+		CBFF801924AB440500E8B527 /* FindFocusVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindFocusVC.h; sourceTree = "<group>"; };
+		CBFF801A24AB440500E8B527 /* FindFocusVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindFocusVC.m; sourceTree = "<group>"; };
+		CBFF801B24AB440500E8B527 /* FindFocusVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindFocusVC.xib; sourceTree = "<group>"; };
 		FD23C3D7E03C2E4BCF3CF224 /* Pods-DigitalCash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalCash.release.xcconfig"; path = "Target Support Files/Pods-DigitalCash/Pods-DigitalCash.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -422,47 +448,47 @@
 		CBFF7F4524AAD1FE00E8B527 /* QIHUO */ = {
 			isa = PBXGroup;
 			children = (
-				CBFF7F4624AAD1FE00E8B527 /* YKLineChartViewBase.m */,
-				CBFF7F4724AAD1FE00E8B527 /* YKLineDataSet.m */,
-				CBFF7F4824AAD1FE00E8B527 /* NetWork.m */,
-				CBFF7F4924AAD1FE00E8B527 /* TopView.h */,
-				CBFF7F4A24AAD1FE00E8B527 /* ZCBaseView.m */,
-				CBFF7F4B24AAD1FE00E8B527 /* YKTimeLineView.m */,
-				CBFF7F4C24AAD1FE00E8B527 /* MacroQiHuo.h */,
 				CBFF7F4D24AAD1FE00E8B527 /* BusinessProcess.h */,
-				CBFF7F4E24AAD1FE00E8B527 /* QHLoctionModel.m */,
-				CBFF7F4F24AAD1FE00E8B527 /* QHDHHeadCollectionViewCell.m */,
-				CBFF7F5024AAD1FE00E8B527 /* YKViewBase.m */,
-				CBFF7F5124AAD1FE00E8B527 /* ZCBaseViewController.h */,
-				CBFF7F5224AAD1FE00E8B527 /* MVPKlineView.h */,
-				CBFF7F5324AAD1FE00E8B527 /* ZCMakeTableViewCell.m */,
-				CBFF7F5424AAD1FE00E8B527 /* QHDetailViewController.m */,
-				CBFF7F5524AAD1FE00E8B527 /* YKLineChartView.m */,
-				CBFF7F5624AAD1FE00E8B527 /* ZCManage.m */,
-				CBFF7F5724AAD1FE00E8B527 /* ThirdPart */,
-				CBFF7F5A24AAD1FE00E8B527 /* QHDataCollectionViewCell.m */,
-				CBFF7F5B24AAD1FE00E8B527 /* YKLineEntity.h */,
-				CBFF7F5C24AAD1FE00E8B527 /* CZ_NEWMarketVC.m */,
-				CBFF7F5D24AAD1FE00E8B527 /* QHLoctionModel.h */,
 				CBFF7F5E24AAD1FE00E8B527 /* BusinessProcess.m */,
-				CBFF7F5F24AAD1FE00E8B527 /* YKTimeLineView.h */,
-				CBFF7F6024AAD1FE00E8B527 /* ZCBaseView.h */,
-				CBFF7F6124AAD1FE00E8B527 /* TopView.m */,
-				CBFF7F6224AAD1FE00E8B527 /* NetWork.h */,
-				CBFF7F6324AAD1FE00E8B527 /* YKLineDataSet.h */,
-				CBFF7F6424AAD1FE00E8B527 /* YKLineChartViewBase.h */,
-				CBFF7F6524AAD1FE00E8B527 /* ZCBaseViewController.m */,
-				CBFF7F6624AAD1FE00E8B527 /* YKViewBase.h */,
-				CBFF7F6724AAD1FE00E8B527 /* QHDHHeadCollectionViewCell.h */,
-				CBFF7F6824AAD1FE00E8B527 /* MVPKlineView.m */,
-				CBFF7F6924AAD1FE00E8B527 /* ZCMakeTableViewCell.h */,
-				CBFF7F6A24AAD1FE00E8B527 /* QHDetailViewController.h */,
-				CBFF7F6B24AAD1FE00E8B527 /* YKLineChart.h */,
 				CBFF7F6C24AAD1FE00E8B527 /* CZ_NEWMarketVC.h */,
-				CBFF7F6D24AAD1FE00E8B527 /* YKLineEntity.m */,
+				CBFF7F5C24AAD1FE00E8B527 /* CZ_NEWMarketVC.m */,
+				CBFF7F4C24AAD1FE00E8B527 /* MacroQiHuo.h */,
+				CBFF7F5224AAD1FE00E8B527 /* MVPKlineView.h */,
+				CBFF7F6824AAD1FE00E8B527 /* MVPKlineView.m */,
+				CBFF7F6224AAD1FE00E8B527 /* NetWork.h */,
+				CBFF7F4824AAD1FE00E8B527 /* NetWork.m */,
 				CBFF7F6E24AAD1FE00E8B527 /* QHDataCollectionViewCell.h */,
-				CBFF7F6F24AAD1FE00E8B527 /* ZCManage.h */,
+				CBFF7F5A24AAD1FE00E8B527 /* QHDataCollectionViewCell.m */,
+				CBFF7F6A24AAD1FE00E8B527 /* QHDetailViewController.h */,
+				CBFF7F5424AAD1FE00E8B527 /* QHDetailViewController.m */,
+				CBFF7F6724AAD1FE00E8B527 /* QHDHHeadCollectionViewCell.h */,
+				CBFF7F4F24AAD1FE00E8B527 /* QHDHHeadCollectionViewCell.m */,
+				CBFF7F5D24AAD1FE00E8B527 /* QHLoctionModel.h */,
+				CBFF7F4E24AAD1FE00E8B527 /* QHLoctionModel.m */,
+				CBFF7F5724AAD1FE00E8B527 /* ThirdPart */,
+				CBFF7F4924AAD1FE00E8B527 /* TopView.h */,
+				CBFF7F6124AAD1FE00E8B527 /* TopView.m */,
+				CBFF7F6B24AAD1FE00E8B527 /* YKLineChart.h */,
 				CBFF7F7024AAD1FE00E8B527 /* YKLineChartView.h */,
+				CBFF7F5524AAD1FE00E8B527 /* YKLineChartView.m */,
+				CBFF7F6424AAD1FE00E8B527 /* YKLineChartViewBase.h */,
+				CBFF7F4624AAD1FE00E8B527 /* YKLineChartViewBase.m */,
+				CBFF7F6324AAD1FE00E8B527 /* YKLineDataSet.h */,
+				CBFF7F4724AAD1FE00E8B527 /* YKLineDataSet.m */,
+				CBFF7F5B24AAD1FE00E8B527 /* YKLineEntity.h */,
+				CBFF7F6D24AAD1FE00E8B527 /* YKLineEntity.m */,
+				CBFF7F5F24AAD1FE00E8B527 /* YKTimeLineView.h */,
+				CBFF7F4B24AAD1FE00E8B527 /* YKTimeLineView.m */,
+				CBFF7F6624AAD1FE00E8B527 /* YKViewBase.h */,
+				CBFF7F5024AAD1FE00E8B527 /* YKViewBase.m */,
+				CBFF7F6024AAD1FE00E8B527 /* ZCBaseView.h */,
+				CBFF7F4A24AAD1FE00E8B527 /* ZCBaseView.m */,
+				CBFF7F5124AAD1FE00E8B527 /* ZCBaseViewController.h */,
+				CBFF7F6524AAD1FE00E8B527 /* ZCBaseViewController.m */,
+				CBFF7F6924AAD1FE00E8B527 /* ZCMakeTableViewCell.h */,
+				CBFF7F5324AAD1FE00E8B527 /* ZCMakeTableViewCell.m */,
+				CBFF7F6F24AAD1FE00E8B527 /* ZCManage.h */,
+				CBFF7F5624AAD1FE00E8B527 /* ZCManage.m */,
 			);
 			path = QIHUO;
 			sourceTree = "<group>";
@@ -624,7 +650,12 @@
 			children = (
 				CBFF7FCD24AAD47200E8B527 /* FindVC.h */,
 				CBFF7FCE24AAD47200E8B527 /* FindVC.m */,
-				CBFF7FCF24AAD47200E8B527 /* FindVC.xib */,
+				CBFF801424AB43D600E8B527 /* FindRecommendVC.h */,
+				CBFF801524AB43D600E8B527 /* FindRecommendVC.m */,
+				CBFF801624AB43D600E8B527 /* FindRecommendVC.xib */,
+				CBFF801924AB440500E8B527 /* FindFocusVC.h */,
+				CBFF801A24AB440500E8B527 /* FindFocusVC.m */,
+				CBFF801B24AB440500E8B527 /* FindFocusVC.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -632,6 +663,15 @@
 		CBFF7FBE24AAD43300E8B527 /* V */ = {
 			isa = PBXGroup;
 			children = (
+				CBA411D024AC38E4005065B1 /* FindTalkCell.h */,
+				CBA411D124AC38E4005065B1 /* FindTalkCell.m */,
+				CBA411D224AC38E4005065B1 /* FindTalkCell.xib */,
+				CBAF971C24AC701D00C9C98B /* FindRecommendFocusCell.h */,
+				CBAF971D24AC701D00C9C98B /* FindRecommendFocusCell.m */,
+				CBAF971E24AC701D00C9C98B /* FindRecommendFocusCell.xib */,
+				CBAF972124AC7AEC00C9C98B /* FindRecommendCollctionCell.h */,
+				CBAF972224AC7AEC00C9C98B /* FindRecommendCollctionCell.m */,
+				CBAF972324AC7AEC00C9C98B /* FindRecommendCollctionCell.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -670,6 +710,8 @@
 		CBFF800A24AB33A800E8B527 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CBA411CD24AC32C2005065B1 /* TalkListModel.h */,
+				CBA411CE24AC32C2005065B1 /* TalkListModel.m */,
 				CBFF801224AB33F100E8B527 /* TalkModel.h */,
 				CBFF801124AB33F100E8B527 /* TalkModel.m */,
 				CBFF800D24AB33A800E8B527 /* MineUserModel.h */,
@@ -738,7 +780,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBFF7FD124AAD47200E8B527 /* FindVC.xib in Resources */,
+				CBFF801824AB43D700E8B527 /* FindRecommendVC.xib in Resources */,
 				CBFF7F0624AACFCD00E8B527 /* LaunchScreen.storyboard in Resources */,
 				CBFF7FED24AB087E00E8B527 /* NewsCell.xib in Resources */,
 				CBFF7FDE24AAE61500E8B527 /* FourBtnCell.xib in Resources */,
@@ -746,11 +788,15 @@
 				CBFF7FE824AB05BC00E8B527 /* QuotesCell.xib in Resources */,
 				CBFF7FE324AB003900E8B527 /* CashCell.xib in Resources */,
 				CBFF7FD624AAD49D00E8B527 /* MineVC.xib in Resources */,
+				CBAF972024AC701D00C9C98B /* FindRecommendFocusCell.xib in Resources */,
+				CBAF972524AC7AEC00C9C98B /* FindRecommendCollctionCell.xib in Resources */,
 				CBFF7F0324AACFCD00E8B527 /* Assets.xcassets in Resources */,
+				CBFF801D24AB440500E8B527 /* FindFocusVC.xib in Resources */,
 				CBFF7FFC24AB1A4000E8B527 /* CashHeaderView.xib in Resources */,
 				CBFF7FCC24AAD46200E8B527 /* CashVC.xib in Resources */,
 				CBFF800124AB257B00E8B527 /* QuotesHeaderView.xib in Resources */,
 				CBFF800624AB261B00E8B527 /* NewsHeaderView.xib in Resources */,
+				CBA411D424AC38E4005065B1 /* FindTalkCell.xib in Resources */,
 				CBFF7FF524AB11D600E8B527 /* TableHeaderCollectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -804,6 +850,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBAF972424AC7AEC00C9C98B /* FindRecommendCollctionCell.m in Sources */,
 				CBFF7FF824AB191800E8B527 /* CashHeaderView.m in Sources */,
 				CBFF7FD024AAD47200E8B527 /* FindVC.m in Sources */,
 				CBFF7FB024AAD1FF00E8B527 /* ListViewController.m in Sources */,
@@ -818,6 +865,7 @@
 				CBFF7F9024AAD1FE00E8B527 /* ENDNetWorkManager.m in Sources */,
 				CBFF7F9A24AAD1FE00E8B527 /* BaseViewController.m in Sources */,
 				CBFF7F8624AAD1FE00E8B527 /* EGHViewsTool.m in Sources */,
+				CBAF971F24AC701D00C9C98B /* FindRecommendFocusCell.m in Sources */,
 				CBFF800024AB257B00E8B527 /* QuotesHeaderView.m in Sources */,
 				CBFF7F8A24AAD1FE00E8B527 /* NSString+DealError.m in Sources */,
 				CBFF7F9924AAD1FE00E8B527 /* UIImage+OriginalImage.m in Sources */,
@@ -825,13 +873,17 @@
 				CBFF7F8D24AAD1FE00E8B527 /* Reachability.m in Sources */,
 				CBFF7FAF24AAD1FF00E8B527 /* CustomTBC.m in Sources */,
 				CBFF7F9C24AAD1FE00E8B527 /* YKLineDataSet.m in Sources */,
+				CBFF801C24AB440500E8B527 /* FindFocusVC.m in Sources */,
 				CBFF7F8324AAD1FE00E8B527 /* EGHImagePickerVCManager.m in Sources */,
 				CBFF7F9F24AAD1FE00E8B527 /* YKTimeLineView.m in Sources */,
+				CBA411D324AC38E4005065B1 /* FindTalkCell.m in Sources */,
 				CBFF7FF024AB112900E8B527 /* TableHeaderView.m in Sources */,
+				CBA411CF24AC32C2005065B1 /* TalkListModel.m in Sources */,
 				CBFF7F9224AAD1FE00E8B527 /* ENDNetWorkPUT.m in Sources */,
 				CBFF7F8424AAD1FE00E8B527 /* TimerTool.m in Sources */,
 				CBFF7FD524AAD49D00E8B527 /* MineVC.m in Sources */,
 				CBFF7FAA24AAD1FF00E8B527 /* BusinessProcess.m in Sources */,
+				CBFF801724AB43D700E8B527 /* FindRecommendVC.m in Sources */,
 				CBFF7F9D24AAD1FE00E8B527 /* NetWork.m in Sources */,
 				CBFF7FA624AAD1FE00E8B527 /* ZCManage.m in Sources */,
 				CBFF7FA024AAD1FE00E8B527 /* QHLoctionModel.m in Sources */,

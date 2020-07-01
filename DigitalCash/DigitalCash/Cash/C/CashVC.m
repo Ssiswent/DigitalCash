@@ -7,7 +7,8 @@
 
 #import "CashVC.h"
 
-@interface CashVC ()
+@interface CashVC ()<YPNavigationBarConfigureStyle>
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 
 @end
 
@@ -16,16 +17,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self setBottomView];
+    [self.view bringSubviewToFront:_bottomView];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)setBottomView
+{
+    _bottomView.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];
+    _bottomView.layer.shadowColor = [UIColor colorWithRed:62/255.0 green:27/255.0 blue:114/255.0 alpha:0.15].CGColor;
+    _bottomView.layer.shadowOffset = CGSizeMake(0,0);
+    _bottomView.layer.shadowOpacity = 1;
+    _bottomView.layer.shadowRadius = 37;
 }
-*/
+
+#pragma mark - yp_navigtionBarConfiguration
+
+- (YPNavigationBarConfigurations) yp_navigtionBarConfiguration {
+    return YPNavigationBarHidden;
+}
+
+- (UIColor *)yp_navigationBarTintColor{
+    return [UIColor whiteColor];
+}
 
 @end

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="FindRecommendFocusCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="推荐关注" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1D-tB-SnS">
+                        <rect key="frame" x="14.5" y="13" width="62" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="g1e-bf-8A5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                        <color key="textColor" red="0.15323174000000001" green="0.15322431919999999" blue="0.15322935579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWt-Ml-Qus" userLabel="ChangeBtn">
+                        <rect key="frame" x="87" y="13" width="40" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="iEX-X3-ffb"/>
+                            <constraint firstAttribute="width" constant="40" id="xRZ-KF-ZEw"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                        <state key="normal" title="换一批">
+                            <color key="titleColor" red="0.66588157420000005" green="0.66585600379999998" blue="0.66587334870000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBd-bp-dsg" userLabel="CloseBtn">
+                        <rect key="frame" x="347" y="17" width="12" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="12" id="5VM-Pu-Bhd"/>
+                            <constraint firstAttribute="height" constant="12" id="zPJ-bh-Tlh"/>
+                        </constraints>
+                        <state key="normal" image="ic_guanbi"/>
+                        <connections>
+                            <action selector="closeBtnClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="yaL-JZ-7wF"/>
+                        </connections>
+                    </button>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="SZO-ym-Fj0" userLabel="RecommendCollectionView">
+                        <rect key="frame" x="0.0" y="47.5" width="375" height="125"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="125" id="fIf-9g-6yb"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="J7M-bM-qW0">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
+                <color key="backgroundColor" red="0.94902616740000001" green="0.94899052380000004" blue="0.94901472330000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <constraints>
+                    <constraint firstItem="NWt-Ml-Qus" firstAttribute="centerY" secondItem="x1D-tB-SnS" secondAttribute="centerY" constant="1" id="1xU-fs-cXY"/>
+                    <constraint firstItem="SZO-ym-Fj0" firstAttribute="top" secondItem="NWt-Ml-Qus" secondAttribute="bottom" constant="14.5" id="Mdz-Ns-zxt"/>
+                    <constraint firstItem="SZO-ym-Fj0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Zed-zy-ELz"/>
+                    <constraint firstItem="x1D-tB-SnS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14.5" id="gpl-yV-YCS"/>
+                    <constraint firstAttribute="trailing" secondItem="SBd-bp-dsg" secondAttribute="trailing" constant="16" id="moa-Ed-WVT"/>
+                    <constraint firstAttribute="bottom" secondItem="SZO-ym-Fj0" secondAttribute="bottom" constant="13" id="o4c-s8-wpE"/>
+                    <constraint firstItem="x1D-tB-SnS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="rmc-RW-D1b"/>
+                    <constraint firstItem="NWt-Ml-Qus" firstAttribute="leading" secondItem="x1D-tB-SnS" secondAttribute="trailing" constant="10.5" id="sl4-nQ-nYP"/>
+                    <constraint firstAttribute="trailing" secondItem="SZO-ym-Fj0" secondAttribute="trailing" id="szS-FC-3QH"/>
+                    <constraint firstItem="SBd-bp-dsg" firstAttribute="centerY" secondItem="NWt-Ml-Qus" secondAttribute="centerY" id="x0X-A6-BlB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="collectionView" destination="SZO-ym-Fj0" id="W8E-Yc-luh"/>
+            </connections>
+            <point key="canvasLocation" x="138.40579710144928" y="137.94642857142856"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_guanbi" width="9.5" height="9.5"/>
+    </resources>
+</document>

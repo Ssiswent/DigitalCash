@@ -1,5 +1,5 @@
 //
-//  FindVC.h
+//  FindRecommendVC.h
 //  DigitalCash
 //
 //  Created by Ssiswent on 2020/6/30.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FindVC : ContentBaseViewController
+@interface FindRecommendVC : ContentBaseViewController<JXCategoryListContentViewDelegate>
 
 @end
 
