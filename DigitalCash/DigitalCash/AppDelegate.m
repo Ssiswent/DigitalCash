@@ -28,7 +28,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-//    [[UITextField appearance] setTintColor:[UIColor colorWithHexString:@"#2A39FB"]];
+    [[UITextField appearance] setTintColor:[UIColor colorWithHexString:@"#DA8D3D"]];
     [IQKeyboardManager sharedManager];
     [IQKeyboardManager sharedManager].toolbarManageBehaviour = YES;
     //点击背景收回键盘

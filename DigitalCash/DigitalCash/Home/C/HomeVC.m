@@ -20,8 +20,7 @@
 #import "QuotesHeaderView.h"
 #import "NewsHeaderView.h"
 
-
-@interface HomeVC ()<UITableViewDataSource, UITableViewDelegate,YPNavigationBarConfigureStyle>
+@interface HomeVC ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -121,19 +120,9 @@ NSString *NewsCellID = @"NewsCell";
     _searchBar.barTintColor = [UIColor colorWithHexString:@"#E6E6E6" alpha:0.1];
 }
 
-- (void)setBottomView
-{
-    _bottomView.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];
-    _bottomView.layer.shadowColor = [UIColor colorWithRed:62/255.0 green:27/255.0 blue:114/255.0 alpha:0.15].CGColor;
-    _bottomView.layer.shadowOffset = CGSizeMake(0,0);
-    _bottomView.layer.shadowOpacity = 1;
-    _bottomView.layer.shadowRadius = 37;
-}
-
 - (void)initialSetUp
 {
     [self setSearchBar];
-    [self setBottomView];
     
     TableHeaderView *headerView = [[TableHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 125)];
     [_tableView setTableHeaderView:headerView];
@@ -142,16 +131,6 @@ NSString *NewsCellID = @"NewsCell";
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([CashCell class]) bundle:nil] forCellReuseIdentifier:CashCellID];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([QuotesCell class]) bundle:nil] forCellReuseIdentifier:QuotesCellID];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([NewsCell class]) bundle:nil] forCellReuseIdentifier:NewsCellID];
-}
-
-#pragma mark - yp_navigtionBarConfiguration
-
-- (YPNavigationBarConfigurations) yp_navigtionBarConfiguration {
-    return YPNavigationBarHidden;
-}
-
-- (UIColor *)yp_navigationBarTintColor{
-    return [UIColor whiteColor];
 }
 
 #pragma mark - TableViewDataSource
@@ -246,7 +225,7 @@ NSString *NewsCellID = @"NewsCell";
 
 - (void)getTalks{
     WEAKSELF
-    NSDictionary *dic = @{@"project":@"bitte"};
+    NSDictionary *dic = @{@"project":ProjectCategory};
     [ENDNetWorkManager getWithPathUrl:@"/user/talk/getTalkListByProject" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
         NSError *error;
         weakSelf.newsArray = [MTLJSONAdapter modelsOfClass:[TalkModel class] fromJSONArray:result[@"data"][@"list"] error:&error];

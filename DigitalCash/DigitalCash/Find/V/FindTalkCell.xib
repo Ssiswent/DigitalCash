@@ -189,7 +189,7 @@
     </objects>
     <resources>
         <image name="avatar" width="64" height="64"/>
-        <image name="btn_guanzhu" width="70" height="30"/>
+        <image name="btn_guanzhu" width="90" height="20"/>
         <image name="btn_guanzhu(1)" width="70" height="30"/>
         <image name="ic_guankan_nor" width="12" height="9"/>
         <image name="ic_pinlun_nor" width="13.5" height="12"/>

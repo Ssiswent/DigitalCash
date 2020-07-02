@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		B08D5E707E5028EF6315B058 /* Pods_DigitalCash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1E371C1891CC3A27929151 /* Pods_DigitalCash.framework */; };
+		CB089A8F24AD6CE900370F40 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB089A8E24AD6CE900370F40 /* BaseVC.m */; };
+		CB877CFB24AD86FF00D43AFE /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB877CF924AD86FF00D43AFE /* LoginVC.m */; };
+		CB877CFC24AD86FF00D43AFE /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB877CFA24AD86FF00D43AFE /* LoginVC.xib */; };
+		CB877D0024ADB3A800D43AFE /* ForgetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB877CFE24ADB3A800D43AFE /* ForgetVC.m */; };
+		CB877D0124ADB3A800D43AFE /* ForgetVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB877CFF24ADB3A800D43AFE /* ForgetVC.xib */; };
+		CB877D0524ADC09300D43AFE /* MineCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB877D0224ADC09200D43AFE /* MineCodeView.m */; };
+		CB877D0624ADC09300D43AFE /* MineCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB877D0424ADC09300D43AFE /* MineCodeView.xib */; };
 		CBA411CF24AC32C2005065B1 /* TalkListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA411CE24AC32C2005065B1 /* TalkListModel.m */; };
 		CBA411D324AC38E4005065B1 /* FindTalkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA411D124AC38E4005065B1 /* FindTalkCell.m */; };
 		CBA411D424AC38E4005065B1 /* FindTalkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA411D224AC38E4005065B1 /* FindTalkCell.xib */; };
@@ -104,6 +111,17 @@
 /* Begin PBXFileReference section */
 		10FA712E7BD45300A9195F61 /* Pods-DigitalCash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalCash.debug.xcconfig"; path = "Target Support Files/Pods-DigitalCash/Pods-DigitalCash.debug.xcconfig"; sourceTree = "<group>"; };
 		CA1E371C1891CC3A27929151 /* Pods_DigitalCash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigitalCash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB089A8D24AD6CE900370F40 /* BaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
+		CB089A8E24AD6CE900370F40 /* BaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
+		CB877CF824AD86FF00D43AFE /* LoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		CB877CF924AD86FF00D43AFE /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		CB877CFA24AD86FF00D43AFE /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		CB877CFD24ADB3A800D43AFE /* ForgetVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetVC.h; sourceTree = "<group>"; };
+		CB877CFE24ADB3A800D43AFE /* ForgetVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetVC.m; sourceTree = "<group>"; };
+		CB877CFF24ADB3A800D43AFE /* ForgetVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetVC.xib; sourceTree = "<group>"; };
+		CB877D0224ADC09200D43AFE /* MineCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineCodeView.m; sourceTree = "<group>"; };
+		CB877D0324ADC09200D43AFE /* MineCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineCodeView.h; sourceTree = "<group>"; };
+		CB877D0424ADC09300D43AFE /* MineCodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineCodeView.xib; sourceTree = "<group>"; };
 		CBA411CD24AC32C2005065B1 /* TalkListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkListModel.h; sourceTree = "<group>"; };
 		CBA411CE24AC32C2005065B1 /* TalkListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkListModel.m; sourceTree = "<group>"; };
 		CBA411D024AC38E4005065B1 /* FindTalkCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindTalkCell.h; sourceTree = "<group>"; };
@@ -307,6 +325,30 @@
 				CA1E371C1891CC3A27929151 /* Pods_DigitalCash.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB089A8B24AD6CBA00370F40 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				CB089A8D24AD6CE900370F40 /* BaseVC.h */,
+				CB089A8E24AD6CE900370F40 /* BaseVC.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		CB089A8C24AD6CC000370F40 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				CBA411CD24AC32C2005065B1 /* TalkListModel.h */,
+				CBA411CE24AC32C2005065B1 /* TalkListModel.m */,
+				CBFF801224AB33F100E8B527 /* TalkModel.h */,
+				CBFF801124AB33F100E8B527 /* TalkModel.m */,
+				CBFF800D24AB33A800E8B527 /* MineUserModel.h */,
+				CBFF800B24AB33A800E8B527 /* MineUserModel.m */,
+				CBFF800E24AB33A800E8B527 /* UserModel.h */,
+				CBFF800C24AB33A800E8B527 /* UserModel.m */,
+			);
+			path = M;
 			sourceTree = "<group>";
 		};
 		CBFF7EEA24AACFCC00E8B527 = {
@@ -689,6 +731,12 @@
 				CBFF7FD224AAD49D00E8B527 /* MineVC.h */,
 				CBFF7FD324AAD49D00E8B527 /* MineVC.m */,
 				CBFF7FD424AAD49D00E8B527 /* MineVC.xib */,
+				CB877CF824AD86FF00D43AFE /* LoginVC.h */,
+				CB877CF924AD86FF00D43AFE /* LoginVC.m */,
+				CB877CFA24AD86FF00D43AFE /* LoginVC.xib */,
+				CB877CFD24ADB3A800D43AFE /* ForgetVC.h */,
+				CB877CFE24ADB3A800D43AFE /* ForgetVC.m */,
+				CB877CFF24ADB3A800D43AFE /* ForgetVC.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -696,6 +744,9 @@
 		CBFF7FC124AAD43F00E8B527 /* V */ = {
 			isa = PBXGroup;
 			children = (
+				CB877D0324ADC09200D43AFE /* MineCodeView.h */,
+				CB877D0224ADC09200D43AFE /* MineCodeView.m */,
+				CB877D0424ADC09300D43AFE /* MineCodeView.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -710,14 +761,8 @@
 		CBFF800A24AB33A800E8B527 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				CBA411CD24AC32C2005065B1 /* TalkListModel.h */,
-				CBA411CE24AC32C2005065B1 /* TalkListModel.m */,
-				CBFF801224AB33F100E8B527 /* TalkModel.h */,
-				CBFF801124AB33F100E8B527 /* TalkModel.m */,
-				CBFF800D24AB33A800E8B527 /* MineUserModel.h */,
-				CBFF800B24AB33A800E8B527 /* MineUserModel.m */,
-				CBFF800E24AB33A800E8B527 /* UserModel.h */,
-				CBFF800C24AB33A800E8B527 /* UserModel.m */,
+				CB089A8C24AD6CC000370F40 /* M */,
+				CB089A8B24AD6CBA00370F40 /* C */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -782,9 +827,11 @@
 			files = (
 				CBFF801824AB43D700E8B527 /* FindRecommendVC.xib in Resources */,
 				CBFF7F0624AACFCD00E8B527 /* LaunchScreen.storyboard in Resources */,
+				CB877D0624ADC09300D43AFE /* MineCodeView.xib in Resources */,
 				CBFF7FED24AB087E00E8B527 /* NewsCell.xib in Resources */,
 				CBFF7FDE24AAE61500E8B527 /* FourBtnCell.xib in Resources */,
 				CBFF7FC724AAD45600E8B527 /* HomeVC.xib in Resources */,
+				CB877D0124ADB3A800D43AFE /* ForgetVC.xib in Resources */,
 				CBFF7FE824AB05BC00E8B527 /* QuotesCell.xib in Resources */,
 				CBFF7FE324AB003900E8B527 /* CashCell.xib in Resources */,
 				CBFF7FD624AAD49D00E8B527 /* MineVC.xib in Resources */,
@@ -795,6 +842,7 @@
 				CBFF7FFC24AB1A4000E8B527 /* CashHeaderView.xib in Resources */,
 				CBFF7FCC24AAD46200E8B527 /* CashVC.xib in Resources */,
 				CBFF800124AB257B00E8B527 /* QuotesHeaderView.xib in Resources */,
+				CB877CFC24AD86FF00D43AFE /* LoginVC.xib in Resources */,
 				CBFF800624AB261B00E8B527 /* NewsHeaderView.xib in Resources */,
 				CBA411D424AC38E4005065B1 /* FindTalkCell.xib in Resources */,
 				CBFF7FF524AB11D600E8B527 /* TableHeaderCollectionCell.xib in Resources */,
@@ -861,11 +909,13 @@
 				CBFF7F9624AAD1FE00E8B527 /* UIView+CornerAndBorder.m in Sources */,
 				CBFF7F8B24AAD1FE00E8B527 /* EGHCodeTool.m in Sources */,
 				CBFF7FA224AAD1FE00E8B527 /* YKViewBase.m in Sources */,
+				CB089A8F24AD6CE900370F40 /* BaseVC.m in Sources */,
 				CBFF7FAB24AAD1FF00E8B527 /* TopView.m in Sources */,
 				CBFF7F9024AAD1FE00E8B527 /* ENDNetWorkManager.m in Sources */,
 				CBFF7F9A24AAD1FE00E8B527 /* BaseViewController.m in Sources */,
 				CBFF7F8624AAD1FE00E8B527 /* EGHViewsTool.m in Sources */,
 				CBAF971F24AC701D00C9C98B /* FindRecommendFocusCell.m in Sources */,
+				CB877D0024ADB3A800D43AFE /* ForgetVC.m in Sources */,
 				CBFF800024AB257B00E8B527 /* QuotesHeaderView.m in Sources */,
 				CBFF7F8A24AAD1FE00E8B527 /* NSString+DealError.m in Sources */,
 				CBFF7F9924AAD1FE00E8B527 /* UIImage+OriginalImage.m in Sources */,
@@ -896,6 +946,8 @@
 				CBFF7FC624AAD45600E8B527 /* HomeVC.m in Sources */,
 				CBFF7FEC24AB087E00E8B527 /* NewsCell.m in Sources */,
 				CBFF7F8824AAD1FE00E8B527 /* Toast.m in Sources */,
+				CB877D0524ADC09300D43AFE /* MineCodeView.m in Sources */,
+				CB877CFB24AD86FF00D43AFE /* LoginVC.m in Sources */,
 				CBFF800F24AB33A800E8B527 /* MineUserModel.m in Sources */,
 				CBFF801024AB33A800E8B527 /* UserModel.m in Sources */,
 				CBFF7F8924AAD1FE00E8B527 /* UILabel+YBAttributeTextTapAction.m in Sources */,

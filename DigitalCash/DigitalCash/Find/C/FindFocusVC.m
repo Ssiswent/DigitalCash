@@ -136,7 +136,7 @@ NSString *FindRecommendFocusCellID = @"FindRecommendFocusCell";
     WEAKSELF
     NSDictionary *dic = @{
         @"pageNumber":@5,
-        @"project":@"bitte"
+        @"project":ProjectCategory
     };
     [ENDNetWorkManager getWithPathUrl:@"/user/talk/getRecommandTalk" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
         NSError *error;
