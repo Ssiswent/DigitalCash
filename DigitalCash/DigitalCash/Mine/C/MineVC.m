@@ -15,11 +15,16 @@
 #import "MineDynamicVC.h"
 #import "MineFocusAndFansVC.h"
 #import "CheckInVC.h"
+#import "AccountSafeVC.h"
+#import "FeedbackVC.h"
+#import "AboutVC.h"
 
 #import "CustomTBC.h"
 
+#import "MineLogoutView.h"
 
-@interface MineVC ()<YPNavigationBarConfigureStyle>
+
+@interface MineVC ()<YPNavigationBarConfigureStyle, MineLogoutViewDelegate, FeedbackVCDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UIView *avatarView;
@@ -35,6 +40,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *dynamicsCountLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *accountView;
+@property (weak, nonatomic) IBOutlet UIView *helpView;
+@property (weak, nonatomic) IBOutlet UIView *aboutView;
 @property (weak, nonatomic) IBOutlet UIView *logoutView;
 
 @property (weak, nonatomic) IBOutlet UILabel *moreLabel;
@@ -57,6 +64,9 @@
 @property (strong , nonatomic) NSMutableArray <NSDate *> *datesArray;
 @property (nonatomic, assign) BOOL hasCheckedIn;
 @property (copy,nonatomic) NSString *dateStr;
+
+@property (weak, nonatomic) UIView *coverView;
+@property (weak, nonatomic) MineLogoutView *mineLogoutView;
 
 @end
 
@@ -193,6 +203,8 @@
     [self addClickFansViewGes];
     [self addClickDynamicsViewGes];
     [self addClickLogoutViewGes];
+    [self addClickHelpViewGes];
+    [self addClickAboutViewGes];
 }
 
 - (void)addClickAvatartViewGes
@@ -236,15 +248,22 @@
 
 - (void)accountViewClicked
 {
-//    if(_hasUserId)
-//    {
-//        MineDynamicVC *pageVC = MineDynamicVC.new;
-//        [self.navigationController pushViewController:pageVC animated:YES];
-//    }
-//    else
-//    {
+    if(_hasUserId)
+    {
+        AccountSafeVC *accountSafeVC = AccountSafeVC.new;
+        WEAKSELF
+        accountSafeVC.accountLogOffBlock = ^{
+            //清空userId
+            NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+            [userDefault setObject:nil forKey:@"userId"];
+            [self clearUser];
+            [Toast makeText:weakSelf.view Message:@"注销成功" afterHideTime:DELAYTiME];
+        };
+        [self.navigationController pushViewController:accountSafeVC animated:YES];
+    }
+    else
+    {
         LoginVC *loginVC = [LoginVC new];
-        //        loginVC.delegate = self;
         WEAKSELF
         loginVC.loginVCDidGetUserBlock = ^{
             [self getUserDefault];
@@ -252,7 +271,49 @@
         };
         [self presentViewController:loginVC animated:YES completion:nil];
         [Toast makeText:loginVC.view Message:@"请先登录" afterHideTime:DELAYTiME];
-//    }
+    }
+}
+
+- (void)addClickHelpViewGes
+{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(helpViewClicked)];
+    [_helpView addGestureRecognizer:tap];
+}
+
+- (void)helpViewClicked
+{
+    if(_hasUserId)
+    {
+        FeedbackVC *feedbackVC = FeedbackVC.new;
+        feedbackVC.titleStr = @"帮助反馈";
+        feedbackVC.tag1Str = @"功能建议";
+        feedbackVC.tag2Str = @"bug";
+        feedbackVC.delegate = self;
+        [self.navigationController pushViewController:feedbackVC animated:YES];
+    }
+    else
+    {
+        LoginVC *loginVC = [LoginVC new];
+        WEAKSELF
+        loginVC.loginVCDidGetUserBlock = ^{
+            [self getUserDefault];
+            [Toast makeText:weakSelf.view Message:@"登录成功" afterHideTime:DELAYTiME];
+        };
+        [self presentViewController:loginVC animated:YES completion:nil];
+        [Toast makeText:loginVC.view Message:@"请先登录" afterHideTime:DELAYTiME];
+    }
+}
+
+- (void)addClickAboutViewGes
+{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(aboutViewClicked)];
+    [_aboutView addGestureRecognizer:tap];
+}
+
+- (void)aboutViewClicked
+{
+    AboutVC *aboutVC = AboutVC.new;
+    [self.navigationController pushViewController:aboutVC animated:YES];
 }
 
 - (void)addClickFocusViewGes
@@ -275,7 +336,6 @@
     else
     {
         LoginVC *loginVC = [LoginVC new];
-        //        loginVC.delegate = self;
         WEAKSELF
         loginVC.loginVCDidGetUserBlock = ^{
             [self getUserDefault];
@@ -306,7 +366,6 @@
     else
     {
         LoginVC *loginVC = [LoginVC new];
-        //        loginVC.delegate = self;
         WEAKSELF
         loginVC.loginVCDidGetUserBlock = ^{
             [self getUserDefault];
@@ -325,10 +384,73 @@
 
 - (void)logoutViewClicked
 {
+    MineLogoutView *mineLogoutView = [[NSBundle mainBundle]loadNibNamed:@"MineLogoutView" owner:nil options:nil].firstObject;
+    mineLogoutView.delegate = self;
+    self.mineLogoutView = mineLogoutView;
+    [self addCoverView];
+}
+
+#pragma mark - MineLogoutViewDelegate
+
+- (void)mineLogoutViewDidClickCancelBtn:(MineLogoutView *)mineLogoutView
+{
+    [self removeCoverView];
+}
+
+- (void)mineLogoutViewDidClickConfirmBtn:(MineLogoutView *)mineLogoutView
+{
     //清空userId
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     [userDefault setObject:nil forKey:@"userId"];
     [self clearUser];
+    [self removeCoverView];
+}
+
+#pragma mark - FeedbackVCDelegate
+- (void)FeedbackVCDidSuccessFeedback:(FeedbackVC *)feedbackVC
+{
+    [Toast makeText:self.view Message:@"反馈成功" afterHideTime:DELAYTiME];
+}
+
+// MARK: Add&RemoveCoverView
+
+- (void)removeCoverView
+{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.mineLogoutView.titleLabel.hidden = YES;
+        self.coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+        self.mineLogoutView.alpha = 0;
+        CGRect frame = self.mineLogoutView.frame;
+        frame.size = CGSizeMake(0, 0);
+        self.mineLogoutView.frame = frame;
+    }completion:^(BOOL finished) {
+        [self.coverView removeFromSuperview];
+    }];
+}
+
+- (void)addCoverView
+{
+    UIView *coverView = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+    
+    _mineLogoutView.alpha = 0;
+    _mineLogoutView.center = coverView.center;
+    CGRect frame = _mineLogoutView.frame;
+    frame.size = CGSizeMake(0, 0);
+    _mineLogoutView.frame = frame;
+    [coverView addSubview:_mineLogoutView];
+    _coverView = coverView;
+    
+    NSArray *array = [UIApplication sharedApplication].windows;
+    UIWindow *keyWindow = [array objectAtIndex:0];
+    [keyWindow addSubview:_coverView];
+    [UIView animateWithDuration:0.5 animations:^{
+        self.coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+        self.mineLogoutView.alpha = 1;
+        CGRect frame = self.mineLogoutView.frame;
+        frame.size = CGSizeMake(340, 181);
+        self.mineLogoutView.frame = frame;
+    }];
 }
 
 #pragma mark - yp_navigtionBarConfiguration

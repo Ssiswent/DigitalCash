@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MineVC">
             <connections>
                 <outlet property="aboutLabel" destination="0Yd-Dm-rf6" id="nbH-Zw-pAV"/>
+                <outlet property="aboutView" destination="iuD-Qk-Ors" id="XwO-Sg-tj4"/>
                 <outlet property="accountLabel" destination="6II-Fk-Sp7" id="0bW-O1-V9p"/>
                 <outlet property="accountView" destination="wXu-y5-3yT" id="Txr-zw-5kt"/>
                 <outlet property="avatarImgView" destination="f74-j8-Sti" id="oIA-mV-XTb"/>
@@ -27,6 +28,7 @@
                 <outlet property="focusCountLabel" destination="A6e-Kh-g6g" id="Uhb-Y8-bGw"/>
                 <outlet property="focusView" destination="CzI-iO-7ZQ" id="Vxf-fe-ztg"/>
                 <outlet property="helpLabel" destination="Pjb-dU-81y" id="45f-Ww-GTH"/>
+                <outlet property="helpView" destination="dRb-iV-ID3" id="d8C-Hz-NN3"/>
                 <outlet property="logoutLabel" destination="vTN-9L-Qys" id="of2-iP-m3a"/>
                 <outlet property="logoutView" destination="S5X-3V-Hb7" id="upe-Or-F9a"/>
                 <outlet property="moreLabel" destination="SAI-Og-OfV" id="IPb-mv-gv6"/>

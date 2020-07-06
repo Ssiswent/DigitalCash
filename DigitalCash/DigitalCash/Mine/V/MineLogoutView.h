@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MineLogoutView : UIView
 
 @property (nonatomic, weak)id<MineLogoutViewDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 

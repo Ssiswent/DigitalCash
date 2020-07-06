@@ -41,9 +41,6 @@
 
 @property (weak, nonatomic) CoverView *coverView;
 
-
-@property (weak, nonatomic) CheckInSuccessView *checkInSuccessView;
-
 @end
 
 @implementation CheckInVC

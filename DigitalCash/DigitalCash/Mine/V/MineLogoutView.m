@@ -21,21 +21,14 @@
 {
     [super awakeFromNib];
     
-    self.layer.cornerRadius = 6;
+    self.layer.cornerRadius = 10;
     self.layer.masksToBounds = YES;
     
-    [_cancelBtn setTitleColor:[UIColor colorWithHexString:@"#FFFFFF"] forState:UIControlStateNormal];
+    [_cancelBtn setTitleColor:[UIColor colorWithHexString:@"#575A61"] forState:UIControlStateNormal];
     [_confirmBtn setTitleColor:[UIColor colorWithHexString:@"#FFFFFF"] forState:UIControlStateNormal];
     
-    [_cancelBtn setBackgroundColor:[UIColor colorWithRed:144/255.0 green:153/255.0 blue:253/255.0 alpha:0.8]];
-    
-    CAGradientLayer *gl = [CAGradientLayer layer];
-    gl.frame = CGRectMake(0,0,CGRectGetWidth(_confirmBtn.frame),CGRectGetHeight(_confirmBtn.frame));
-    gl.startPoint = CGPointMake(1, 1);
-    gl.endPoint = CGPointMake(0, 0);
-    gl.colors = @[(__bridge id)[UIColor colorWithRed:41/255.0 green:58/255.0 blue:255/255.0 alpha:1.0].CGColor,(__bridge id)[UIColor colorWithRed:144/255.0 green:153/255.0 blue:253/255.0 alpha:1.0].CGColor];
-    gl.locations = @[@(0.0),@(1.0)];
-    [_confirmBtn.layer addSublayer:gl];
+    [_cancelBtn setBackgroundColor:[UIColor colorWithHexString:@"#E8BBAF"]];
+    [_confirmBtn setBackgroundColor:[UIColor colorWithHexString:@"#D95336"]];
 }
 
 - (IBAction)cancelBtnClicked:(id)sender {

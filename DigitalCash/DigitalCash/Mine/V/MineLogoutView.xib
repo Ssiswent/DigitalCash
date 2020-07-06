@@ -37,20 +37,21 @@
                         <action selector="confirmBtnClicked:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="Xwn-dr-B7S"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fN7-mp-gg0">
-                    <rect key="frame" x="149" y="61" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="确定退出?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fN7-mp-gg0">
+                    <rect key="frame" x="128.5" y="51.5" width="83" height="22"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                    <color key="textColor" red="0.1066674963" green="0.062617056069999996" blue="0.01962618902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="fN7-mp-gg0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="51.5" id="8z5-b7-y67"/>
                 <constraint firstItem="B9e-D7-FwP" firstAttribute="top" secondItem="qYG-7l-U1S" secondAttribute="top" id="ISZ-SW-sZB"/>
                 <constraint firstItem="qYG-7l-U1S" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="NQI-np-3qb"/>
                 <constraint firstItem="qYG-7l-U1S" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="REE-cm-MEx"/>
+                <constraint firstItem="fN7-mp-gg0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="URf-LD-Cb2"/>
                 <constraint firstItem="qYG-7l-U1S" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Wea-5S-2KP"/>
                 <constraint firstItem="B9e-D7-FwP" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="iOv-Og-s9r"/>
                 <constraint firstItem="B9e-D7-FwP" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="s0y-x8-djH"/>
@@ -60,6 +61,7 @@
             <connections>
                 <outlet property="cancelBtn" destination="qYG-7l-U1S" id="t2A-t3-7jI"/>
                 <outlet property="confirmBtn" destination="B9e-D7-FwP" id="iTM-zk-5R1"/>
+                <outlet property="titleLabel" destination="fN7-mp-gg0" id="ynw-zW-3Xk"/>
             </connections>
             <point key="canvasLocation" x="169.56521739130437" y="-49.888392857142854"/>
         </view>

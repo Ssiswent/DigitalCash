@@ -42,6 +42,7 @@ NSString *HomeFocusAndFansCellID = @"HomeFocusAndFansCell";
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     [CustomTBC setTabBarHidden:YES TabBarVC:self.tabBarController];
 }

@@ -35,9 +35,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *changePwdBtn;
 @property (weak, nonatomic) IBOutlet UILabel *topLabel;
 
-@property (weak, nonatomic)UIView *coverView;
-@property (weak, nonatomic)MineCodeView *mineCodeView;
-@property (copy, nonatomic)NSString *picCode;
+@property (weak, nonatomic) UIView *coverView;
+@property (weak, nonatomic) MineCodeView *mineCodeView;
+@property (copy, nonatomic) NSString *picCode;
 
 @end
 
@@ -53,12 +53,16 @@
     if([_forgetOrRegister isEqualToString:@"forget"])
     {
         [_changePwdBtn setTitle:@"重置密码" forState:UIControlStateNormal];
-        _topLabel.text = @"忘记密码";
+        _topLabel.text = @"修改密码";
+        _pwdTextF.placeholder = @"请输入新密码";
+        _rePwdTextF.placeholder = @"请再次输入新密码";
     }
     else if([_forgetOrRegister isEqualToString:@"Register"])
     {
         [_changePwdBtn setTitle:@"注册并登录" forState:UIControlStateNormal];
         _topLabel.text = @"注册账号";
+        _pwdTextF.placeholder = @"请输入密码";
+        _rePwdTextF.placeholder = @"请再次输入密码";
     }
     
     _loginViewTop.constant = kScaleFrom_iPhone8_Height(150);
