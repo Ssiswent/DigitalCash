@@ -59,7 +59,7 @@
                             <constraint firstAttribute="height" constant="30" id="LTh-nU-7EY"/>
                         </constraints>
                         <state key="normal" image="btn_guanzhu"/>
-                        <state key="selected" image="btn_guanzhu(1)"/>
+                        <state key="selected" image="btn_yiguanzhu"/>
                         <connections>
                             <action selector="focusBtnClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qU2-rR-7fV"/>
                         </connections>
@@ -189,8 +189,8 @@
     </objects>
     <resources>
         <image name="avatar" width="64" height="64"/>
-        <image name="btn_guanzhu" width="90" height="20"/>
-        <image name="btn_guanzhu(1)" width="70" height="30"/>
+        <image name="btn_guanzhu" width="70" height="30"/>
+        <image name="btn_yiguanzhu" width="70" height="30"/>
         <image name="ic_guankan_nor" width="12" height="9"/>
         <image name="ic_pinlun_nor" width="13.5" height="12"/>
         <image name="ic_zan_nor" width="11.5" height="12"/>

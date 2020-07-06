@@ -20,10 +20,19 @@
                 <outlet property="bottomView" destination="me3-8F-XKE" id="jyG-A6-Xbx"/>
                 <outlet property="contentViewTop" destination="oMG-Gh-RDK" id="Ehq-ZL-Cnt"/>
                 <outlet property="countViewTop" destination="UeG-C6-zxv" id="ewu-6A-FRu"/>
+                <outlet property="dynamicsCountLabel" destination="lA7-eK-3V8" id="mbc-jH-TBt"/>
+                <outlet property="dynamicsView" destination="sdg-Pk-egB" id="sov-sJ-JWt"/>
+                <outlet property="fansCountLabel" destination="DlI-wg-ofI" id="edU-r8-GaW"/>
+                <outlet property="fansView" destination="DVC-KN-eAZ" id="BY4-WF-1DE"/>
+                <outlet property="focusCountLabel" destination="A6e-Kh-g6g" id="Uhb-Y8-bGw"/>
+                <outlet property="focusView" destination="CzI-iO-7ZQ" id="Vxf-fe-ztg"/>
                 <outlet property="helpLabel" destination="Pjb-dU-81y" id="45f-Ww-GTH"/>
                 <outlet property="logoutLabel" destination="vTN-9L-Qys" id="of2-iP-m3a"/>
                 <outlet property="logoutView" destination="S5X-3V-Hb7" id="upe-Or-F9a"/>
                 <outlet property="moreLabel" destination="SAI-Og-OfV" id="IPb-mv-gv6"/>
+                <outlet property="moreLabelTop" destination="eUe-wK-3Ek" id="AWz-ER-1fD"/>
+                <outlet property="nameLabel" destination="w1w-gz-JTc" id="Obw-Y3-m0q"/>
+                <outlet property="signatureLabel" destination="Ux6-Vu-O2I" id="s4L-YC-JIs"/>
                 <outlet property="stackView" destination="rmv-QF-0gS" id="wAe-Vz-bfv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -162,7 +171,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdg-Pk-egB" userLabel="View3">
                                             <rect key="frame" x="262" y="0.0" width="131" height="109.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消息" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPB-pL-kQR">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="动态" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPB-pL-kQR">
                                                     <rect key="frame" x="50" y="38" width="31" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14" id="5x9-bZ-16k"/>
@@ -172,7 +181,7 @@
                                                     <color key="textColor" red="0.14902219180000001" green="0.14901494979999999" blue="0.14901983739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lA7-eK-3V8" userLabel="MessagesCountLabel">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lA7-eK-3V8" userLabel="DynamicsCountLabel">
                                                     <rect key="frame" x="10" y="65.5" width="111" height="18.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18.5" id="lFo-bx-2f9"/>
@@ -242,7 +251,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更多功能" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAI-Og-OfV" userLabel="MoreLabel">
-                    <rect key="frame" x="14.5" y="274" width="61.5" height="18"/>
+                    <rect key="frame" x="14.5" y="224" width="61.5" height="18"/>
                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                     <color key="textColor" red="0.15323174000000001" green="0.15322431919999999" blue="0.15322935579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
@@ -253,6 +262,9 @@
                         <constraint firstAttribute="width" secondItem="J4U-DD-bGA" secondAttribute="height" multiplier="362.5:127.5" id="x2R-H7-SRD"/>
                     </constraints>
                     <state key="normal" image="pic_qiandao"/>
+                    <connections>
+                        <action selector="checkInBtnClicked:" destination="-1" eventType="touchUpInside" id="8EU-2n-h0N"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="me3-8F-XKE" userLabel="BottomView">
                     <rect key="frame" x="0.0" y="847" width="414" height="49"/>
@@ -262,7 +274,7 @@
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28.5" translatesAutoresizingMaskIntoConstraints="NO" id="rmv-QF-0gS" userLabel="StackView">
-                    <rect key="frame" x="0.0" y="312.5" width="414" height="177.5"/>
+                    <rect key="frame" x="0.0" y="262.5" width="414" height="177.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wXu-y5-3yT" userLabel="AccountView">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="23"/>
@@ -414,7 +426,7 @@
                 <constraint firstItem="rmv-QF-0gS" firstAttribute="top" secondItem="SAI-Og-OfV" secondAttribute="bottom" constant="20.5" id="YTE-Eh-yLo"/>
                 <constraint firstItem="me3-8F-XKE" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="Ye3-eS-Jxr"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="J4U-DD-bGA" secondAttribute="trailing" constant="6.5" id="b3C-OU-WQH"/>
-                <constraint firstItem="SAI-Og-OfV" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="230" id="eUe-wK-3Ek"/>
+                <constraint firstItem="SAI-Og-OfV" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="180" id="eUe-wK-3Ek"/>
                 <constraint firstAttribute="trailing" secondItem="me3-8F-XKE" secondAttribute="trailing" id="fzf-4R-2fW"/>
                 <constraint firstItem="J4U-DD-bGA" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="6.5" id="hh5-vj-w7r"/>
                 <constraint firstAttribute="bottom" secondItem="me3-8F-XKE" secondAttribute="bottom" id="j5f-qZ-NfQ"/>

@@ -15,6 +15,8 @@
 
 #import <ZXCountDownView.h>
 
+//#import <AFNetworking.h>
+
 @interface ForgetVC ()<MineCodeViewDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *accountViewTop;
@@ -204,7 +206,14 @@
 - (void)MineCodeViewDidClickConfirmBtn:(MineCodeView *)mineCodeView inputCode:(NSString *)inputCode
 {
     self.picCode = inputCode;
-    [self sendCode];
+    if([_forgetOrRegister isEqualToString:@"forget"])
+    {
+        [self sendChangeCode];
+    }
+    else if([_forgetOrRegister isEqualToString:@"Register"])
+    {
+        [self sendRegisterCode];
+    }
 }
 
 - (void)MineCodeViewDidClickChangeBtn:(MineCodeView *)mineCodeView
@@ -233,7 +242,24 @@
     }];
 }
 
-- (void)sendCode
+- (void)sendRegisterCode
+{
+    WEAKSELF
+    if([self.picCode isEqualToString:@""])
+    {
+        self.picCode = @" ";
+    }
+    NSDictionary *dic = @{@"phone":self.accountTextF.text,@"type":@(1),@"project":ProjectCategory,@"code":self.picCode};
+    [ENDNetWorkManager postWithPathUrl:@"/system/sendCode" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        [self removeCoverView];
+        [self.codeBtn startCountDown];
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.coverView Message:@"发送验证码失败" afterHideTime:DELAYTiME];
+    }];
+}
+
+- (void)sendChangeCode
 {
     WEAKSELF
     if([self.picCode isEqualToString:@""])
@@ -269,7 +295,7 @@
 - (void)registerAccount
 {
     WEAKSELF
-    NSDictionary *dic = @{@"phone":self.accountTextF.text,@"password":self.pwdTextF.text,@"confirmPassword":self.rePwdTextF.text,@"code":self.codeTextF.text,@"type":@(1),@"project":ProjectCategory};
+    NSDictionary *dic = @{@"phone":self.accountTextF.text,@"password":self.pwdTextF.text,@"confirmPassword":self.rePwdTextF.text,@"code":self.codeTextF.text,@"type":@1,@"project":ProjectCategory};
     [ENDNetWorkManager postWithPathUrl:@"/system/register" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
         NSError *error;
         MineUserModel *mineUser = [MineUserModel sharedMineUserModel];

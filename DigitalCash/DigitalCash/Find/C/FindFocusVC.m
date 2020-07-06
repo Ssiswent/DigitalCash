@@ -14,7 +14,6 @@
 
 @interface FindFocusVC ()<UITableViewDataSource, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 
@@ -45,31 +44,11 @@ NSString *FindRecommendFocusCellID = @"FindRecommendFocusCell";
 
 - (void)initialSetUp
 {
-    [self setSearchBar];
     [self setBottomView];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([FindTalkCell class]) bundle:nil] forCellReuseIdentifier:FindFocusTalkCellID];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([FindRecommendFocusCell class]) bundle:nil] forCellReuseIdentifier:FindRecommendFocusCellID];
     
     _numberOfSections = 2;
-}
-
-- (void)setSearchBar
-{
-    _searchBar.layer.cornerRadius = 15;
-    _searchBar.layer.masksToBounds = YES;
-    if (@available(iOS 13.0, *)) {
-        _searchBar.searchTextField.backgroundColor = [UIColor colorWithHexString:@"#E6E6E6" alpha:0.1];
-    } else {
-        // Fallback on earlier versions
-    }
-    if (@available(iOS 13.0, *)) {
-        _searchBar.searchTextField.font = [UIFont systemFontOfSize:12];
-    } else {
-        // Fallback on earlier versions
-    }
-//    _searchBar.searchTextField.textColor = [UIColor colorWithHexString:@"#2A39FB"];
-    _searchBar.backgroundColor = [UIColor colorWithHexString:@"#E6E6E6" alpha:0.1];
-    _searchBar.barTintColor = [UIColor colorWithHexString:@"#E6E6E6" alpha:0.1];
 }
 
 - (void)setBottomView

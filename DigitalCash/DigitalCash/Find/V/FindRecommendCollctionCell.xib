@@ -45,8 +45,8 @@
                             <constraint firstAttribute="height" constant="20" id="gt6-fV-a7y"/>
                             <constraint firstAttribute="width" constant="90" id="nGK-NQ-iKS"/>
                         </constraints>
-                        <state key="normal" image="btn_guanzhu"/>
-                        <state key="selected" image="btn_yiguanzhu"/>
+                        <state key="normal" image="btn_guanzhu_long"/>
+                        <state key="selected" image="btn_yiguanzhu_long"/>
                         <connections>
                             <action selector="focusBtnClicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="CA8-9j-cuS"/>
                         </connections>
@@ -85,7 +85,7 @@
     <resources>
         <image name="avatar" width="64" height="64"/>
         <image name="bg_tuijian" width="110" height="125"/>
-        <image name="btn_guanzhu" width="90" height="20"/>
-        <image name="btn_yiguanzhu" width="90" height="20"/>
+        <image name="btn_guanzhu_long" width="90" height="20"/>
+        <image name="btn_yiguanzhu_long" width="90" height="20"/>
     </resources>
 </document>

@@ -12,7 +12,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FindRecommendVC">
             <connections>
                 <outlet property="bottomView" destination="Rsn-GB-IDS" id="G6i-oI-AUW"/>
-                <outlet property="searchBar" destination="XeB-qd-7gc" id="KR4-uC-hS0"/>
                 <outlet property="tableView" destination="rwC-kW-R64" id="6Zp-IP-6q9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,14 +21,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" placeholder="搜索货币" backgroundImage="bg_search" translatesAutoresizingMaskIntoConstraints="NO" id="XeB-qd-7gc" userLabel="SearchBar">
-                    <rect key="frame" x="248" y="60.5" width="150" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="62j-nS-aUu"/>
-                        <constraint firstAttribute="width" constant="150" id="QEG-uS-SeE"/>
-                    </constraints>
-                    <textInputTraits key="textInputTraits"/>
-                </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rwC-kW-R64" userLabel="TableView">
                     <rect key="frame" x="0.0" y="95.5" width="414" height="766.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -51,19 +42,16 @@
             <constraints>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="rwC-kW-R64" secondAttribute="bottom" id="15E-z8-rhP"/>
                 <constraint firstAttribute="bottom" secondItem="Rsn-GB-IDS" secondAttribute="bottom" id="6J3-5G-UnB"/>
+                <constraint firstItem="rwC-kW-R64" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="51.5" id="CBx-7u-Ro5"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="rwC-kW-R64" secondAttribute="trailing" id="Per-Cj-GFn"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="XeB-qd-7gc" secondAttribute="trailing" constant="16" id="Rw9-rW-kIA"/>
-                <constraint firstItem="XeB-qd-7gc" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="16.670000000000002" id="bzU-K0-Ecx"/>
                 <constraint firstItem="rwC-kW-R64" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="cbd-V4-UNu"/>
                 <constraint firstItem="Rsn-GB-IDS" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="ebE-TZ-82V"/>
-                <constraint firstItem="rwC-kW-R64" firstAttribute="top" secondItem="XeB-qd-7gc" secondAttribute="bottom" constant="5" id="gaw-xX-p0J"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Rsn-GB-IDS" secondAttribute="trailing" id="kbA-oB-CEi"/>
             </constraints>
             <point key="canvasLocation" x="-204" y="153"/>
         </view>
     </objects>
     <resources>
-        <image name="bg_search" width="150" height="30"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

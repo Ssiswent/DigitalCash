@@ -15,6 +15,13 @@
 		CB877D0124ADB3A800D43AFE /* ForgetVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB877CFF24ADB3A800D43AFE /* ForgetVC.xib */; };
 		CB877D0524ADC09300D43AFE /* MineCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB877D0224ADC09200D43AFE /* MineCodeView.m */; };
 		CB877D0624ADC09300D43AFE /* MineCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB877D0424ADC09300D43AFE /* MineCodeView.xib */; };
+		CB877D0A24ADDDDB00D43AFE /* MineDynamicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB877D0824ADDDDB00D43AFE /* MineDynamicVC.m */; };
+		CB877D0B24ADDDDB00D43AFE /* MineDynamicVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB877D0924ADDDDB00D43AFE /* MineDynamicVC.xib */; };
+		CBA399A524AEBFC500CC0DBE /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA399A424AEBFC500CC0DBE /* UIImage+Alpha.m */; };
+		CBA399A924AECBAB00CC0DBE /* MineTalkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA399A724AECBAB00CC0DBE /* MineTalkCell.m */; };
+		CBA399AA24AECBAB00CC0DBE /* MineTalkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA399A824AECBAB00CC0DBE /* MineTalkCell.xib */; };
+		CBA399AE24AEFBC300CC0DBE /* MineTalkSortCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA399AC24AEFBC300CC0DBE /* MineTalkSortCell.m */; };
+		CBA399AF24AEFBC300CC0DBE /* MineTalkSortCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA399AD24AEFBC300CC0DBE /* MineTalkSortCell.xib */; };
 		CBA411CF24AC32C2005065B1 /* TalkListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA411CE24AC32C2005065B1 /* TalkListModel.m */; };
 		CBA411D324AC38E4005065B1 /* FindTalkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA411D124AC38E4005065B1 /* FindTalkCell.m */; };
 		CBA411D424AC38E4005065B1 /* FindTalkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA411D224AC38E4005065B1 /* FindTalkCell.xib */; };
@@ -22,6 +29,22 @@
 		CBAF972024AC701D00C9C98B /* FindRecommendFocusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAF971E24AC701D00C9C98B /* FindRecommendFocusCell.xib */; };
 		CBAF972424AC7AEC00C9C98B /* FindRecommendCollctionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAF972224AC7AEC00C9C98B /* FindRecommendCollctionCell.m */; };
 		CBAF972524AC7AEC00C9C98B /* FindRecommendCollctionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAF972324AC7AEC00C9C98B /* FindRecommendCollctionCell.xib */; };
+		CBB4827724B2F4A5000F5BC5 /* MineLogoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB4827424B2F4A4000F5BC5 /* MineLogoutView.m */; };
+		CBB4827824B2F4A5000F5BC5 /* MineLogoutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBB4827524B2F4A5000F5BC5 /* MineLogoutView.xib */; };
+		CBD5E18A24AF0D5800A51D31 /* MineFocusAndFansCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD5E18724AF0D5700A51D31 /* MineFocusAndFansCell.m */; };
+		CBD5E18B24AF0D5800A51D31 /* MineFocusAndFansCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD5E18924AF0D5700A51D31 /* MineFocusAndFansCell.xib */; };
+		CBD5E18F24AF0D6100A51D31 /* MineFocusAndFansVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD5E18D24AF0D6100A51D31 /* MineFocusAndFansVC.m */; };
+		CBD5E19024AF0D6100A51D31 /* MineFocusAndFansVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD5E18E24AF0D6100A51D31 /* MineFocusAndFansVC.xib */; };
+		CBD5E19324AF139E00A51D31 /* CheckInModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD5E19224AF139E00A51D31 /* CheckInModel.m */; };
+		CBD5E19E24AF142C00A51D31 /* DIYCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD5E19424AF142C00A51D31 /* DIYCalendarCell.m */; };
+		CBD5E19F24AF142C00A51D31 /* CoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD5E19624AF142C00A51D31 /* CoverView.m */; };
+		CBD5E1A024AF142C00A51D31 /* CheckInSuccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD5E19824AF142C00A51D31 /* CheckInSuccessView.m */; };
+		CBD5E1A124AF142C00A51D31 /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD5E19924AF142C00A51D31 /* EmptyView.m */; };
+		CBD5E1A224AF142C00A51D31 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD5E19A24AF142C00A51D31 /* EmptyView.xib */; };
+		CBD5E1A324AF142C00A51D31 /* CheckInSuccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD5E19C24AF142C00A51D31 /* CheckInSuccessView.xib */; };
+		CBD5E1A624AF143C00A51D31 /* CheckInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD5E1A524AF143C00A51D31 /* CheckInVC.m */; };
+		CBD5E1A824AF17A800A51D31 /* CheckInVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD5E1A724AF17A800A51D31 /* CheckInVC.xib */; };
+		CBD5E1AA24AF1DCC00A51D31 /* FindVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD5E1A924AF1DCC00A51D31 /* FindVC.xib */; };
 		CBFF7EF824AACFCC00E8B527 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFF7EF724AACFCC00E8B527 /* AppDelegate.m */; };
 		CBFF7F0324AACFCD00E8B527 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBFF7F0224AACFCD00E8B527 /* Assets.xcassets */; };
 		CBFF7F0624AACFCD00E8B527 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBFF7F0424AACFCD00E8B527 /* LaunchScreen.storyboard */; };
@@ -122,6 +145,17 @@
 		CB877D0224ADC09200D43AFE /* MineCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineCodeView.m; sourceTree = "<group>"; };
 		CB877D0324ADC09200D43AFE /* MineCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineCodeView.h; sourceTree = "<group>"; };
 		CB877D0424ADC09300D43AFE /* MineCodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineCodeView.xib; sourceTree = "<group>"; };
+		CB877D0724ADDDDB00D43AFE /* MineDynamicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineDynamicVC.h; sourceTree = "<group>"; };
+		CB877D0824ADDDDB00D43AFE /* MineDynamicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineDynamicVC.m; sourceTree = "<group>"; };
+		CB877D0924ADDDDB00D43AFE /* MineDynamicVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineDynamicVC.xib; sourceTree = "<group>"; };
+		CBA399A324AEBFC500CC0DBE /* UIImage+Alpha.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
+		CBA399A424AEBFC500CC0DBE /* UIImage+Alpha.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
+		CBA399A624AECBAB00CC0DBE /* MineTalkCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineTalkCell.h; sourceTree = "<group>"; };
+		CBA399A724AECBAB00CC0DBE /* MineTalkCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineTalkCell.m; sourceTree = "<group>"; };
+		CBA399A824AECBAB00CC0DBE /* MineTalkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineTalkCell.xib; sourceTree = "<group>"; };
+		CBA399AB24AEFBC300CC0DBE /* MineTalkSortCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineTalkSortCell.h; sourceTree = "<group>"; };
+		CBA399AC24AEFBC300CC0DBE /* MineTalkSortCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineTalkSortCell.m; sourceTree = "<group>"; };
+		CBA399AD24AEFBC300CC0DBE /* MineTalkSortCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineTalkSortCell.xib; sourceTree = "<group>"; };
 		CBA411CD24AC32C2005065B1 /* TalkListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkListModel.h; sourceTree = "<group>"; };
 		CBA411CE24AC32C2005065B1 /* TalkListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkListModel.m; sourceTree = "<group>"; };
 		CBA411D024AC38E4005065B1 /* FindTalkCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindTalkCell.h; sourceTree = "<group>"; };
@@ -133,6 +167,31 @@
 		CBAF972124AC7AEC00C9C98B /* FindRecommendCollctionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindRecommendCollctionCell.h; sourceTree = "<group>"; };
 		CBAF972224AC7AEC00C9C98B /* FindRecommendCollctionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindRecommendCollctionCell.m; sourceTree = "<group>"; };
 		CBAF972324AC7AEC00C9C98B /* FindRecommendCollctionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindRecommendCollctionCell.xib; sourceTree = "<group>"; };
+		CBB4827424B2F4A4000F5BC5 /* MineLogoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineLogoutView.m; sourceTree = "<group>"; };
+		CBB4827524B2F4A5000F5BC5 /* MineLogoutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineLogoutView.xib; sourceTree = "<group>"; };
+		CBB4827624B2F4A5000F5BC5 /* MineLogoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineLogoutView.h; sourceTree = "<group>"; };
+		CBD5E18724AF0D5700A51D31 /* MineFocusAndFansCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineFocusAndFansCell.m; sourceTree = "<group>"; };
+		CBD5E18824AF0D5700A51D31 /* MineFocusAndFansCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineFocusAndFansCell.h; sourceTree = "<group>"; };
+		CBD5E18924AF0D5700A51D31 /* MineFocusAndFansCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineFocusAndFansCell.xib; sourceTree = "<group>"; };
+		CBD5E18C24AF0D6100A51D31 /* MineFocusAndFansVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineFocusAndFansVC.h; sourceTree = "<group>"; };
+		CBD5E18D24AF0D6100A51D31 /* MineFocusAndFansVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineFocusAndFansVC.m; sourceTree = "<group>"; };
+		CBD5E18E24AF0D6100A51D31 /* MineFocusAndFansVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineFocusAndFansVC.xib; sourceTree = "<group>"; };
+		CBD5E19124AF139E00A51D31 /* CheckInModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInModel.h; sourceTree = "<group>"; };
+		CBD5E19224AF139E00A51D31 /* CheckInModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInModel.m; sourceTree = "<group>"; };
+		CBD5E19424AF142C00A51D31 /* DIYCalendarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIYCalendarCell.m; sourceTree = "<group>"; };
+		CBD5E19524AF142C00A51D31 /* EmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
+		CBD5E19624AF142C00A51D31 /* CoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoverView.m; sourceTree = "<group>"; };
+		CBD5E19724AF142C00A51D31 /* CoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverView.h; sourceTree = "<group>"; };
+		CBD5E19824AF142C00A51D31 /* CheckInSuccessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInSuccessView.m; sourceTree = "<group>"; };
+		CBD5E19924AF142C00A51D31 /* EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
+		CBD5E19A24AF142C00A51D31 /* EmptyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
+		CBD5E19B24AF142C00A51D31 /* CheckInSuccessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInSuccessView.h; sourceTree = "<group>"; };
+		CBD5E19C24AF142C00A51D31 /* CheckInSuccessView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckInSuccessView.xib; sourceTree = "<group>"; };
+		CBD5E19D24AF142C00A51D31 /* DIYCalendarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIYCalendarCell.h; sourceTree = "<group>"; };
+		CBD5E1A424AF143C00A51D31 /* CheckInVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInVC.h; sourceTree = "<group>"; };
+		CBD5E1A524AF143C00A51D31 /* CheckInVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInVC.m; sourceTree = "<group>"; };
+		CBD5E1A724AF17A800A51D31 /* CheckInVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckInVC.xib; sourceTree = "<group>"; };
+		CBD5E1A924AF1DCC00A51D31 /* FindVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindVC.xib; sourceTree = "<group>"; };
 		CBFF7EF324AACFCC00E8B527 /* DigitalCash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalCash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFF7EF624AACFCC00E8B527 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CBFF7EF724AACFCC00E8B527 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -473,6 +532,8 @@
 				CBFF7F3A24AAD1FE00E8B527 /* UIView+CornerAndBorder.m */,
 				CBFF7F4124AAD1FE00E8B527 /* YPNavigationController+Configure.h */,
 				CBFF7F3B24AAD1FE00E8B527 /* YPNavigationController+Configure.m */,
+				CBA399A324AEBFC500CC0DBE /* UIImage+Alpha.h */,
+				CBA399A424AEBFC500CC0DBE /* UIImage+Alpha.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -692,6 +753,7 @@
 			children = (
 				CBFF7FCD24AAD47200E8B527 /* FindVC.h */,
 				CBFF7FCE24AAD47200E8B527 /* FindVC.m */,
+				CBD5E1A924AF1DCC00A51D31 /* FindVC.xib */,
 				CBFF801424AB43D600E8B527 /* FindRecommendVC.h */,
 				CBFF801524AB43D600E8B527 /* FindRecommendVC.m */,
 				CBFF801624AB43D600E8B527 /* FindRecommendVC.xib */,
@@ -737,6 +799,15 @@
 				CB877CFD24ADB3A800D43AFE /* ForgetVC.h */,
 				CB877CFE24ADB3A800D43AFE /* ForgetVC.m */,
 				CB877CFF24ADB3A800D43AFE /* ForgetVC.xib */,
+				CB877D0724ADDDDB00D43AFE /* MineDynamicVC.h */,
+				CB877D0824ADDDDB00D43AFE /* MineDynamicVC.m */,
+				CB877D0924ADDDDB00D43AFE /* MineDynamicVC.xib */,
+				CBD5E18C24AF0D6100A51D31 /* MineFocusAndFansVC.h */,
+				CBD5E18D24AF0D6100A51D31 /* MineFocusAndFansVC.m */,
+				CBD5E18E24AF0D6100A51D31 /* MineFocusAndFansVC.xib */,
+				CBD5E1A424AF143C00A51D31 /* CheckInVC.h */,
+				CBD5E1A524AF143C00A51D31 /* CheckInVC.m */,
+				CBD5E1A724AF17A800A51D31 /* CheckInVC.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -747,6 +818,28 @@
 				CB877D0324ADC09200D43AFE /* MineCodeView.h */,
 				CB877D0224ADC09200D43AFE /* MineCodeView.m */,
 				CB877D0424ADC09300D43AFE /* MineCodeView.xib */,
+				CBA399A624AECBAB00CC0DBE /* MineTalkCell.h */,
+				CBA399A724AECBAB00CC0DBE /* MineTalkCell.m */,
+				CBA399A824AECBAB00CC0DBE /* MineTalkCell.xib */,
+				CBA399AB24AEFBC300CC0DBE /* MineTalkSortCell.h */,
+				CBA399AC24AEFBC300CC0DBE /* MineTalkSortCell.m */,
+				CBA399AD24AEFBC300CC0DBE /* MineTalkSortCell.xib */,
+				CBD5E18824AF0D5700A51D31 /* MineFocusAndFansCell.h */,
+				CBD5E18724AF0D5700A51D31 /* MineFocusAndFansCell.m */,
+				CBD5E18924AF0D5700A51D31 /* MineFocusAndFansCell.xib */,
+				CBD5E19B24AF142C00A51D31 /* CheckInSuccessView.h */,
+				CBD5E19824AF142C00A51D31 /* CheckInSuccessView.m */,
+				CBD5E19C24AF142C00A51D31 /* CheckInSuccessView.xib */,
+				CBD5E19724AF142C00A51D31 /* CoverView.h */,
+				CBD5E19624AF142C00A51D31 /* CoverView.m */,
+				CBD5E19D24AF142C00A51D31 /* DIYCalendarCell.h */,
+				CBD5E19424AF142C00A51D31 /* DIYCalendarCell.m */,
+				CBD5E19524AF142C00A51D31 /* EmptyView.h */,
+				CBD5E19924AF142C00A51D31 /* EmptyView.m */,
+				CBD5E19A24AF142C00A51D31 /* EmptyView.xib */,
+				CBB4827624B2F4A5000F5BC5 /* MineLogoutView.h */,
+				CBB4827424B2F4A4000F5BC5 /* MineLogoutView.m */,
+				CBB4827524B2F4A5000F5BC5 /* MineLogoutView.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -754,6 +847,8 @@
 		CBFF7FC224AAD44300E8B527 /* M */ = {
 			isa = PBXGroup;
 			children = (
+				CBD5E19124AF139E00A51D31 /* CheckInModel.h */,
+				CBD5E19224AF139E00A51D31 /* CheckInModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -825,23 +920,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBD5E1A324AF142C00A51D31 /* CheckInSuccessView.xib in Resources */,
+				CBD5E19024AF0D6100A51D31 /* MineFocusAndFansVC.xib in Resources */,
 				CBFF801824AB43D700E8B527 /* FindRecommendVC.xib in Resources */,
 				CBFF7F0624AACFCD00E8B527 /* LaunchScreen.storyboard in Resources */,
 				CB877D0624ADC09300D43AFE /* MineCodeView.xib in Resources */,
 				CBFF7FED24AB087E00E8B527 /* NewsCell.xib in Resources */,
+				CBA399AA24AECBAB00CC0DBE /* MineTalkCell.xib in Resources */,
 				CBFF7FDE24AAE61500E8B527 /* FourBtnCell.xib in Resources */,
 				CBFF7FC724AAD45600E8B527 /* HomeVC.xib in Resources */,
 				CB877D0124ADB3A800D43AFE /* ForgetVC.xib in Resources */,
 				CBFF7FE824AB05BC00E8B527 /* QuotesCell.xib in Resources */,
 				CBFF7FE324AB003900E8B527 /* CashCell.xib in Resources */,
+				CBA399AF24AEFBC300CC0DBE /* MineTalkSortCell.xib in Resources */,
 				CBFF7FD624AAD49D00E8B527 /* MineVC.xib in Resources */,
+				CBB4827824B2F4A5000F5BC5 /* MineLogoutView.xib in Resources */,
 				CBAF972024AC701D00C9C98B /* FindRecommendFocusCell.xib in Resources */,
+				CB877D0B24ADDDDB00D43AFE /* MineDynamicVC.xib in Resources */,
+				CBD5E18B24AF0D5800A51D31 /* MineFocusAndFansCell.xib in Resources */,
 				CBAF972524AC7AEC00C9C98B /* FindRecommendCollctionCell.xib in Resources */,
 				CBFF7F0324AACFCD00E8B527 /* Assets.xcassets in Resources */,
 				CBFF801D24AB440500E8B527 /* FindFocusVC.xib in Resources */,
+				CBD5E1A224AF142C00A51D31 /* EmptyView.xib in Resources */,
 				CBFF7FFC24AB1A4000E8B527 /* CashHeaderView.xib in Resources */,
 				CBFF7FCC24AAD46200E8B527 /* CashVC.xib in Resources */,
+				CBD5E1A824AF17A800A51D31 /* CheckInVC.xib in Resources */,
 				CBFF800124AB257B00E8B527 /* QuotesHeaderView.xib in Resources */,
+				CBD5E1AA24AF1DCC00A51D31 /* FindVC.xib in Resources */,
 				CB877CFC24AD86FF00D43AFE /* LoginVC.xib in Resources */,
 				CBFF800624AB261B00E8B527 /* NewsHeaderView.xib in Resources */,
 				CBA411D424AC38E4005065B1 /* FindTalkCell.xib in Resources */,
@@ -913,12 +1018,14 @@
 				CBFF7FAB24AAD1FF00E8B527 /* TopView.m in Sources */,
 				CBFF7F9024AAD1FE00E8B527 /* ENDNetWorkManager.m in Sources */,
 				CBFF7F9A24AAD1FE00E8B527 /* BaseViewController.m in Sources */,
+				CBD5E19324AF139E00A51D31 /* CheckInModel.m in Sources */,
 				CBFF7F8624AAD1FE00E8B527 /* EGHViewsTool.m in Sources */,
 				CBAF971F24AC701D00C9C98B /* FindRecommendFocusCell.m in Sources */,
 				CB877D0024ADB3A800D43AFE /* ForgetVC.m in Sources */,
 				CBFF800024AB257B00E8B527 /* QuotesHeaderView.m in Sources */,
 				CBFF7F8A24AAD1FE00E8B527 /* NSString+DealError.m in Sources */,
 				CBFF7F9924AAD1FE00E8B527 /* UIImage+OriginalImage.m in Sources */,
+				CBD5E18A24AF0D5800A51D31 /* MineFocusAndFansCell.m in Sources */,
 				CBFF7FA824AAD1FE00E8B527 /* QHDataCollectionViewCell.m in Sources */,
 				CBFF7F8D24AAD1FE00E8B527 /* Reachability.m in Sources */,
 				CBFF7FAF24AAD1FF00E8B527 /* CustomTBC.m in Sources */,
@@ -939,14 +1046,18 @@
 				CBFF7FA024AAD1FE00E8B527 /* QHLoctionModel.m in Sources */,
 				CBFF7F8F24AAD1FE00E8B527 /* ENDNetWorkPOST.m in Sources */,
 				CBFF7FAD24AAD1FF00E8B527 /* MVPKlineView.m in Sources */,
+				CBA399AE24AEFBC300CC0DBE /* MineTalkSortCell.m in Sources */,
 				CBFF7FA524AAD1FE00E8B527 /* YKLineChartView.m in Sources */,
+				CBB4827724B2F4A5000F5BC5 /* MineLogoutView.m in Sources */,
 				CBFF7FA324AAD1FE00E8B527 /* ZCMakeTableViewCell.m in Sources */,
 				CBFF7FA724AAD1FE00E8B527 /* UIButton+LXMImagePosition.m in Sources */,
 				CBFF7F9824AAD1FE00E8B527 /* UITextView+WZB.m in Sources */,
+				CBD5E19E24AF142C00A51D31 /* DIYCalendarCell.m in Sources */,
 				CBFF7FC624AAD45600E8B527 /* HomeVC.m in Sources */,
 				CBFF7FEC24AB087E00E8B527 /* NewsCell.m in Sources */,
 				CBFF7F8824AAD1FE00E8B527 /* Toast.m in Sources */,
 				CB877D0524ADC09300D43AFE /* MineCodeView.m in Sources */,
+				CBD5E18F24AF0D6100A51D31 /* MineFocusAndFansVC.m in Sources */,
 				CB877CFB24AD86FF00D43AFE /* LoginVC.m in Sources */,
 				CBFF800F24AB33A800E8B527 /* MineUserModel.m in Sources */,
 				CBFF801024AB33A800E8B527 /* UserModel.m in Sources */,
@@ -957,23 +1068,30 @@
 				CBFF7FAE24AAD1FF00E8B527 /* YKLineEntity.m in Sources */,
 				CBFF800924AB2A6E00E8B527 /* HomeQuotesModel.m in Sources */,
 				CBFF800524AB261B00E8B527 /* NewsHeaderView.m in Sources */,
+				CB877D0A24ADDDDB00D43AFE /* MineDynamicVC.m in Sources */,
 				CBFF7F9B24AAD1FE00E8B527 /* YKLineChartViewBase.m in Sources */,
 				CBFF7FA424AAD1FE00E8B527 /* QHDetailViewController.m in Sources */,
 				CBFF7FE224AB003900E8B527 /* CashCell.m in Sources */,
+				CBD5E19F24AF142C00A51D31 /* CoverView.m in Sources */,
 				CBFF7FF424AB11D600E8B527 /* TableHeaderCollectionCell.m in Sources */,
 				CBFF7F9124AAD1FE00E8B527 /* ENDNetWorkDELETE.m in Sources */,
+				CBD5E1A024AF142C00A51D31 /* CheckInSuccessView.m in Sources */,
+				CBA399A524AEBFC500CC0DBE /* UIImage+Alpha.m in Sources */,
 				CBFF7FCB24AAD46200E8B527 /* CashVC.m in Sources */,
 				CBFF7FAC24AAD1FF00E8B527 /* ZCBaseViewController.m in Sources */,
 				CBFF7F8E24AAD1FE00E8B527 /* LCPReachability.m in Sources */,
 				CBFF7F9324AAD1FE00E8B527 /* ENDLCPNetWorkERROR.m in Sources */,
 				CBFF7F9E24AAD1FE00E8B527 /* ZCBaseView.m in Sources */,
 				CBFF7EF824AACFCC00E8B527 /* AppDelegate.m in Sources */,
+				CBD5E1A624AF143C00A51D31 /* CheckInVC.m in Sources */,
 				CBFF7F9424AAD1FE00E8B527 /* UIColor+Hex.m in Sources */,
+				CBD5E1A124AF142C00A51D31 /* EmptyView.m in Sources */,
 				CBFF7FB224AAD1FF00E8B527 /* BaseModel.m in Sources */,
 				CBFF7FA924AAD1FF00E8B527 /* CZ_NEWMarketVC.m in Sources */,
 				CBFF7F0924AACFCD00E8B527 /* main.m in Sources */,
 				CBFF7F8724AAD1FE00E8B527 /* StringAndLabelDealTool.m in Sources */,
 				CBFF7F9524AAD1FE00E8B527 /* UIImage+Image.m in Sources */,
+				CBA399A924AECBAB00CC0DBE /* MineTalkCell.m in Sources */,
 				CBFF7FB124AAD1FF00E8B527 /* ContentBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

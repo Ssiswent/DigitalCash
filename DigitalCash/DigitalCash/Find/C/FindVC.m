@@ -16,6 +16,8 @@
 
 @property (nonatomic, strong) JXCategoryTitleView *myCategoryView;
 
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
 @end
 
 @implementation FindVC
@@ -23,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavBar];
+    [self setSearchBar];
 }
 
 - (void)setNavBar
@@ -38,6 +41,27 @@
     self.myCategoryView.titleLabelZoomEnabled = YES;
     self.myCategoryView.selectedAnimationEnabled = YES;
     self.myCategoryView.titleLabelAnchorPointStyle = JXCategoryTitleLabelAnchorPointStyleBottom;
+}
+
+- (void)setSearchBar
+{
+    _searchBar.layer.cornerRadius = 15;
+    _searchBar.layer.masksToBounds = YES;
+    if (@available(iOS 13.0, *)) {
+        _searchBar.searchTextField.backgroundColor = [UIColor colorWithHexString:@"#E6E6E6" alpha:0.1];
+    } else {
+        // Fallback on earlier versions
+    }
+    if (@available(iOS 13.0, *)) {
+        _searchBar.searchTextField.font = [UIFont systemFontOfSize:12];
+    } else {
+        // Fallback on earlier versions
+    }
+//    _searchBar.searchTextField.textColor = [UIColor colorWithHexString:@"#2A39FB"];
+    _searchBar.backgroundColor = [UIColor colorWithHexString:@"#E6E6E6" alpha:0.1];
+    _searchBar.barTintColor = [UIColor colorWithHexString:@"#E6E6E6" alpha:0.1];
+    
+    [self.view bringSubviewToFront:_searchBar];
 }
 
 - (void)viewDidLayoutSubviews {
