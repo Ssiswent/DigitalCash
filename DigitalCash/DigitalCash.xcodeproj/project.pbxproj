@@ -56,6 +56,12 @@
 		CBB4828A24B351CF000F5BC5 /* UpToDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB4828924B351CF000F5BC5 /* UpToDateView.m */; };
 		CBB4828D24B351E7000F5BC5 /* UpToDateCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB4828C24B351E7000F5BC5 /* UpToDateCoverView.m */; };
 		CBB4829124B35450000F5BC5 /* UpToDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBB4829024B35450000F5BC5 /* UpToDateView.xib */; };
+		CBC76AB024B46FE400A9C236 /* HomeNewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC76AAE24B46FE400A9C236 /* HomeNewsVC.m */; };
+		CBC76AB124B46FE400A9C236 /* HomeNewsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC76AAF24B46FE400A9C236 /* HomeNewsVC.xib */; };
+		CBC76AB524B4714700A9C236 /* HomeFastNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC76AB324B4714700A9C236 /* HomeFastNewsCell.m */; };
+		CBC76AB624B4714700A9C236 /* HomeFastNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC76AB424B4714700A9C236 /* HomeFastNewsCell.xib */; };
+		CBC76AB924B47A6300A9C236 /* HomeNewsHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC76AB824B47A6300A9C236 /* HomeNewsHeaderView.m */; };
+		CBC76ABB24B47A7000A9C236 /* HomeNewsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC76ABA24B47A7000A9C236 /* HomeNewsHeaderView.xib */; };
 		CBD5E18A24AF0D5800A51D31 /* MineFocusAndFansCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD5E18724AF0D5700A51D31 /* MineFocusAndFansCell.m */; };
 		CBD5E18B24AF0D5800A51D31 /* MineFocusAndFansCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD5E18924AF0D5700A51D31 /* MineFocusAndFansCell.xib */; };
 		CBD5E18F24AF0D6100A51D31 /* MineFocusAndFansVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD5E18D24AF0D6100A51D31 /* MineFocusAndFansVC.m */; };
@@ -234,6 +240,15 @@
 		CBB4828B24B351E7000F5BC5 /* UpToDateCoverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpToDateCoverView.h; sourceTree = "<group>"; };
 		CBB4828C24B351E7000F5BC5 /* UpToDateCoverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpToDateCoverView.m; sourceTree = "<group>"; };
 		CBB4829024B35450000F5BC5 /* UpToDateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpToDateView.xib; sourceTree = "<group>"; };
+		CBC76AAD24B46FE400A9C236 /* HomeNewsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeNewsVC.h; sourceTree = "<group>"; };
+		CBC76AAE24B46FE400A9C236 /* HomeNewsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeNewsVC.m; sourceTree = "<group>"; };
+		CBC76AAF24B46FE400A9C236 /* HomeNewsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNewsVC.xib; sourceTree = "<group>"; };
+		CBC76AB224B4714700A9C236 /* HomeFastNewsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFastNewsCell.h; sourceTree = "<group>"; };
+		CBC76AB324B4714700A9C236 /* HomeFastNewsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFastNewsCell.m; sourceTree = "<group>"; };
+		CBC76AB424B4714700A9C236 /* HomeFastNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeFastNewsCell.xib; sourceTree = "<group>"; };
+		CBC76AB724B47A6300A9C236 /* HomeNewsHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeNewsHeaderView.h; sourceTree = "<group>"; };
+		CBC76AB824B47A6300A9C236 /* HomeNewsHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeNewsHeaderView.m; sourceTree = "<group>"; };
+		CBC76ABA24B47A7000A9C236 /* HomeNewsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNewsHeaderView.xib; sourceTree = "<group>"; };
 		CBD5E18724AF0D5700A51D31 /* MineFocusAndFansCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineFocusAndFansCell.m; sourceTree = "<group>"; };
 		CBD5E18824AF0D5700A51D31 /* MineFocusAndFansCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineFocusAndFansCell.h; sourceTree = "<group>"; };
 		CBD5E18924AF0D5700A51D31 /* MineFocusAndFansCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineFocusAndFansCell.xib; sourceTree = "<group>"; };
@@ -750,6 +765,9 @@
 				CB66186A24B46899006A250D /* HomeBusinessVC.h */,
 				CB66186B24B46899006A250D /* HomeBusinessVC.m */,
 				CB66186C24B46899006A250D /* HomeBusinessVC.xib */,
+				CBC76AAD24B46FE400A9C236 /* HomeNewsVC.h */,
+				CBC76AAE24B46FE400A9C236 /* HomeNewsVC.m */,
+				CBC76AAF24B46FE400A9C236 /* HomeNewsVC.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -786,6 +804,12 @@
 				CB66186524B45B4A006A250D /* HomeCalendarCell.h */,
 				CB66186624B45B4A006A250D /* HomeCalendarCell.m */,
 				CB66186724B45B4A006A250D /* HomeCalendarCell.xib */,
+				CBC76AB224B4714700A9C236 /* HomeFastNewsCell.h */,
+				CBC76AB324B4714700A9C236 /* HomeFastNewsCell.m */,
+				CBC76AB424B4714700A9C236 /* HomeFastNewsCell.xib */,
+				CBC76AB724B47A6300A9C236 /* HomeNewsHeaderView.h */,
+				CBC76AB824B47A6300A9C236 /* HomeNewsHeaderView.m */,
+				CBC76ABA24B47A7000A9C236 /* HomeNewsHeaderView.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -1025,6 +1049,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBD5E1A324AF142C00A51D31 /* CheckInSuccessView.xib in Resources */,
+				CBC76AB124B46FE400A9C236 /* HomeNewsVC.xib in Resources */,
 				CBD5E19024AF0D6100A51D31 /* MineFocusAndFansVC.xib in Resources */,
 				CBFF801824AB43D700E8B527 /* FindRecommendVC.xib in Resources */,
 				CBFF7F0624AACFCD00E8B527 /* LaunchScreen.storyboard in Resources */,
@@ -1035,6 +1060,7 @@
 				CBB4827D24B315FB000F5BC5 /* AccountSafeVC.xib in Resources */,
 				CBFF7FDE24AAE61500E8B527 /* FourBtnCell.xib in Resources */,
 				CB66183324B40CD4006A250D /* MineInformationSexView.xib in Resources */,
+				CBC76ABB24B47A7000A9C236 /* HomeNewsHeaderView.xib in Resources */,
 				CBFF7FC724AAD45600E8B527 /* HomeVC.xib in Resources */,
 				CB877D0124ADB3A800D43AFE /* ForgetVC.xib in Resources */,
 				CBFF7FE824AB05BC00E8B527 /* QuotesCell.xib in Resources */,
@@ -1044,6 +1070,7 @@
 				CBFF7FD624AAD49D00E8B527 /* MineVC.xib in Resources */,
 				CBB4827824B2F4A5000F5BC5 /* MineLogoutView.xib in Resources */,
 				CBAF972024AC701D00C9C98B /* FindRecommendFocusCell.xib in Resources */,
+				CBC76AB624B4714700A9C236 /* HomeFastNewsCell.xib in Resources */,
 				CB877D0B24ADDDDB00D43AFE /* MineDynamicVC.xib in Resources */,
 				CBD5E18B24AF0D5800A51D31 /* MineFocusAndFansCell.xib in Resources */,
 				CBAF972524AC7AEC00C9C98B /* FindRecommendCollctionCell.xib in Resources */,
@@ -1127,6 +1154,7 @@
 				CB66186824B45B4A006A250D /* HomeCalendarCell.m in Sources */,
 				CBFF7FA124AAD1FE00E8B527 /* QHDHHeadCollectionViewCell.m in Sources */,
 				CBFF801324AB33F200E8B527 /* TalkModel.m in Sources */,
+				CBC76AB524B4714700A9C236 /* HomeFastNewsCell.m in Sources */,
 				CBFF7FE724AB05BC00E8B527 /* QuotesCell.m in Sources */,
 				CBFF7F9624AAD1FE00E8B527 /* UIView+CornerAndBorder.m in Sources */,
 				CBFF7F8B24AAD1FE00E8B527 /* EGHCodeTool.m in Sources */,
@@ -1166,6 +1194,7 @@
 				CBFF7FA024AAD1FE00E8B527 /* QHLoctionModel.m in Sources */,
 				CBFF7F8F24AAD1FE00E8B527 /* ENDNetWorkPOST.m in Sources */,
 				CBFF7FAD24AAD1FF00E8B527 /* MVPKlineView.m in Sources */,
+				CBC76AB024B46FE400A9C236 /* HomeNewsVC.m in Sources */,
 				CBA399AE24AEFBC300CC0DBE /* MineTalkSortCell.m in Sources */,
 				CBFF7FA524AAD1FE00E8B527 /* YKLineChartView.m in Sources */,
 				CBB4827724B2F4A5000F5BC5 /* MineLogoutView.m in Sources */,
@@ -1222,6 +1251,7 @@
 				CBFF7F9524AAD1FE00E8B527 /* UIImage+Image.m in Sources */,
 				CBA399A924AECBAB00CC0DBE /* MineTalkCell.m in Sources */,
 				CBFF7FB124AAD1FF00E8B527 /* ContentBaseViewController.m in Sources */,
+				CBC76AB924B47A6300A9C236 /* HomeNewsHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

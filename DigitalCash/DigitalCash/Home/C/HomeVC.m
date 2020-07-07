@@ -23,6 +23,7 @@
 #import "CashVC.h"
 #import "HomeCalendarVC.h"
 #import "HomeBusinessVC.h"
+#import "HomeNewsVC.h"
 
 #import "CustomTBC.h"
 
@@ -174,6 +175,10 @@ NSString *NewsCellID = @"NewsCell";
     fourBtnCell.businessViewClickedBlock = ^{
         HomeBusinessVC *businessVC = HomeBusinessVC.new;
         [self.navigationController pushViewController:businessVC animated:YES];
+    };
+    fourBtnCell.newsViewClickedBlock = ^{
+        HomeNewsVC *newsVC = HomeNewsVC.new;
+        [self.navigationController pushViewController:newsVC animated:YES];
     };
     
     CashCell *cashCell = [tableView dequeueReusableCellWithIdentifier:CashCellID];

@@ -101,11 +101,6 @@ NSString *HomeCalendarCellID = @"HomeCalendarCell";
 
 #pragma mark - FSCalendarDelegate
 
-//- (NSInteger)calendar:(FSCalendar *)calendar numberOfEventsForDate:(NSDate *)date
-//{
-//    return 1;
-//}
-
 - (void)calendar:(FSCalendar *)calendar didSelectDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)monthPosition
 {
     _dateLabel.text = [self getTimeToTimeStr:date];
