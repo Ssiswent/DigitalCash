@@ -18,6 +18,13 @@
 		CB66183524B40CD4006A250D /* MineInformationNameView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB66183124B40CD4006A250D /* MineInformationNameView.m */; };
 		CB66183624B40CD4006A250D /* MineInformationSexView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB66183224B40CD4006A250D /* MineInformationSexView.m */; };
 		CB66183924B4106F006A250D /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB66183824B4106F006A250D /* NetworkTool.swift */; };
+		CB66184324B44B87006A250D /* HomeCalendarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB66183A24B44B87006A250D /* HomeCalendarVC.xib */; };
+		CB66184824B44B87006A250D /* HomeCalendarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB66184224B44B87006A250D /* HomeCalendarVC.m */; };
+		CB66186424B44EFB006A250D /* HomeNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB66186224B44EFB006A250D /* HomeNewsModel.m */; };
+		CB66186824B45B4A006A250D /* HomeCalendarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB66186624B45B4A006A250D /* HomeCalendarCell.m */; };
+		CB66186924B45B4A006A250D /* HomeCalendarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB66186724B45B4A006A250D /* HomeCalendarCell.xib */; };
+		CB66186D24B46899006A250D /* HomeBusinessVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB66186B24B46899006A250D /* HomeBusinessVC.m */; };
+		CB66186E24B46899006A250D /* HomeBusinessVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB66186C24B46899006A250D /* HomeBusinessVC.xib */; };
 		CB877CFB24AD86FF00D43AFE /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB877CF924AD86FF00D43AFE /* LoginVC.m */; };
 		CB877CFC24AD86FF00D43AFE /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB877CFA24AD86FF00D43AFE /* LoginVC.xib */; };
 		CB877D0024ADB3A800D43AFE /* ForgetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB877CFE24ADB3A800D43AFE /* ForgetVC.m */; };
@@ -168,6 +175,17 @@
 		CB66183224B40CD4006A250D /* MineInformationSexView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineInformationSexView.m; sourceTree = "<group>"; };
 		CB66183724B4106F006A250D /* DigitalCash-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DigitalCash-Bridging-Header.h"; sourceTree = "<group>"; };
 		CB66183824B4106F006A250D /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
+		CB66183A24B44B87006A250D /* HomeCalendarVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCalendarVC.xib; sourceTree = "<group>"; };
+		CB66183D24B44B87006A250D /* HomeCalendarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCalendarVC.h; sourceTree = "<group>"; };
+		CB66184224B44B87006A250D /* HomeCalendarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCalendarVC.m; sourceTree = "<group>"; };
+		CB66186224B44EFB006A250D /* HomeNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeNewsModel.m; sourceTree = "<group>"; };
+		CB66186324B44EFB006A250D /* HomeNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeNewsModel.h; sourceTree = "<group>"; };
+		CB66186524B45B4A006A250D /* HomeCalendarCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCalendarCell.h; sourceTree = "<group>"; };
+		CB66186624B45B4A006A250D /* HomeCalendarCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCalendarCell.m; sourceTree = "<group>"; };
+		CB66186724B45B4A006A250D /* HomeCalendarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCalendarCell.xib; sourceTree = "<group>"; };
+		CB66186A24B46899006A250D /* HomeBusinessVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeBusinessVC.h; sourceTree = "<group>"; };
+		CB66186B24B46899006A250D /* HomeBusinessVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeBusinessVC.m; sourceTree = "<group>"; };
+		CB66186C24B46899006A250D /* HomeBusinessVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeBusinessVC.xib; sourceTree = "<group>"; };
 		CB877CF824AD86FF00D43AFE /* LoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		CB877CF924AD86FF00D43AFE /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		CB877CFA24AD86FF00D43AFE /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
@@ -726,6 +744,12 @@
 				CBFF7FC324AAD45600E8B527 /* HomeVC.h */,
 				CBFF7FC424AAD45600E8B527 /* HomeVC.m */,
 				CBFF7FC524AAD45600E8B527 /* HomeVC.xib */,
+				CB66183D24B44B87006A250D /* HomeCalendarVC.h */,
+				CB66184224B44B87006A250D /* HomeCalendarVC.m */,
+				CB66183A24B44B87006A250D /* HomeCalendarVC.xib */,
+				CB66186A24B46899006A250D /* HomeBusinessVC.h */,
+				CB66186B24B46899006A250D /* HomeBusinessVC.m */,
+				CB66186C24B46899006A250D /* HomeBusinessVC.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -733,11 +757,6 @@
 		CBFF7FB824AAD41500E8B527 /* V */ = {
 			isa = PBXGroup;
 			children = (
-				CBFF7FEE24AB112900E8B527 /* TableHeaderView.h */,
-				CBFF7FEF24AB112900E8B527 /* TableHeaderView.m */,
-				CBFF7FF124AB11D600E8B527 /* TableHeaderCollectionCell.h */,
-				CBFF7FF224AB11D600E8B527 /* TableHeaderCollectionCell.m */,
-				CBFF7FF324AB11D600E8B527 /* TableHeaderCollectionCell.xib */,
 				CBFF7FDA24AAE61500E8B527 /* FourBtnCell.h */,
 				CBFF7FDB24AAE61500E8B527 /* FourBtnCell.m */,
 				CBFF7FDC24AAE61500E8B527 /* FourBtnCell.xib */,
@@ -759,6 +778,14 @@
 				CBFF7FE924AB087E00E8B527 /* NewsCell.h */,
 				CBFF7FEA24AB087E00E8B527 /* NewsCell.m */,
 				CBFF7FEB24AB087E00E8B527 /* NewsCell.xib */,
+				CBFF7FEE24AB112900E8B527 /* TableHeaderView.h */,
+				CBFF7FEF24AB112900E8B527 /* TableHeaderView.m */,
+				CBFF7FF124AB11D600E8B527 /* TableHeaderCollectionCell.h */,
+				CBFF7FF224AB11D600E8B527 /* TableHeaderCollectionCell.m */,
+				CBFF7FF324AB11D600E8B527 /* TableHeaderCollectionCell.xib */,
+				CB66186524B45B4A006A250D /* HomeCalendarCell.h */,
+				CB66186624B45B4A006A250D /* HomeCalendarCell.m */,
+				CB66186724B45B4A006A250D /* HomeCalendarCell.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -766,6 +793,8 @@
 		CBFF7FB924AAD41A00E8B527 /* M */ = {
 			isa = PBXGroup;
 			children = (
+				CB66186324B44EFB006A250D /* HomeNewsModel.h */,
+				CB66186224B44EFB006A250D /* HomeNewsModel.m */,
 				CBFF800724AB2A6E00E8B527 /* HomeQuotesModel.h */,
 				CBFF800824AB2A6E00E8B527 /* HomeQuotesModel.m */,
 			);
@@ -1002,6 +1031,7 @@
 				CB877D0624ADC09300D43AFE /* MineCodeView.xib in Resources */,
 				CBFF7FED24AB087E00E8B527 /* NewsCell.xib in Resources */,
 				CBA399AA24AECBAB00CC0DBE /* MineTalkCell.xib in Resources */,
+				CB66186924B45B4A006A250D /* HomeCalendarCell.xib in Resources */,
 				CBB4827D24B315FB000F5BC5 /* AccountSafeVC.xib in Resources */,
 				CBFF7FDE24AAE61500E8B527 /* FourBtnCell.xib in Resources */,
 				CB66183324B40CD4006A250D /* MineInformationSexView.xib in Resources */,
@@ -1026,11 +1056,13 @@
 				CBFF7FCC24AAD46200E8B527 /* CashVC.xib in Resources */,
 				CBD5E1A824AF17A800A51D31 /* CheckInVC.xib in Resources */,
 				CB66182724B40BFC006A250D /* MineEditProfileCell.xib in Resources */,
+				CB66184324B44B87006A250D /* HomeCalendarVC.xib in Resources */,
 				CBFF800124AB257B00E8B527 /* QuotesHeaderView.xib in Resources */,
 				CBD5E1AA24AF1DCC00A51D31 /* FindVC.xib in Resources */,
 				CB877CFC24AD86FF00D43AFE /* LoginVC.xib in Resources */,
 				CBFF800624AB261B00E8B527 /* NewsHeaderView.xib in Resources */,
 				CBA411D424AC38E4005065B1 /* FindTalkCell.xib in Resources */,
+				CB66186E24B46899006A250D /* HomeBusinessVC.xib in Resources */,
 				CBFF7FF524AB11D600E8B527 /* TableHeaderCollectionCell.xib in Resources */,
 				CBB4828124B32CA9000F5BC5 /* FeedbackVC.xib in Resources */,
 				CB66182B24B40C0A006A250D /* MineEditVC.xib in Resources */,
@@ -1092,6 +1124,7 @@
 				CBFF7FB024AAD1FF00E8B527 /* ListViewController.m in Sources */,
 				CBB4828A24B351CF000F5BC5 /* UpToDateView.m in Sources */,
 				CBFF7F9724AAD1FE00E8B527 /* YPNavigationController+Configure.m in Sources */,
+				CB66186824B45B4A006A250D /* HomeCalendarCell.m in Sources */,
 				CBFF7FA124AAD1FE00E8B527 /* QHDHHeadCollectionViewCell.m in Sources */,
 				CBFF801324AB33F200E8B527 /* TalkModel.m in Sources */,
 				CBFF7FE724AB05BC00E8B527 /* QuotesCell.m in Sources */,
@@ -1110,6 +1143,7 @@
 				CBFF800024AB257B00E8B527 /* QuotesHeaderView.m in Sources */,
 				CBFF7F8A24AAD1FE00E8B527 /* NSString+DealError.m in Sources */,
 				CBFF7F9924AAD1FE00E8B527 /* UIImage+OriginalImage.m in Sources */,
+				CB66186D24B46899006A250D /* HomeBusinessVC.m in Sources */,
 				CBD5E18A24AF0D5800A51D31 /* MineFocusAndFansCell.m in Sources */,
 				CBFF7FA824AAD1FE00E8B527 /* QHDataCollectionViewCell.m in Sources */,
 				CBFF7F8D24AAD1FE00E8B527 /* Reachability.m in Sources */,
@@ -1149,6 +1183,7 @@
 				CB66183524B40CD4006A250D /* MineInformationNameView.m in Sources */,
 				CBFF801024AB33A800E8B527 /* UserModel.m in Sources */,
 				CBFF7F8924AAD1FE00E8B527 /* UILabel+YBAttributeTextTapAction.m in Sources */,
+				CB66184824B44B87006A250D /* HomeCalendarVC.m in Sources */,
 				CBFF7F8C24AAD1FE00E8B527 /* ENDLCPNetWorkGET.m in Sources */,
 				CBFF7F8524AAD1FE00E8B527 /* ENDGradientLabel.m in Sources */,
 				CBFF7FDD24AAE61500E8B527 /* FourBtnCell.m in Sources */,
@@ -1158,6 +1193,7 @@
 				CBB4828224B32CA9000F5BC5 /* FeedbackVC.m in Sources */,
 				CBB4828D24B351E7000F5BC5 /* UpToDateCoverView.m in Sources */,
 				CBB4828624B34472000F5BC5 /* AboutVC.m in Sources */,
+				CB66186424B44EFB006A250D /* HomeNewsModel.m in Sources */,
 				CB877D0A24ADDDDB00D43AFE /* MineDynamicVC.m in Sources */,
 				CBFF7F9B24AAD1FE00E8B527 /* YKLineChartViewBase.m in Sources */,
 				CBFF7FA424AAD1FE00E8B527 /* QHDetailViewController.m in Sources */,

@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CashVC : CZ_NEWMarketVC
 
+@property (nonatomic, assign) BOOL hideTabBar;
+
 @end
 
 NS_ASSUME_NONNULL_END

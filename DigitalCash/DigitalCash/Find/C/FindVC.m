@@ -49,10 +49,6 @@
     _searchBar.layer.masksToBounds = YES;
     if (@available(iOS 13.0, *)) {
         _searchBar.searchTextField.backgroundColor = [UIColor colorWithHexString:@"#E6E6E6" alpha:0.1];
-    } else {
-        // Fallback on earlier versions
-    }
-    if (@available(iOS 13.0, *)) {
         _searchBar.searchTextField.font = [UIFont systemFontOfSize:12];
     } else {
         // Fallback on earlier versions

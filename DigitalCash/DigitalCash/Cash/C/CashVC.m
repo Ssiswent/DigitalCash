@@ -7,7 +7,9 @@
 
 #import "CashVC.h"
 
-@interface CashVC ()<YPNavigationBarConfigureStyle>
+#import "CustomTBC.h"
+
+@interface CashVC ()<YPNavigationBarConfigureStyle, UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 
 @end
@@ -19,6 +21,20 @@
     // Do any additional setup after loading the view from its nib.
     [self setBottomView];
     [self.view bringSubviewToFront:_bottomView];
+    if(_hideTabBar)
+    {
+        _bottomView.hidden = YES;
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    if(_hideTabBar)
+    {
+        [CustomTBC setTabBarHidden:YES TabBarVC:self.tabBarController];
+    }
 }
 
 - (void)setBottomView

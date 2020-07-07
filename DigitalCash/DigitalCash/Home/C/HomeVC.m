@@ -20,6 +20,12 @@
 #import "QuotesHeaderView.h"
 #import "NewsHeaderView.h"
 
+#import "CashVC.h"
+#import "HomeCalendarVC.h"
+#import "HomeBusinessVC.h"
+
+#import "CustomTBC.h"
+
 @interface HomeVC ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -101,6 +107,12 @@ NSString *NewsCellID = @"NewsCell";
     [self getTalks];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [CustomTBC setTabBarHidden:NO TabBarVC:self.tabBarController];
+}
+
 - (void)setSearchBar
 {
     _searchBar.layer.cornerRadius = 15;
@@ -150,6 +162,20 @@ NSString *NewsCellID = @"NewsCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FourBtnCell *fourBtnCell = [tableView dequeueReusableCellWithIdentifier:FourBtnCellID];
+    fourBtnCell.cashViewClickedBlock = ^{
+        CashVC *cashVC = CashVC.new;
+        cashVC.hideTabBar = YES;
+        [self.navigationController pushViewController:cashVC animated:YES];
+    };
+    fourBtnCell.calendarViewClickedBlock = ^{
+        HomeCalendarVC *calendarVC = HomeCalendarVC.new;
+        [self.navigationController pushViewController:calendarVC animated:YES];
+    };
+    fourBtnCell.businessViewClickedBlock = ^{
+        HomeBusinessVC *businessVC = HomeBusinessVC.new;
+        [self.navigationController pushViewController:businessVC animated:YES];
+    };
+    
     CashCell *cashCell = [tableView dequeueReusableCellWithIdentifier:CashCellID];
     QuotesCell *quotesCell = [tableView dequeueReusableCellWithIdentifier:QuotesCellID];
     NewsCell *newsCell = [tableView dequeueReusableCellWithIdentifier:NewsCellID];

@@ -176,6 +176,10 @@
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="BTCView" destination="3Qq-cu-hiD" id="2QT-NV-5ES"/>
+                <outlet property="businessView" destination="NmM-xJ-ZpA" id="9zu-9s-9C7"/>
+                <outlet property="calendarView" destination="tbF-x4-rje" id="4bc-6B-iBO"/>
+                <outlet property="cashView" destination="xu5-HC-tBO" id="MEF-Hk-jnp"/>
+                <outlet property="newsView" destination="tv8-a0-0gC" id="hVY-L0-GS0"/>
             </connections>
             <point key="canvasLocation" x="252.89855072463769" y="176.78571428571428"/>
         </tableViewCell>
