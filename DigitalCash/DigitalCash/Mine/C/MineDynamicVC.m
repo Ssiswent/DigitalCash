@@ -19,7 +19,12 @@
 
 #import "UIImage+Alpha.h"
 
+#import "MineEditVC.h"
+
 @interface MineDynamicVC ()<UITableViewDataSource, UITableViewDelegate, YPNavigationBarConfigureStyle, UIGestureRecognizerDelegate>
+
+@property (weak, nonatomic) IBOutlet UIButton *sortNewBtn;
+@property (weak, nonatomic) IBOutlet UIButton *sortDefaultBtn;
 
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImgView;
@@ -71,6 +76,8 @@ NSString *MineTalkSortCellID = @"MineTalkSortCell";
     //读取userId
     NSNumber *userId = [userDefault objectForKey:@"userId"];
     _userId = userId;
+    
+    _sortDefaultBtn.selected = YES;
     [self getDynamics];
     [self getUser];
 }
@@ -102,11 +109,32 @@ NSString *MineTalkSortCellID = @"MineTalkSortCell";
     [self.dynamicTableView registerNib:[UINib nibWithNibName:NSStringFromClass([MineTalkSortCell class]) bundle:nil]forCellReuseIdentifier:MineTalkSortCellID];
     
     [self setContentInset];
+    
+    _sortDefaultBtn.selected = YES;
 }
 
 - (void)backBtnClicked
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)editBtnClicked:(id)sender {
+    MineEditVC *mineEditVC = MineEditVC.new;
+    MineUserModel *user = [MineUserModel sharedMineUserModel];
+    mineEditVC.user = user;
+    [self.navigationController pushViewController:mineEditVC animated:YES];
+}
+
+- (IBAction)sortNewBtnClicked:(id)sender {
+    _sortDefaultBtn.selected = NO;
+    _sortNewBtn.selected = YES;
+    [self getNewDynamics];
+}
+
+- (IBAction)sortDefaultBtnClicked:(id)sender {
+    _sortDefaultBtn.selected = YES;
+    _sortNewBtn.selected = NO;
+    [self getDynamics];
 }
 
 #pragma mark - setNavFade

@@ -20,7 +20,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="13.5" id="s0o-Sn-Oi3"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                     <color key="textColor" red="0.20069780949999999" green="0.20068871969999999" blue="0.2006948888" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -31,7 +31,7 @@
                         <constraint firstAttribute="height" constant="50" id="HLU-ta-nAN"/>
                         <constraint firstAttribute="width" constant="100" id="fdg-GN-d3d"/>
                     </constraints>
-                    <color key="textColor" red="0.89181309939999998" green="0.60581463579999995" blue="0.31464314459999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="textColor" red="0.97185152770000005" green="0.3570823669" blue="0.21731859449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
@@ -40,7 +40,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="gen-eQ-4Uq"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                     <state key="normal" title="取消"/>
                     <connections>
                         <action selector="cancelBtnClicked:" destination="HjD-Zg-HHe" eventType="touchUpInside" id="k7S-6M-Fkd"/>
@@ -51,7 +51,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="86b-4O-Pnq"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                     <state key="normal" title="确定"/>
                     <connections>
                         <action selector="confirmBtnClicked:" destination="HjD-Zg-HHe" eventType="touchUpInside" id="HqZ-92-dot"/>

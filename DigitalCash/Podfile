@@ -24,5 +24,6 @@ pod 'JXPagingView/Pager'
 pod 'TZImagePickerController'
 pod 'Alamofire', '~> 4.9.1'
 pod 'FSCalendar'
+pod 'BRPickerView'
 
 end

@@ -12,6 +12,8 @@
 #import "UpToDateView.h"
 #import "UpToDateCoverView.h"
 
+#import <SVProgressHUD.h>
+
 @interface AboutVC ()<UIGestureRecognizerDelegate, YPNavigationBarConfigureStyle>
 
 @property (weak, nonatomic) IBOutlet UIView *topView;
@@ -72,9 +74,15 @@
 
 - (void)checkUpdateViewClicked
 {
-    [self addCoverView1];
-    _versionLabel.text = @"当前已是最新 V0.2";
-    _versionLabel.textColor = [UIColor colorWithHexString:@"#FF5959"];
+    WEAKSELF
+    [SVProgressHUD show];
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self addCoverView1];
+        weakSelf.versionLabel.text = @"当前已是最新 V0.2";
+        weakSelf.versionLabel.textColor = [UIColor colorWithHexString:@"#FF5959"];
+        [SVProgressHUD dismiss];
+    });
 }
 
 - (void)removeCoverView1

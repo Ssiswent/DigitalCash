@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		B08D5E707E5028EF6315B058 /* Pods_DigitalCash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1E371C1891CC3A27929151 /* Pods_DigitalCash.framework */; };
 		CB089A8F24AD6CE900370F40 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB089A8E24AD6CE900370F40 /* BaseVC.m */; };
+		CB66182624B40BFC006A250D /* MineEditProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB66182424B40BFC006A250D /* MineEditProfileCell.m */; };
+		CB66182724B40BFC006A250D /* MineEditProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB66182524B40BFC006A250D /* MineEditProfileCell.xib */; };
+		CB66182B24B40C0A006A250D /* MineEditVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB66182824B40C0A006A250D /* MineEditVC.xib */; };
+		CB66182C24B40C0A006A250D /* MineEditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB66182A24B40C0A006A250D /* MineEditVC.m */; };
+		CB66183324B40CD4006A250D /* MineInformationSexView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB66182F24B40CD4006A250D /* MineInformationSexView.xib */; };
+		CB66183424B40CD4006A250D /* MineInformationNameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB66183024B40CD4006A250D /* MineInformationNameView.xib */; };
+		CB66183524B40CD4006A250D /* MineInformationNameView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB66183124B40CD4006A250D /* MineInformationNameView.m */; };
+		CB66183624B40CD4006A250D /* MineInformationSexView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB66183224B40CD4006A250D /* MineInformationSexView.m */; };
+		CB66183924B4106F006A250D /* NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB66183824B4106F006A250D /* NetworkTool.swift */; };
 		CB877CFB24AD86FF00D43AFE /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB877CF924AD86FF00D43AFE /* LoginVC.m */; };
 		CB877CFC24AD86FF00D43AFE /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB877CFA24AD86FF00D43AFE /* LoginVC.xib */; };
 		CB877D0024ADB3A800D43AFE /* ForgetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB877CFE24ADB3A800D43AFE /* ForgetVC.m */; };
@@ -145,6 +154,20 @@
 		CA1E371C1891CC3A27929151 /* Pods_DigitalCash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigitalCash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB089A8D24AD6CE900370F40 /* BaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
 		CB089A8E24AD6CE900370F40 /* BaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
+		CB66182324B40BFC006A250D /* MineEditProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineEditProfileCell.h; sourceTree = "<group>"; };
+		CB66182424B40BFC006A250D /* MineEditProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineEditProfileCell.m; sourceTree = "<group>"; };
+		CB66182524B40BFC006A250D /* MineEditProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineEditProfileCell.xib; sourceTree = "<group>"; };
+		CB66182824B40C0A006A250D /* MineEditVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineEditVC.xib; sourceTree = "<group>"; };
+		CB66182924B40C0A006A250D /* MineEditVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineEditVC.h; sourceTree = "<group>"; };
+		CB66182A24B40C0A006A250D /* MineEditVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineEditVC.m; sourceTree = "<group>"; };
+		CB66182D24B40CD4006A250D /* MineInformationNameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineInformationNameView.h; sourceTree = "<group>"; };
+		CB66182E24B40CD4006A250D /* MineInformationSexView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineInformationSexView.h; sourceTree = "<group>"; };
+		CB66182F24B40CD4006A250D /* MineInformationSexView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineInformationSexView.xib; sourceTree = "<group>"; };
+		CB66183024B40CD4006A250D /* MineInformationNameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineInformationNameView.xib; sourceTree = "<group>"; };
+		CB66183124B40CD4006A250D /* MineInformationNameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineInformationNameView.m; sourceTree = "<group>"; };
+		CB66183224B40CD4006A250D /* MineInformationSexView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineInformationSexView.m; sourceTree = "<group>"; };
+		CB66183724B4106F006A250D /* DigitalCash-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DigitalCash-Bridging-Header.h"; sourceTree = "<group>"; };
+		CB66183824B4106F006A250D /* NetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTool.swift; sourceTree = "<group>"; };
 		CB877CF824AD86FF00D43AFE /* LoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		CB877CF924AD86FF00D43AFE /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		CB877CFA24AD86FF00D43AFE /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
@@ -475,8 +498,10 @@
 			children = (
 				CBFF7F3624AAD1FE00E8B527 /* Category */,
 				CBFF7F7224AAD1FE00E8B527 /* Common */,
+				CB66183724B4106F006A250D /* DigitalCash-Bridging-Header.h */,
 				CBFF7F7B24AAD1FE00E8B527 /* Macro */,
 				CBFF7F2424AAD1FE00E8B527 /* NetWorkManager */,
+				CB66183824B4106F006A250D /* NetworkTool.swift */,
 				CBFF7F8124AAD1FE00E8B527 /* PrefixHeader.pch */,
 				CBFF7F4324AAD1FE00E8B527 /* ThirdControl */,
 				CBFF7F1124AAD1FE00E8B527 /* Tools */,
@@ -840,6 +865,9 @@
 				CBB4828324B34472000F5BC5 /* AboutVC.h */,
 				CBB4828424B34472000F5BC5 /* AboutVC.m */,
 				CBB4828524B34472000F5BC5 /* AboutVC.xib */,
+				CB66182924B40C0A006A250D /* MineEditVC.h */,
+				CB66182A24B40C0A006A250D /* MineEditVC.m */,
+				CB66182824B40C0A006A250D /* MineEditVC.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -877,6 +905,15 @@
 				CBB4829024B35450000F5BC5 /* UpToDateView.xib */,
 				CBB4828B24B351E7000F5BC5 /* UpToDateCoverView.h */,
 				CBB4828C24B351E7000F5BC5 /* UpToDateCoverView.m */,
+				CB66182324B40BFC006A250D /* MineEditProfileCell.h */,
+				CB66182424B40BFC006A250D /* MineEditProfileCell.m */,
+				CB66182524B40BFC006A250D /* MineEditProfileCell.xib */,
+				CB66182D24B40CD4006A250D /* MineInformationNameView.h */,
+				CB66183124B40CD4006A250D /* MineInformationNameView.m */,
+				CB66183024B40CD4006A250D /* MineInformationNameView.xib */,
+				CB66182E24B40CD4006A250D /* MineInformationSexView.h */,
+				CB66183224B40CD4006A250D /* MineInformationSexView.m */,
+				CB66182F24B40CD4006A250D /* MineInformationSexView.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -931,6 +968,7 @@
 				TargetAttributes = {
 					CBFF7EF224AACFCC00E8B527 = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -966,11 +1004,13 @@
 				CBA399AA24AECBAB00CC0DBE /* MineTalkCell.xib in Resources */,
 				CBB4827D24B315FB000F5BC5 /* AccountSafeVC.xib in Resources */,
 				CBFF7FDE24AAE61500E8B527 /* FourBtnCell.xib in Resources */,
+				CB66183324B40CD4006A250D /* MineInformationSexView.xib in Resources */,
 				CBFF7FC724AAD45600E8B527 /* HomeVC.xib in Resources */,
 				CB877D0124ADB3A800D43AFE /* ForgetVC.xib in Resources */,
 				CBFF7FE824AB05BC00E8B527 /* QuotesCell.xib in Resources */,
 				CBFF7FE324AB003900E8B527 /* CashCell.xib in Resources */,
 				CBA399AF24AEFBC300CC0DBE /* MineTalkSortCell.xib in Resources */,
+				CB66183424B40CD4006A250D /* MineInformationNameView.xib in Resources */,
 				CBFF7FD624AAD49D00E8B527 /* MineVC.xib in Resources */,
 				CBB4827824B2F4A5000F5BC5 /* MineLogoutView.xib in Resources */,
 				CBAF972024AC701D00C9C98B /* FindRecommendFocusCell.xib in Resources */,
@@ -985,6 +1025,7 @@
 				CBFF7FFC24AB1A4000E8B527 /* CashHeaderView.xib in Resources */,
 				CBFF7FCC24AAD46200E8B527 /* CashVC.xib in Resources */,
 				CBD5E1A824AF17A800A51D31 /* CheckInVC.xib in Resources */,
+				CB66182724B40BFC006A250D /* MineEditProfileCell.xib in Resources */,
 				CBFF800124AB257B00E8B527 /* QuotesHeaderView.xib in Resources */,
 				CBD5E1AA24AF1DCC00A51D31 /* FindVC.xib in Resources */,
 				CB877CFC24AD86FF00D43AFE /* LoginVC.xib in Resources */,
@@ -992,6 +1033,7 @@
 				CBA411D424AC38E4005065B1 /* FindTalkCell.xib in Resources */,
 				CBFF7FF524AB11D600E8B527 /* TableHeaderCollectionCell.xib in Resources */,
 				CBB4828124B32CA9000F5BC5 /* FeedbackVC.xib in Resources */,
+				CB66182B24B40C0A006A250D /* MineEditVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1060,6 +1102,7 @@
 				CBFF7FAB24AAD1FF00E8B527 /* TopView.m in Sources */,
 				CBFF7F9024AAD1FE00E8B527 /* ENDNetWorkManager.m in Sources */,
 				CBFF7F9A24AAD1FE00E8B527 /* BaseViewController.m in Sources */,
+				CB66182624B40BFC006A250D /* MineEditProfileCell.m in Sources */,
 				CBD5E19324AF139E00A51D31 /* CheckInModel.m in Sources */,
 				CBFF7F8624AAD1FE00E8B527 /* EGHViewsTool.m in Sources */,
 				CBAF971F24AC701D00C9C98B /* FindRecommendFocusCell.m in Sources */,
@@ -1075,6 +1118,7 @@
 				CBFF801C24AB440500E8B527 /* FindFocusVC.m in Sources */,
 				CBFF7F8324AAD1FE00E8B527 /* EGHImagePickerVCManager.m in Sources */,
 				CBFF7F9F24AAD1FE00E8B527 /* YKTimeLineView.m in Sources */,
+				CB66183624B40CD4006A250D /* MineInformationSexView.m in Sources */,
 				CBA411D324AC38E4005065B1 /* FindTalkCell.m in Sources */,
 				CBFF7FF024AB112900E8B527 /* TableHeaderView.m in Sources */,
 				CBA411CF24AC32C2005065B1 /* TalkListModel.m in Sources */,
@@ -1102,6 +1146,7 @@
 				CBD5E18F24AF0D6100A51D31 /* MineFocusAndFansVC.m in Sources */,
 				CB877CFB24AD86FF00D43AFE /* LoginVC.m in Sources */,
 				CBFF800F24AB33A800E8B527 /* MineUserModel.m in Sources */,
+				CB66183524B40CD4006A250D /* MineInformationNameView.m in Sources */,
 				CBFF801024AB33A800E8B527 /* UserModel.m in Sources */,
 				CBFF7F8924AAD1FE00E8B527 /* UILabel+YBAttributeTextTapAction.m in Sources */,
 				CBFF7F8C24AAD1FE00E8B527 /* ENDLCPNetWorkGET.m in Sources */,
@@ -1118,12 +1163,14 @@
 				CBFF7FA424AAD1FE00E8B527 /* QHDetailViewController.m in Sources */,
 				CBFF7FE224AB003900E8B527 /* CashCell.m in Sources */,
 				CBD5E19F24AF142C00A51D31 /* CoverView.m in Sources */,
+				CB66182C24B40C0A006A250D /* MineEditVC.m in Sources */,
 				CBFF7FF424AB11D600E8B527 /* TableHeaderCollectionCell.m in Sources */,
 				CBFF7F9124AAD1FE00E8B527 /* ENDNetWorkDELETE.m in Sources */,
 				CBD5E1A024AF142C00A51D31 /* CheckInSuccessView.m in Sources */,
 				CBA399A524AEBFC500CC0DBE /* UIImage+Alpha.m in Sources */,
 				CBFF7FCB24AAD46200E8B527 /* CashVC.m in Sources */,
 				CBFF7FAC24AAD1FF00E8B527 /* ZCBaseViewController.m in Sources */,
+				CB66183924B4106F006A250D /* NetworkTool.swift in Sources */,
 				CBFF7F8E24AAD1FE00E8B527 /* LCPReachability.m in Sources */,
 				CBFF7F9324AAD1FE00E8B527 /* ENDLCPNetWorkERROR.m in Sources */,
 				CBFF7F9E24AAD1FE00E8B527 /* ZCBaseView.m in Sources */,
@@ -1212,6 +1259,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "DigitalCash-Swift.h";
 			};
 			name = Debug;
 		};
@@ -1264,6 +1312,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "DigitalCash-Swift.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1274,6 +1323,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A84QXBXH2V;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1284,8 +1334,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Ssiswent;
+				PRODUCT_BUNDLE_IDENTIFIER = Sssiswent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DigitalCash/SupportFiles/DigitalCash-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1296,6 +1349,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A84QXBXH2V;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1306,8 +1360,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Ssiswent;
+				PRODUCT_BUNDLE_IDENTIFIER = Sssiswent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DigitalCash/SupportFiles/DigitalCash-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
