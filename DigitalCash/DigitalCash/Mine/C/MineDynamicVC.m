@@ -21,6 +21,10 @@
 
 #import "MineEditVC.h"
 
+#import "CommentModel.h"
+
+#import "TalkDetailVC.h"
+
 @interface MineDynamicVC ()<UITableViewDataSource, UITableViewDelegate, YPNavigationBarConfigureStyle, UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *sortNewBtn;
@@ -49,6 +53,8 @@
 
 @property (weak, nonatomic) UIImage *navImg;
 
+@property (strong , nonatomic) NSArray *allCommentsArray;
+
 @end
 
 @implementation MineDynamicVC
@@ -65,8 +71,9 @@ NSString *MineTalkSortCellID = @"MineTalkSortCell";
 {
     [super viewWillAppear:animated];
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-    [self getUserDefault];
     [CustomTBC setTabBarHidden:YES TabBarVC:self.tabBarController];
+    [self getUserDefault];
+    [self getComments];
 }
 
 - (void)getUserDefault
@@ -211,6 +218,28 @@ NSString *MineTalkSortCellID = @"MineTalkSortCell";
     return talkCell;
 }
 
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger count = self.allCommentsArray.count;
+    if(count % 2 != 0)
+    {
+        count --;
+    }
+    NSInteger commentsNum1 = indexPath.row % (count / 2) * 2;
+    NSInteger commentsNum2 = commentsNum1 + 1;
+    NSMutableArray *temp = NSMutableArray.new;
+    [temp addObject: self.allCommentsArray[commentsNum1]];
+    [temp addObject: self.allCommentsArray[commentsNum2]];
+    
+    TalkModel *talkModel = self.talksArray[indexPath.row];
+    talkModel.commentArray = temp;
+    
+    TalkDetailVC *talkDetailVC = TalkDetailVC.new;
+    talkDetailVC.dynamicModel = talkModel;
+    [self.navigationController pushViewController:talkDetailVC animated:YES];
+}
 
 #pragma mark - API
 
@@ -258,6 +287,20 @@ NSString *MineTalkSortCellID = @"MineTalkSortCell";
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
         [Toast makeText:weakSelf.view Message:@"请求用户数据失败" afterHideTime:DELAYTiME];
+    }];
+}
+
+#pragma mark - API
+
+- (void)getComments{
+    WEAKSELF
+    NSDictionary *dic = @{@"userId":@4161};
+    [ENDNetWorkManager getWithPathUrl:@"/user/talk/getDiscussByUserId" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        NSError *error;
+        weakSelf.allCommentsArray = [MTLJSONAdapter modelsOfClass:[CommentModel class] fromJSONArray:result[@"data"][@"list"] error:&error];
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.view Message:@"请求评论失败" afterHideTime:DELAYTiME];
     }];
 }
 

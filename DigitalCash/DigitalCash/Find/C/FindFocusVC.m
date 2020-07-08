@@ -8,9 +8,14 @@
 #import "FindFocusVC.h"
 
 #import "TalkModel.h"
+#import "CommentModel.h"
 
 #import "FindTalkCell.h"
 #import "FindRecommendFocusCell.h"
+
+#import "TalkDetailVC.h"
+
+#import "CustomTBC.h"
 
 @interface FindFocusVC ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -20,6 +25,8 @@
 @property (strong , nonatomic) NSArray *talksArray;
 
 @property (assign, nonatomic) NSInteger numberOfSections;
+
+@property (strong , nonatomic) NSArray *allCommentsArray;
 
 @end
 
@@ -36,7 +43,15 @@ NSString *FindRecommendFocusCellID = @"FindRecommendFocusCell";
 {
     [super viewWillAppear:animated];
     [self getTalks];
+    [self getComments];
 }
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [CustomTBC setTabBarHidden:NO TabBarVC:self.tabBarController];
+}
+
 
 -(UIView *)listView{
     return self.view;
@@ -109,6 +124,32 @@ NSString *FindRecommendFocusCellID = @"FindRecommendFocusCell";
     }
 }
 
+#pragma mark - TableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.section == _numberOfSections - 1)
+    {
+        NSInteger count = self.allCommentsArray.count;
+        if(count % 2 != 0)
+        {
+            count --;
+        }
+        NSInteger commentsNum1 = indexPath.row % (count / 2) * 2;
+        NSInteger commentsNum2 = commentsNum1 + 1;
+        NSMutableArray *temp = NSMutableArray.new;
+        [temp addObject: self.allCommentsArray[commentsNum1]];
+        [temp addObject: self.allCommentsArray[commentsNum2]];
+        
+        TalkModel *talkModel = self.talksArray[indexPath.row];
+        talkModel.commentArray = temp;
+        
+        TalkDetailVC *talkDetailVC = TalkDetailVC.new;
+        talkDetailVC.dynamicModel = talkModel;
+        [self.navigationController pushViewController:talkDetailVC animated:YES];
+    }
+}
+
 #pragma mark - API
 
 - (void)getTalks{
@@ -124,6 +165,18 @@ NSString *FindRecommendFocusCellID = @"FindRecommendFocusCell";
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
         [Toast makeText:weakSelf.view Message:@"请求关注说说失败" afterHideTime:DELAYTiME];
+    }];
+}
+
+- (void)getComments{
+    WEAKSELF
+    NSDictionary *dic = @{@"userId":@4161};
+    [ENDNetWorkManager getWithPathUrl:@"/user/talk/getDiscussByUserId" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        NSError *error;
+        weakSelf.allCommentsArray = [MTLJSONAdapter modelsOfClass:[CommentModel class] fromJSONArray:result[@"data"][@"list"] error:&error];
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.view Message:@"请求评论失败" afterHideTime:DELAYTiME];
     }];
 }
 

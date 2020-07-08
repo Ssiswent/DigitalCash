@@ -76,6 +76,15 @@
 		CBD5E1A624AF143C00A51D31 /* CheckInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD5E1A524AF143C00A51D31 /* CheckInVC.m */; };
 		CBD5E1A824AF17A800A51D31 /* CheckInVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD5E1A724AF17A800A51D31 /* CheckInVC.xib */; };
 		CBD5E1AA24AF1DCC00A51D31 /* FindVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD5E1A924AF1DCC00A51D31 /* FindVC.xib */; };
+		CBDCF22D24B55AA600B5469B /* TalkDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDCF22B24B55AA600B5469B /* TalkDetailVC.m */; };
+		CBDCF22E24B55AA600B5469B /* TalkDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDCF22C24B55AA600B5469B /* TalkDetailVC.xib */; };
+		CBDCF23124B55CCE00B5469B /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDCF22F24B55CCE00B5469B /* CommentModel.m */; };
+		CBDCF23624B5600F00B5469B /* DynamicDetailContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDCF23424B5600F00B5469B /* DynamicDetailContentCell.m */; };
+		CBDCF23724B5600F00B5469B /* DynamicDetailContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDCF23524B5600F00B5469B /* DynamicDetailContentCell.xib */; };
+		CBDCF23B24B5601D00B5469B /* DynamicDetailCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDCF23924B5601D00B5469B /* DynamicDetailCommentCell.m */; };
+		CBDCF23C24B5601D00B5469B /* DynamicDetailCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDCF23A24B5601D00B5469B /* DynamicDetailCommentCell.xib */; };
+		CBDCF23F24B5603200B5469B /* DynamicDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDCF23E24B5603200B5469B /* DynamicDetailHeaderView.m */; };
+		CBDCF24124B56A1B00B5469B /* DynamicDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBDCF24024B56A1B00B5469B /* DynamicDetailHeaderView.xib */; };
 		CBFF7EF824AACFCC00E8B527 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFF7EF724AACFCC00E8B527 /* AppDelegate.m */; };
 		CBFF7F0324AACFCD00E8B527 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBFF7F0224AACFCD00E8B527 /* Assets.xcassets */; };
 		CBFF7F0624AACFCD00E8B527 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBFF7F0424AACFCD00E8B527 /* LaunchScreen.storyboard */; };
@@ -271,6 +280,20 @@
 		CBD5E1A524AF143C00A51D31 /* CheckInVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInVC.m; sourceTree = "<group>"; };
 		CBD5E1A724AF17A800A51D31 /* CheckInVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckInVC.xib; sourceTree = "<group>"; };
 		CBD5E1A924AF1DCC00A51D31 /* FindVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindVC.xib; sourceTree = "<group>"; };
+		CBDCF22A24B55AA600B5469B /* TalkDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TalkDetailVC.h; sourceTree = "<group>"; };
+		CBDCF22B24B55AA600B5469B /* TalkDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TalkDetailVC.m; sourceTree = "<group>"; };
+		CBDCF22C24B55AA600B5469B /* TalkDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TalkDetailVC.xib; sourceTree = "<group>"; };
+		CBDCF22F24B55CCE00B5469B /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
+		CBDCF23024B55CCE00B5469B /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
+		CBDCF23324B5600F00B5469B /* DynamicDetailContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicDetailContentCell.h; sourceTree = "<group>"; };
+		CBDCF23424B5600F00B5469B /* DynamicDetailContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicDetailContentCell.m; sourceTree = "<group>"; };
+		CBDCF23524B5600F00B5469B /* DynamicDetailContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DynamicDetailContentCell.xib; sourceTree = "<group>"; };
+		CBDCF23824B5601D00B5469B /* DynamicDetailCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicDetailCommentCell.h; sourceTree = "<group>"; };
+		CBDCF23924B5601D00B5469B /* DynamicDetailCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicDetailCommentCell.m; sourceTree = "<group>"; };
+		CBDCF23A24B5601D00B5469B /* DynamicDetailCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DynamicDetailCommentCell.xib; sourceTree = "<group>"; };
+		CBDCF23D24B5603200B5469B /* DynamicDetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicDetailHeaderView.h; sourceTree = "<group>"; };
+		CBDCF23E24B5603200B5469B /* DynamicDetailHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicDetailHeaderView.m; sourceTree = "<group>"; };
+		CBDCF24024B56A1B00B5469B /* DynamicDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DynamicDetailHeaderView.xib; sourceTree = "<group>"; };
 		CBFF7EF324AACFCC00E8B527 /* DigitalCash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalCash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBFF7EF624AACFCC00E8B527 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CBFF7EF724AACFCC00E8B527 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -470,6 +493,9 @@
 			children = (
 				CB089A8D24AD6CE900370F40 /* BaseVC.h */,
 				CB089A8E24AD6CE900370F40 /* BaseVC.m */,
+				CBDCF22A24B55AA600B5469B /* TalkDetailVC.h */,
+				CBDCF22B24B55AA600B5469B /* TalkDetailVC.m */,
+				CBDCF22C24B55AA600B5469B /* TalkDetailVC.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -485,8 +511,26 @@
 				CBFF800B24AB33A800E8B527 /* MineUserModel.m */,
 				CBFF800E24AB33A800E8B527 /* UserModel.h */,
 				CBFF800C24AB33A800E8B527 /* UserModel.m */,
+				CBDCF23024B55CCE00B5469B /* CommentModel.h */,
+				CBDCF22F24B55CCE00B5469B /* CommentModel.m */,
 			);
 			path = M;
+			sourceTree = "<group>";
+		};
+		CBDCF23224B55FD900B5469B /* V */ = {
+			isa = PBXGroup;
+			children = (
+				CBDCF23324B5600F00B5469B /* DynamicDetailContentCell.h */,
+				CBDCF23424B5600F00B5469B /* DynamicDetailContentCell.m */,
+				CBDCF23524B5600F00B5469B /* DynamicDetailContentCell.xib */,
+				CBDCF23824B5601D00B5469B /* DynamicDetailCommentCell.h */,
+				CBDCF23924B5601D00B5469B /* DynamicDetailCommentCell.m */,
+				CBDCF23A24B5601D00B5469B /* DynamicDetailCommentCell.xib */,
+				CBDCF23D24B5603200B5469B /* DynamicDetailHeaderView.h */,
+				CBDCF23E24B5603200B5469B /* DynamicDetailHeaderView.m */,
+				CBDCF24024B56A1B00B5469B /* DynamicDetailHeaderView.xib */,
+			);
+			path = V;
 			sourceTree = "<group>";
 		};
 		CBFF7EEA24AACFCC00E8B527 = {
@@ -984,6 +1028,7 @@
 			isa = PBXGroup;
 			children = (
 				CB089A8C24AD6CC000370F40 /* M */,
+				CBDCF23224B55FD900B5469B /* V */,
 				CB089A8B24AD6CBA00370F40 /* C */,
 			);
 			path = Common;
@@ -1051,6 +1096,7 @@
 				CBD5E1A324AF142C00A51D31 /* CheckInSuccessView.xib in Resources */,
 				CBC76AB124B46FE400A9C236 /* HomeNewsVC.xib in Resources */,
 				CBD5E19024AF0D6100A51D31 /* MineFocusAndFansVC.xib in Resources */,
+				CBDCF22E24B55AA600B5469B /* TalkDetailVC.xib in Resources */,
 				CBFF801824AB43D700E8B527 /* FindRecommendVC.xib in Resources */,
 				CBFF7F0624AACFCD00E8B527 /* LaunchScreen.storyboard in Resources */,
 				CB877D0624ADC09300D43AFE /* MineCodeView.xib in Resources */,
@@ -1058,18 +1104,21 @@
 				CBA399AA24AECBAB00CC0DBE /* MineTalkCell.xib in Resources */,
 				CB66186924B45B4A006A250D /* HomeCalendarCell.xib in Resources */,
 				CBB4827D24B315FB000F5BC5 /* AccountSafeVC.xib in Resources */,
+				CBDCF23724B5600F00B5469B /* DynamicDetailContentCell.xib in Resources */,
 				CBFF7FDE24AAE61500E8B527 /* FourBtnCell.xib in Resources */,
 				CB66183324B40CD4006A250D /* MineInformationSexView.xib in Resources */,
 				CBC76ABB24B47A7000A9C236 /* HomeNewsHeaderView.xib in Resources */,
 				CBFF7FC724AAD45600E8B527 /* HomeVC.xib in Resources */,
 				CB877D0124ADB3A800D43AFE /* ForgetVC.xib in Resources */,
 				CBFF7FE824AB05BC00E8B527 /* QuotesCell.xib in Resources */,
+				CBDCF24124B56A1B00B5469B /* DynamicDetailHeaderView.xib in Resources */,
 				CBFF7FE324AB003900E8B527 /* CashCell.xib in Resources */,
 				CBA399AF24AEFBC300CC0DBE /* MineTalkSortCell.xib in Resources */,
 				CB66183424B40CD4006A250D /* MineInformationNameView.xib in Resources */,
 				CBFF7FD624AAD49D00E8B527 /* MineVC.xib in Resources */,
 				CBB4827824B2F4A5000F5BC5 /* MineLogoutView.xib in Resources */,
 				CBAF972024AC701D00C9C98B /* FindRecommendFocusCell.xib in Resources */,
+				CBDCF23C24B5601D00B5469B /* DynamicDetailCommentCell.xib in Resources */,
 				CBC76AB624B4714700A9C236 /* HomeFastNewsCell.xib in Resources */,
 				CB877D0B24ADDDDB00D43AFE /* MineDynamicVC.xib in Resources */,
 				CBD5E18B24AF0D5800A51D31 /* MineFocusAndFansCell.xib in Resources */,
@@ -1145,6 +1194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBDCF23624B5600F00B5469B /* DynamicDetailContentCell.m in Sources */,
 				CBAF972424AC7AEC00C9C98B /* FindRecommendCollctionCell.m in Sources */,
 				CBFF7FF824AB191800E8B527 /* CashHeaderView.m in Sources */,
 				CBFF7FD024AAD47200E8B527 /* FindVC.m in Sources */,
@@ -1175,6 +1225,7 @@
 				CBD5E18A24AF0D5800A51D31 /* MineFocusAndFansCell.m in Sources */,
 				CBFF7FA824AAD1FE00E8B527 /* QHDataCollectionViewCell.m in Sources */,
 				CBFF7F8D24AAD1FE00E8B527 /* Reachability.m in Sources */,
+				CBDCF23B24B5601D00B5469B /* DynamicDetailCommentCell.m in Sources */,
 				CBFF7FAF24AAD1FF00E8B527 /* CustomTBC.m in Sources */,
 				CBFF7F9C24AAD1FE00E8B527 /* YKLineDataSet.m in Sources */,
 				CBFF801C24AB440500E8B527 /* FindFocusVC.m in Sources */,
@@ -1190,6 +1241,8 @@
 				CBFF7FAA24AAD1FF00E8B527 /* BusinessProcess.m in Sources */,
 				CBFF801724AB43D700E8B527 /* FindRecommendVC.m in Sources */,
 				CBFF7F9D24AAD1FE00E8B527 /* NetWork.m in Sources */,
+				CBDCF23124B55CCE00B5469B /* CommentModel.m in Sources */,
+				CBDCF23F24B5603200B5469B /* DynamicDetailHeaderView.m in Sources */,
 				CBFF7FA624AAD1FE00E8B527 /* ZCManage.m in Sources */,
 				CBFF7FA024AAD1FE00E8B527 /* QHLoctionModel.m in Sources */,
 				CBFF7F8F24AAD1FE00E8B527 /* ENDNetWorkPOST.m in Sources */,
@@ -1250,6 +1303,7 @@
 				CBFF7F8724AAD1FE00E8B527 /* StringAndLabelDealTool.m in Sources */,
 				CBFF7F9524AAD1FE00E8B527 /* UIImage+Image.m in Sources */,
 				CBA399A924AECBAB00CC0DBE /* MineTalkCell.m in Sources */,
+				CBDCF22D24B55AA600B5469B /* TalkDetailVC.m in Sources */,
 				CBFF7FB124AAD1FF00E8B527 /* ContentBaseViewController.m in Sources */,
 				CBC76AB924B47A6300A9C236 /* HomeNewsHeaderView.m in Sources */,
 			);
