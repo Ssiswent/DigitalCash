@@ -20,7 +20,7 @@
 #import "QuotesHeaderView.h"
 #import "NewsHeaderView.h"
 
-#import "CashVC.h"
+#import "HomeCashVC.h"
 #import "HomeCalendarVC.h"
 #import "HomeBusinessVC.h"
 #import "HomeNewsVC.h"
@@ -164,8 +164,7 @@ NSString *NewsCellID = @"NewsCell";
 {
     FourBtnCell *fourBtnCell = [tableView dequeueReusableCellWithIdentifier:FourBtnCellID];
     fourBtnCell.cashViewClickedBlock = ^{
-        CashVC *cashVC = CashVC.new;
-        cashVC.hideTabBar = YES;
+        HomeCashVC *cashVC = HomeCashVC.new;
         [self.navigationController pushViewController:cashVC animated:YES];
     };
     fourBtnCell.calendarViewClickedBlock = ^{

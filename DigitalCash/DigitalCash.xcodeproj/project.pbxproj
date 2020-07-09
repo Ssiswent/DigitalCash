@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B08D5E707E5028EF6315B058 /* Pods_DigitalCash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1E371C1891CC3A27929151 /* Pods_DigitalCash.framework */; };
 		CB089A8F24AD6CE900370F40 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB089A8E24AD6CE900370F40 /* BaseVC.m */; };
+		CB1F0A1024B75FEA00BF27FA /* HomeCashVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1F0A0F24B75FEA00BF27FA /* HomeCashVC.m */; };
 		CB2D63F124B5BFAF00400436 /* MineMessagesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2D63EF24B5BFAF00400436 /* MineMessagesVC.m */; };
 		CB2D63F224B5BFAF00400436 /* MineMessagesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB2D63F024B5BFAF00400436 /* MineMessagesVC.xib */; };
 		CB2D63F624B5C89300400436 /* LikeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2D63F424B5C89300400436 /* LikeVC.m */; };
@@ -182,6 +183,8 @@
 		CA1E371C1891CC3A27929151 /* Pods_DigitalCash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigitalCash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB089A8D24AD6CE900370F40 /* BaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
 		CB089A8E24AD6CE900370F40 /* BaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
+		CB1F0A0E24B75FEA00BF27FA /* HomeCashVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCashVC.h; sourceTree = "<group>"; };
+		CB1F0A0F24B75FEA00BF27FA /* HomeCashVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCashVC.m; sourceTree = "<group>"; };
 		CB2D63EE24B5BFAF00400436 /* MineMessagesVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineMessagesVC.h; sourceTree = "<group>"; };
 		CB2D63EF24B5BFAF00400436 /* MineMessagesVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineMessagesVC.m; sourceTree = "<group>"; };
 		CB2D63F024B5BFAF00400436 /* MineMessagesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineMessagesVC.xib; sourceTree = "<group>"; };
@@ -818,6 +821,8 @@
 				CBFF7FC324AAD45600E8B527 /* HomeVC.h */,
 				CBFF7FC424AAD45600E8B527 /* HomeVC.m */,
 				CBFF7FC524AAD45600E8B527 /* HomeVC.xib */,
+				CB1F0A0E24B75FEA00BF27FA /* HomeCashVC.h */,
+				CB1F0A0F24B75FEA00BF27FA /* HomeCashVC.m */,
 				CB66183D24B44B87006A250D /* HomeCalendarVC.h */,
 				CB66184224B44B87006A250D /* HomeCalendarVC.m */,
 				CB66183A24B44B87006A250D /* HomeCalendarVC.xib */,
@@ -1285,6 +1290,7 @@
 				CBFF7FA724AAD1FE00E8B527 /* UIButton+LXMImagePosition.m in Sources */,
 				CBFF7F9824AAD1FE00E8B527 /* UITextView+WZB.m in Sources */,
 				CBD5E19E24AF142C00A51D31 /* DIYCalendarCell.m in Sources */,
+				CB1F0A1024B75FEA00BF27FA /* HomeCashVC.m in Sources */,
 				CBFF7FC624AAD45600E8B527 /* HomeVC.m in Sources */,
 				CBFF7FEC24AB087E00E8B527 /* NewsCell.m in Sources */,
 				CBFF7F8824AAD1FE00E8B527 /* Toast.m in Sources */,

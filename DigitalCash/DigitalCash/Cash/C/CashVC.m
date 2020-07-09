@@ -21,20 +21,12 @@
     // Do any additional setup after loading the view from its nib.
     [self setBottomView];
     [self.view bringSubviewToFront:_bottomView];
-    if(_hideTabBar)
-    {
-        _bottomView.hidden = YES;
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
-    if(_hideTabBar)
-    {
-        [CustomTBC setTabBarHidden:YES TabBarVC:self.tabBarController];
-    }
 }
 
 - (void)setBottomView
