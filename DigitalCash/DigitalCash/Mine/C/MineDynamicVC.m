@@ -10,7 +10,7 @@
 
 
 #import "TalkModel.h"
-#import "MineUserModel.h"
+#import "UserModel.h"
 
 #import "MineTalkCell.h"
 #import "MineTalkSortCell.h"
@@ -25,7 +25,14 @@
 
 #import "TalkDetailVC.h"
 
+#import "EmptyView.h"
+
+#import "LoginVC.h"
+
 @interface MineDynamicVC ()<UITableViewDataSource, UITableViewDelegate, YPNavigationBarConfigureStyle, UIGestureRecognizerDelegate>
+
+@property (weak, nonatomic) IBOutlet UIButton *editBtn;
+@property (weak, nonatomic) IBOutlet UIButton *focusBtn;
 
 @property (weak, nonatomic) IBOutlet UIButton *sortNewBtn;
 @property (weak, nonatomic) IBOutlet UIButton *sortDefaultBtn;
@@ -55,6 +62,8 @@
 
 @property (strong , nonatomic) NSArray *allCommentsArray;
 
+@property (nonatomic, assign) BOOL isFocus;
+
 @end
 
 @implementation MineDynamicVC
@@ -72,21 +81,17 @@ NSString *MineTalkSortCellID = @"MineTalkSortCell";
     [super viewWillAppear:animated];
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     [CustomTBC setTabBarHidden:YES TabBarVC:self.tabBarController];
-    [self getUserDefault];
     [self getComments];
-}
-
-- (void)getUserDefault
-{
-    //获取用户偏好
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    //读取userId
-    NSNumber *userId = [userDefault objectForKey:@"userId"];
-    _userId = userId;
-    
-    _sortDefaultBtn.selected = YES;
+    [self getUserDefault];
     [self getDynamics];
-    [self getUser];
+    _sortDefaultBtn.selected = YES;
+    
+    _focusBtn.selected = NO;
+    
+    if(_userId != nil)
+    {
+        [self getFocusUser];
+    }
 }
 
 - (void)initialSetup
@@ -116,8 +121,31 @@ NSString *MineTalkSortCellID = @"MineTalkSortCell";
     [self.dynamicTableView registerNib:[UINib nibWithNibName:NSStringFromClass([MineTalkSortCell class]) bundle:nil]forCellReuseIdentifier:MineTalkSortCellID];
     
     [self setContentInset];
+        
+    [self setUser];
     
-    _sortDefaultBtn.selected = YES;
+    if([_talksCount isEqualToNumber:@0])
+    {
+        EmptyView *emptyView = [EmptyView emptyView];
+        [self.dynamicTableView removeFromSuperview];
+        [self.view addSubview:emptyView];
+        [emptyView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.mas_equalTo(self.view);
+            make.centerY.mas_equalTo(self.view).offset(100);
+            make.size.mas_equalTo(CGSizeMake(153, 200));
+        }];
+    }
+    
+    if(_isMineDynamic)
+    {
+        _focusBtn.hidden = YES;
+        _editBtn.hidden = NO;
+    }
+    else
+    {
+        _focusBtn.hidden = NO;
+        _editBtn.hidden = YES;
+    }
 }
 
 - (void)backBtnClicked
@@ -125,10 +153,47 @@ NSString *MineTalkSortCellID = @"MineTalkSortCell";
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)setUser{
+    self.focusCountLabel.text = [NSString stringWithFormat:@"%d",_user.followCount.intValue];
+    self.fansCountLabel.text = [NSString stringWithFormat:@"%d",_user.fansCount.intValue];
+    [self.avatarImgView sd_setImageWithURL:[NSURL URLWithString:_user.head]
+                              placeholderImage:[UIImage imageNamed:@"avatar_white"]];
+    self.nameLabel.text = _user.nickName;
+    self.signatureLabel.text = _user.signature;
+}
+
+- (void)getUserDefault
+{
+    //获取用户偏好
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    //读取userId
+    NSNumber *userId = [userDefault objectForKey:@"userId"];
+    _userId = userId;
+}
+
+- (IBAction)focusBtnClicked:(id)sender {
+    _isFocus = !_focusBtn.selected;
+    if(_userId != nil)
+    {
+        [self focusUser];
+    }
+    else
+    {
+        LoginVC *loginVC = [LoginVC new];
+        WEAKSELF
+        loginVC.loginVCDidGetUserBlock = ^{
+            [self getUserDefault];
+            [self getFocusUser];
+            [Toast makeText:weakSelf.view Message:@"登录成功" afterHideTime:DELAYTiME];
+        };
+        [self presentViewController:loginVC animated:YES completion:nil];
+        [Toast makeText:loginVC.view Message:@"请先登录" afterHideTime:DELAYTiME];
+    }
+}
+
 - (IBAction)editBtnClicked:(id)sender {
     MineEditVC *mineEditVC = MineEditVC.new;
-    MineUserModel *user = [MineUserModel sharedMineUserModel];
-    mineEditVC.user = user;
+    mineEditVC.user = _user;
     [self.navigationController pushViewController:mineEditVC animated:YES];
 }
 
@@ -245,7 +310,7 @@ NSString *MineTalkSortCellID = @"MineTalkSortCell";
 
 - (void)getDynamics{
     WEAKSELF
-    NSDictionary *dic = @{@"_orderBy":@"publishTime",@"userId":@155};
+    NSDictionary *dic = @{@"_orderBy":@"publishTime",@"userId":_user.userId};
     [ENDNetWorkManager postWithPathUrl:@"/user/talk/getTalkList/155" parameters:dic queryParams:nil Header:nil success:^(BOOL success, id result) {
         NSError *error;
         weakSelf.talksArray = [MTLJSONAdapter modelsOfClass:[TalkModel class] fromJSONArray:result[@"data"][@"list"] error:&error];
@@ -259,7 +324,7 @@ NSString *MineTalkSortCellID = @"MineTalkSortCell";
 
 - (void)getNewDynamics{
     WEAKSELF
-    NSDictionary *dic = @{@"_orderByDesc":@"publishTime",@"userId":@155};
+    NSDictionary *dic = @{@"_orderByDesc":@"publishTime",@"userId":_user.userId};
     [ENDNetWorkManager postWithPathUrl:@"/user/talk/getTalkList/155" parameters:dic queryParams:nil Header:nil success:^(BOOL success, id result) {
         NSError *error;
         weakSelf.talksArray = [MTLJSONAdapter modelsOfClass:[TalkModel class] fromJSONArray:result[@"data"][@"list"] error:&error];
@@ -268,25 +333,6 @@ NSString *MineTalkSortCellID = @"MineTalkSortCell";
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
         [Toast makeText:weakSelf.view Message:@"请求用户说说失败" afterHideTime:DELAYTiME];
-    }];
-}
-
-- (void)getUser{
-    WEAKSELF
-    NSDictionary *dic = @{@"userId":_userId};
-    [ENDNetWorkManager postWithPathUrl:@"/user/personal/queryUser" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
-        NSError *error;
-        MineUserModel *mineUser = [MineUserModel sharedMineUserModel];
-        mineUser = [MTLJSONAdapter modelOfClass:[MineUserModel class] fromJSONDictionary:result[@"data"] error:&error];
-        weakSelf.focusCountLabel.text = [NSString stringWithFormat:@"%d",mineUser.followCount.intValue];
-        weakSelf.fansCountLabel.text = [NSString stringWithFormat:@"%d",mineUser.fansCount.intValue];
-        [weakSelf.avatarImgView sd_setImageWithURL:[NSURL URLWithString:mineUser.head]
-                                  placeholderImage:[UIImage imageNamed:@"avatar_white"]];
-        weakSelf.nameLabel.text = mineUser.nickName;
-        weakSelf.signatureLabel.text = mineUser.signature;
-    } failure:^(BOOL failuer, NSError *error) {
-        NSLog(@"%@",error.description);
-        [Toast makeText:weakSelf.view Message:@"请求用户数据失败" afterHideTime:DELAYTiME];
     }];
 }
 
@@ -301,6 +347,58 @@ NSString *MineTalkSortCellID = @"MineTalkSortCell";
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
         [Toast makeText:weakSelf.view Message:@"请求评论失败" afterHideTime:DELAYTiME];
+    }];
+}
+
+- (void)getFocusUser
+{
+    WEAKSELF
+    NSDictionary *dic = @{
+        @"userId":_userId,
+        @"followerId":_user.userId
+    };
+    [ENDNetWorkManager getWithPathUrl:@"/user/follow/isFollow" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        NSNumber *data = result[@"data"];
+        
+        BOOL isFocus = NO;
+        if([data isEqualToNumber:@0])
+        {
+            isFocus = NO;
+        }
+        else if([data isEqualToNumber:@1])
+        {
+            isFocus = YES;
+        }
+        
+        weakSelf.focusBtn.selected = isFocus;
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.view Message:@"获取关注失败" afterHideTime:DELAYTiME];
+    }];
+}
+
+- (void)focusUser{
+    WEAKSELF
+    NSString *isFocus;
+    if(weakSelf.isFocus)
+    {
+        isFocus = @"true";
+    }
+    else
+    {
+        isFocus = @"false";
+    }
+    
+    NSDictionary *dic = @{
+        @"userId":_userId,
+        @"followerId":_user.userId,
+        @"isFollow":isFocus
+    };
+    [ENDNetWorkManager postWithPathUrl:@"/user/follow/follow" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        [self getFocusUser];
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.view Message:@"关注失败" afterHideTime:DELAYTiME];
     }];
 }
 

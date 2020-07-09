@@ -10,6 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^FocusBtnClickedBlock)(BOOL isFocus);
+
 @class UserModel;
 
 @interface MineFocusAndFansCell : UITableViewCell
@@ -17,6 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *focusBtn;
 
 @property (nonatomic, strong)UserModel *model;
+
+@property (nonatomic, copy) FocusBtnClickedBlock focusBtnClickedBlock;
+
+@property (strong, nonatomic) NSNumber *userId;
 
 @end
 

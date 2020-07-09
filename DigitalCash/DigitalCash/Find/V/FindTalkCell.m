@@ -22,12 +22,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *likeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commentLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *focusBtn;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentImgViewHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentImgViewTop;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentLabelHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentLabelTop;
-
-@property (weak, nonatomic) IBOutlet UIButton *focusBtn;
 
 @end
 
@@ -45,10 +45,31 @@
     
     _contentImgView.layer.cornerRadius = 10;
     _contentImgView.layer.masksToBounds = YES;
+    
+    [self addClickAvatarViewGes];
+}
+
+- (void)addClickAvatarViewGes
+{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(avatarViewClicked)];
+    [_avatarImgView addGestureRecognizer:tap];
+}
+
+- (void)avatarViewClicked
+{
+    WEAKSELF
+    if(weakSelf.avatarViewClickedBlock)
+    {
+        weakSelf.avatarViewClickedBlock();
+    }
 }
 
 - (IBAction)focusBtnClicked:(id)sender {
-    _focusBtn.selected = !_focusBtn.selected;
+    WEAKSELF
+    if(weakSelf.focusBtnClickedBlock)
+    {
+        weakSelf.focusBtnClickedBlock(!_focusBtn.selected);
+    }
 }
 
 - (void)setTalkModel:(TalkModel *)talkModel
@@ -114,6 +135,13 @@
     _viewLabel.text = [NSString stringWithFormat:@"%d",count1];
     _likeLabel.text = [NSString stringWithFormat:@"%d",count2];
     _commentLabel.text = [NSString stringWithFormat:@"%d",count3];
+    
+    _focusBtn.selected = NO;
+    
+    if(_userId != nil)
+    {
+        [self getFocusUser:userModel.userId];
+    }
 }
 
 //计算发布时间
@@ -146,6 +174,34 @@
     {
         return timeStr3;
     }
+}
+
+// MARK: API
+
+- (void)getFocusUser:(NSNumber *) followerId{
+    WEAKSELF
+    NSDictionary *dic = @{
+        @"userId":_userId,
+        @"followerId":followerId
+    };
+    [ENDNetWorkManager getWithPathUrl:@"/user/follow/isFollow" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        NSNumber *data = result[@"data"];
+        
+        BOOL isFocus = NO;
+        if([data isEqualToNumber:@0])
+        {
+            isFocus = NO;
+        }
+        else if([data isEqualToNumber:@1])
+        {
+            isFocus = YES;
+        }
+        
+        weakSelf.focusBtn.selected = isFocus;
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf Message:@"获取关注失败" afterHideTime:DELAYTiME];
+    }];
 }
 
 @end

@@ -10,10 +10,14 @@
 #import "TalkListModel.h"
 #import "TalkModel.h"
 #import "CommentModel.h"
+#import "UserModel.h"
 
 #import "FindTalkCell.h"
 
 #import "TalkDetailVC.h"
+
+#import "LoginVC.h"
+#import "MineDynamicVC.h"
 
 #import <MJRefresh.h>
 
@@ -34,6 +38,12 @@
 @property (strong, nonatomic) NSNumber *userId;
 
 @property (strong , nonatomic) NSArray *allCommentsArray;
+
+@property (nonatomic, assign) BOOL isFocus;
+@property (strong, nonatomic) NSNumber *followerId;
+@property (assign, nonatomic) NSInteger focusIndex;
+
+@property (strong, nonatomic) UserModel *dynamicUser;
 
 @end
 
@@ -61,6 +71,7 @@ NSString *FindTalkCellID = @"FindTalkCell";
 {
     [super viewWillAppear:animated];
     [self getUserDefault];
+    [self getTalks];
     [self getComments];
 }
 
@@ -143,7 +154,46 @@ NSString *FindTalkCellID = @"FindTalkCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FindTalkCell *talkCell = [tableView dequeueReusableCellWithIdentifier:FindTalkCellID];
-    talkCell.talkModel = self.talksArray[indexPath.row];
+    
+    talkCell.userId = _userId;
+    
+    WEAKSELF
+    if(self.talksArray.count > 0)
+    {
+        TalkModel *talkModel = self.talksArray[indexPath.row];
+        talkCell.talkModel = talkModel;
+        
+        //关注
+        UserModel *follower = talkModel.user;
+        
+        talkCell.focusBtnClickedBlock = ^(BOOL isFocus) {
+            
+            if(weakSelf.userId != nil)
+            {
+                weakSelf.followerId = follower.userId;
+                weakSelf.focusIndex = indexPath.row;
+                weakSelf.isFocus = isFocus;
+                [weakSelf focusUser];
+            }
+            else
+            {
+                LoginVC *loginVC = [LoginVC new];
+                loginVC.loginVCDidGetUserBlock = ^{
+                    [self getUserDefault];
+                    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
+                    [Toast makeText:weakSelf.view Message:@"登录成功" afterHideTime:DELAYTiME];
+                };
+                [self presentViewController:loginVC animated:YES completion:nil];
+                [Toast makeText:loginVC.view Message:@"请先登录" afterHideTime:DELAYTiME];
+            }
+        };
+        
+        talkCell.avatarViewClickedBlock = ^{
+            weakSelf.dynamicUser = follower;
+            [weakSelf getTalksCount];
+        };
+    }
+    
     return talkCell;
 }
 
@@ -188,7 +238,7 @@ NSString *FindTalkCellID = @"FindTalkCell";
             [weakSelf.talksArray removeAllObjects];
         }
         [weakSelf.talksArray addObjectsFromArray:weakSelf.listModel.talksArray];
-        [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
         if (!weakSelf.loadMore) {
             [weakSelf.tableView.mj_header endRefreshing];
         }
@@ -203,6 +253,9 @@ NSString *FindTalkCellID = @"FindTalkCell";
                 [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
             }
         }
+
+        [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
+        
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
         if (weakSelf.loadMore) {
@@ -239,6 +292,50 @@ NSString *FindTalkCellID = @"FindTalkCell";
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
         [Toast makeText:weakSelf.view Message:@"屏蔽失败" afterHideTime:DELAYTiME];
+    }];
+}
+
+- (void)focusUser{
+    WEAKSELF
+    NSString *isFocus;
+    if(weakSelf.isFocus)
+    {
+        isFocus = @"true";
+    }
+    else
+    {
+        isFocus = @"false";
+    }
+    
+    NSDictionary *dic = @{
+        @"userId":_userId,
+        @"followerId":_followerId,
+        @"isFollow":isFocus
+    };
+    [ENDNetWorkManager postWithPathUrl:@"/user/follow/follow" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        NSInteger focusIndex  = weakSelf.focusIndex;
+        NSArray *indexPaths = @[[NSIndexPath indexPathForRow:focusIndex inSection:0]];
+        [weakSelf.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
+        
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.view Message:@"关注失败" afterHideTime:DELAYTiME];
+    }];
+}
+
+- (void)getTalksCount{
+    WEAKSELF
+    NSDictionary *dic = @{
+        @"userId":_dynamicUser.userId
+    };
+    [ENDNetWorkManager getWithPathUrl:@"/user/talk/getTalkCount" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        MineDynamicVC *userDynamicVC = MineDynamicVC.new;
+        userDynamicVC.user = weakSelf.dynamicUser;
+        userDynamicVC.talksCount = result[@"data"];
+        [self.navigationController pushViewController:userDynamicVC animated:YES];
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.view Message:@"获取说说数失败" afterHideTime:DELAYTiME];
     }];
 }
 

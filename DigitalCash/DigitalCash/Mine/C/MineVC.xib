@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -93,12 +93,15 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6a-l4-nbh" userLabel="AlertBtn">
-                                    <rect key="frame" x="383.5" y="10.5" width="13.5" height="16"/>
+                                    <rect key="frame" x="374" y="2.5" width="27" height="32"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="13.5" id="fGr-CG-4fJ"/>
-                                        <constraint firstAttribute="height" constant="16" id="wY1-2z-zqE"/>
+                                        <constraint firstAttribute="width" constant="27" id="fGr-CG-4fJ"/>
+                                        <constraint firstAttribute="height" constant="32" id="wY1-2z-zqE"/>
                                     </constraints>
                                     <state key="normal" image="ic_xiaoxi_mine"/>
+                                    <connections>
+                                        <action selector="alertBtnClicked:" destination="-1" eventType="touchUpInside" id="zhK-3Q-jyh"/>
+                                    </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="arc-MB-rYd" userLabel="CountView">
                                     <rect key="frame" x="10.5" y="65.5" width="393" height="109.5"/>
@@ -225,7 +228,7 @@
                                 </view>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="F6a-l4-nbh" secondAttribute="trailing" constant="17" id="5Dz-oq-vTB"/>
+                                <constraint firstAttribute="trailing" secondItem="F6a-l4-nbh" secondAttribute="trailing" constant="13" id="5Dz-oq-vTB"/>
                                 <constraint firstItem="jkU-BS-pYw" firstAttribute="top" secondItem="woh-A7-sCf" secondAttribute="top" id="Giy-H7-Vpv"/>
                                 <constraint firstItem="w1w-gz-JTc" firstAttribute="top" secondItem="jkU-BS-pYw" secondAttribute="top" constant="8.5" id="MUP-3l-hWN"/>
                                 <constraint firstItem="F6a-l4-nbh" firstAttribute="centerY" secondItem="w1w-gz-JTc" secondAttribute="centerY" id="NG9-Le-lLp"/>

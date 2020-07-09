@@ -27,6 +27,10 @@
 
 @property (nonatomic, strong)NSNumber *userId;
 
+@property (nonatomic, assign) BOOL isFocus;
+@property (strong, nonatomic) NSNumber *followerId;
+@property (assign, nonatomic) NSInteger focusIndex;
+
 @end
 
 @implementation MineFocusAndFansVC
@@ -37,7 +41,6 @@ NSString *HomeFocusAndFansCellID = @"HomeFocusAndFansCell";
     [super viewDidLoad];
     [self getUserDefault];
     [self initialSetUp];
-    [self.focusAndFansTableView registerNib:[UINib nibWithNibName:NSStringFromClass([MineFocusAndFansCell class]) bundle:nil] forCellReuseIdentifier:HomeFocusAndFansCellID];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -91,6 +94,8 @@ NSString *HomeFocusAndFansCellID = @"HomeFocusAndFansCell";
     }
     //启用右滑返回手势
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    
+    [self.focusAndFansTableView registerNib:[UINib nibWithNibName:NSStringFromClass([MineFocusAndFansCell class]) bundle:nil] forCellReuseIdentifier:HomeFocusAndFansCellID];
 }
 
 - (void)getUserDefault
@@ -133,11 +138,32 @@ NSString *HomeFocusAndFansCellID = @"HomeFocusAndFansCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MineFocusAndFansCell *cell = [tableView dequeueReusableCellWithIdentifier:HomeFocusAndFansCellID];
+    
     if([_focusOrFans isEqualToString:@"focus"])
     {
         cell.focusBtn.selected = YES;
     }
-    cell.model = self.followsArray[indexPath.row];
+    else if([_focusOrFans isEqualToString:@"Fans"])
+    {
+        cell.focusBtn.selected = NO;
+    }
+    cell.userId = _userId;
+    
+    WEAKSELF
+    if(self.followsArray.count > 0)
+    {
+        //关注
+        UserModel *follower = self.followsArray[indexPath.row];
+        cell.model = follower;
+        
+        cell.focusBtnClickedBlock = ^(BOOL isFocus) {
+            weakSelf.followerId = follower.userId;
+            weakSelf.focusIndex = indexPath.row;
+            weakSelf.isFocus = isFocus;
+            [weakSelf focusUser];
+        };
+    }
+    
     return cell;
 }
 
@@ -166,6 +192,34 @@ NSString *HomeFocusAndFansCellID = @"HomeFocusAndFansCell";
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
         [Toast makeText:weakSelf.view Message:@"请求粉丝列表失败" afterHideTime:DELAYTiME];
+    }];
+}
+
+- (void)focusUser{
+    WEAKSELF
+    NSString *isFocus;
+    if(weakSelf.isFocus)
+    {
+        isFocus = @"true";
+    }
+    else
+    {
+        isFocus = @"false";
+    }
+    
+    NSDictionary *dic = @{
+        @"userId":_userId,
+        @"followerId":_followerId,
+        @"isFollow":isFocus
+    };
+    [ENDNetWorkManager postWithPathUrl:@"/user/follow/follow" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        NSInteger focusIndex  = weakSelf.focusIndex;
+        NSArray *indexPaths = @[[NSIndexPath indexPathForRow:focusIndex inSection:0]];
+        [weakSelf.focusAndFansTableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
+        
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.view Message:@"关注失败" afterHideTime:DELAYTiME];
     }];
 }
 

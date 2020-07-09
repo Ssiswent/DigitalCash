@@ -23,6 +23,8 @@
 
 #import "MineLogoutView.h"
 
+#import "MineMessagesVC.h"
+
 
 @interface MineVC ()<YPNavigationBarConfigureStyle, MineLogoutViewDelegate, FeedbackVCDelegate>
 
@@ -161,7 +163,7 @@
 {
     _hasUserId = NO;
     
-    self.fansCountLabel.text = @"0";
+    self.focusCountLabel.text = @"0";
     self.fansCountLabel.text = @"0";
     self.dynamicsCountLabel.text = @"0";
     self.avatarImgView.image = [UIImage imageNamed:@"avatar_white"];
@@ -169,6 +171,26 @@
     self.signatureLabel.text = @"请点击头像登录";
     
     _logoutView.hidden = YES;
+}
+
+- (IBAction)alertBtnClicked:(id)sender {
+    if(_hasUserId)
+    {
+        MineMessagesVC *messagesVC = MineMessagesVC.new;
+        [self.navigationController pushViewController:messagesVC animated:YES];
+    }
+    else
+    {
+        LoginVC *loginVC = [LoginVC new];
+        //        loginVC.delegate = self;
+        WEAKSELF
+        loginVC.loginVCDidGetUserBlock = ^{
+            [self getUserDefault];
+            [Toast makeText:weakSelf.view Message:@"登录成功" afterHideTime:DELAYTiME];
+        };
+        [self presentViewController:loginVC animated:YES completion:nil];
+        [Toast makeText:loginVC.view Message:@"请先登录" afterHideTime:DELAYTiME];
+    }
 }
 
 - (IBAction)checkInBtnClicked:(id)sender {
@@ -223,8 +245,11 @@
 {
     if(_hasUserId)
     {
-        MineDynamicVC *pageVC = MineDynamicVC.new;
-        [self.navigationController pushViewController:pageVC animated:YES];
+        MineDynamicVC *mineDynamicVC = MineDynamicVC.new;
+        MineUserModel *mineUser = [MineUserModel sharedMineUserModel];
+        mineDynamicVC.user = mineUser;
+        mineDynamicVC.isMineDynamic = YES;
+        [self.navigationController pushViewController:mineDynamicVC animated:YES];
     }
     else
     {
@@ -478,12 +503,15 @@
         mineUser.fansCount = user.fansCount;
         mineUser.head = user.head;
         mineUser.signature = user.signature;
+        mineUser.talkCount = user.talkCount;
+        
         weakSelf.focusCountLabel.text = [NSString stringWithFormat:@"%d",mineUser.followCount.intValue];
         weakSelf.fansCountLabel.text = [NSString stringWithFormat:@"%d",mineUser.fansCount.intValue];
         [weakSelf.avatarImgView sd_setImageWithURL:[NSURL URLWithString:mineUser.head]
                                   placeholderImage:[UIImage imageNamed:@"avatar_white"]];
         weakSelf.nameLabel.text = mineUser.nickName;
         weakSelf.signatureLabel.text = mineUser.signature;
+        weakSelf.dynamicsCountLabel.text = mineUser.talkCount.stringValue;
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
         [Toast makeText:weakSelf.view Message:@"请求用户数据失败" afterHideTime:DELAYTiME];

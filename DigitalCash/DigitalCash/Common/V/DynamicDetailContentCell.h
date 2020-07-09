@@ -10,6 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^CommitBtnClickedBlock)(void);
+typedef void(^FocusBtnClickedBlock)(BOOL isFocus);
+typedef void(^AvatarViewClickedBlock)(void);
 
 @class TalkModel;
 
@@ -18,8 +20,12 @@ typedef void(^CommitBtnClickedBlock)(void);
 @property (strong, nonatomic) TalkModel *dynamicModel;
 
 @property (nonatomic, copy) CommitBtnClickedBlock commitBtnClickedBlock;
+@property (nonatomic, copy) FocusBtnClickedBlock focusBtnClickedBlock;
+@property (nonatomic, copy) AvatarViewClickedBlock avatarViewClickedBlock;
 
 @property (nonatomic, assign) int commitCount;
+
+@property (strong, nonatomic) NSNumber *userId;
 
 @end
 

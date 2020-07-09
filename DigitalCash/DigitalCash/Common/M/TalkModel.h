@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, getter=isDynamicLiked) BOOL dynamicLiked;
 @property (nonatomic, strong) NSArray <CommentModel *> *commentArray;
 
+
 @end
 
 NS_ASSUME_NONNULL_END

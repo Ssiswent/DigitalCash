@@ -10,7 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class UserModel;
+
 @interface MineDynamicVC : UIViewController
+
+@property (nonatomic, strong) UserModel *user;
+@property (nonatomic, assign) BOOL isMineDynamic;
+
+@property (nonatomic, strong) NSNumber *talksCount;
 
 @end
 

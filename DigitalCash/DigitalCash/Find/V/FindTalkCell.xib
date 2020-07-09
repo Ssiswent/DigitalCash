@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,7 +26,7 @@
                         <color key="textColor" red="0.15323174000000001" green="0.15322431919999999" blue="0.15322935579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Rpi-Hp-UNn" userLabel="AvatarImgView">
+                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Rpi-Hp-UNn" userLabel="AvatarImgView">
                         <rect key="frame" x="16.5" y="44.5" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="hER-dq-gXu"/>
@@ -193,6 +193,6 @@
         <image name="btn_yiguanzhu" width="70" height="30"/>
         <image name="ic_guankan_nor" width="12" height="9"/>
         <image name="ic_pinlun_nor" width="13.5" height="12"/>
-        <image name="ic_zan_nor" width="11.5" height="12"/>
+        <image name="ic_zan_nor" width="10" height="10"/>
     </resources>
 </document>

@@ -23,6 +23,9 @@
 #import "MineUserModel.h"
 #import "UserModel.h"
 
+#import "LoginVC.h"
+#import "MineDynamicVC.h"
+
 @interface TalkDetailVC ()<UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, FeedbackVCDelegate, YPNavigationBarConfigureStyle>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -34,6 +37,11 @@
 @property (nonatomic, strong)NSNumber *userId;
 
 @property (nonatomic, assign) int commitCount;
+
+@property (nonatomic, assign) BOOL isFocus;
+@property (strong, nonatomic) NSNumber *followerId;
+
+@property (strong, nonatomic) UserModel *dynamicUser;
 
 @end
 
@@ -188,26 +196,41 @@ NSString *DynamicDetailCommentCellID = @"DynamicDetailCommentCell";
 }
 
 - (IBAction)sendBtnClicked:(id)sender {
-    CommentModel *commentModel = CommentModel.new;
-    commentModel.content = _replyTextF.text;
-    NSDate *todayDate = [NSDate date];
-    NSTimeInterval publishTime = [todayDate timeIntervalSince1970];
-    commentModel.publishTime = publishTime * 1000;
-    MineUserModel *user = [MineUserModel sharedMineUserModel];
-    commentModel.user = user;
-    NSMutableArray *commentsArray = NSMutableArray.new;
-    for (CommentModel *model in _dynamicModel.commentArray) {
-        [commentsArray addObject:model];
+    if(_userId != nil)
+    {
+        CommentModel *commentModel = CommentModel.new;
+        commentModel.content = _replyTextF.text;
+        NSDate *todayDate = [NSDate date];
+        NSTimeInterval publishTime = [todayDate timeIntervalSince1970];
+        commentModel.publishTime = publishTime * 1000;
+        MineUserModel *user = [MineUserModel sharedMineUserModel];
+        commentModel.user = user;
+        NSMutableArray *commentsArray = NSMutableArray.new;
+        for (CommentModel *model in _dynamicModel.commentArray) {
+            [commentsArray addObject:model];
+        }
+        [commentsArray addObject:commentModel];
+        _dynamicModel.commentArray = commentsArray;
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+        _commitCount ++;
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+        [self hideReplyView];
+        [self postComment];
     }
-    [commentsArray addObject:commentModel];
-    _dynamicModel.commentArray = commentsArray;
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
-    
-    _commitCount ++;
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-    
-    [self hideReplyView];
-    [self postComment];
+    else
+    {
+        LoginVC *loginVC = [LoginVC new];
+        //        loginVC.delegate = self;
+        WEAKSELF
+        loginVC.loginVCDidGetUserBlock = ^{
+            [self getUserDefault];
+            [Toast makeText:weakSelf.view Message:@"登录成功" afterHideTime:DELAYTiME];
+        };
+        [self presentViewController:loginVC animated:YES completion:nil];
+        [Toast makeText:loginVC.view Message:@"请先登录" afterHideTime:DELAYTiME];
+    }
 }
 
 - (void)hideReplyView
@@ -279,9 +302,42 @@ NSString *DynamicDetailCommentCellID = @"DynamicDetailCommentCell";
     if(indexPath.section == 0)
     {
         DynamicDetailContentCell *contentCell = [tableView dequeueReusableCellWithIdentifier:DynamicDetailContentCellID];
+        
+        contentCell.userId = _userId;
         contentCell.dynamicModel = _dynamicModel;
         contentCell.commitCount = _commitCount;
+        
         WEAKSELF
+        
+        //关注
+        UserModel *follower = _dynamicModel.user;
+        
+        contentCell.focusBtnClickedBlock = ^(BOOL isFocus) {
+            if(weakSelf.userId != nil)
+            {
+                weakSelf.followerId = follower.userId;
+                weakSelf.isFocus = isFocus;
+                [weakSelf focusUser];
+            }
+            else
+            {
+                LoginVC *loginVC = [LoginVC new];
+                loginVC.loginVCDidGetUserBlock = ^{
+                    [self getUserDefault];
+                    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
+                    [Toast makeText:weakSelf.view Message:@"登录成功" afterHideTime:DELAYTiME];
+                };
+                [self presentViewController:loginVC animated:YES completion:nil];
+                [Toast makeText:loginVC.view Message:@"请先登录" afterHideTime:DELAYTiME];
+            }
+        };
+        
+        contentCell.avatarViewClickedBlock = ^{
+            weakSelf.dynamicUser = follower;
+            [weakSelf getTalksCount];
+        };
+        
+        
         contentCell.commitBtnClickedBlock = ^{
             [weakSelf showReplyView];
             [weakSelf.replyTextF becomeFirstResponder];
@@ -376,6 +432,47 @@ NSString *DynamicDetailCommentCellID = @"DynamicDetailCommentCell";
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
         [Toast makeText:weakSelf.view Message:@"请求用户数据失败" afterHideTime:DELAYTiME];
+    }];
+}
+
+- (void)focusUser{
+    WEAKSELF
+    NSString *isFocus;
+    if(weakSelf.isFocus)
+    {
+        isFocus = @"true";
+    }
+    else
+    {
+        isFocus = @"false";
+    }
+    
+    NSDictionary *dic = @{
+        @"userId":_userId,
+        @"followerId":_followerId,
+        @"isFollow":isFocus
+    };
+    [ENDNetWorkManager postWithPathUrl:@"/user/follow/follow" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.view Message:@"关注失败" afterHideTime:DELAYTiME];
+    }];
+}
+
+- (void)getTalksCount{
+    WEAKSELF
+    NSDictionary *dic = @{
+        @"userId":_dynamicUser.userId
+    };
+    [ENDNetWorkManager getWithPathUrl:@"/user/talk/getTalkCount" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        MineDynamicVC *userDynamicVC = MineDynamicVC.new;
+        userDynamicVC.user = weakSelf.dynamicUser;
+        userDynamicVC.talksCount = result[@"data"];
+        [self.navigationController pushViewController:userDynamicVC animated:YES];
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf.view Message:@"获取说说数失败" afterHideTime:DELAYTiME];
     }];
 }
 

@@ -55,6 +55,23 @@
     _commitBtn.layer.masksToBounds = YES;
     
     _commitCount = _commitBtn.titleLabel.text.intValue;
+    
+    [self addClickAvatarViewGes];
+}
+
+- (void)addClickAvatarViewGes
+{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(avatarViewClicked)];
+    [_avatarImgView addGestureRecognizer:tap];
+}
+
+- (void)avatarViewClicked
+{
+    WEAKSELF
+    if(weakSelf.avatarViewClickedBlock)
+    {
+        weakSelf.avatarViewClickedBlock();
+    }
 }
 
 - (void)setCommitCount:(int)commitCount
@@ -125,6 +142,13 @@
     int count2 = arc4random() % 21;
     [_viewBtn setTitle:[NSString stringWithFormat:@"%d",count1] forState:UIControlStateNormal];
     [_likeBtn setTitle:[NSString stringWithFormat:@"%d",count2] forState:UIControlStateNormal];
+    
+    _focusBtn.selected = NO;
+    
+    if(_userId != nil)
+    {
+        [self getFocusUser:userModel.userId];
+    }
 }
 
 - (NSString *)getTimeToTimeStr:(double)time{
@@ -148,7 +172,11 @@
 }
 
 - (IBAction)focusBtnClicked:(id)sender {
-    _focusBtn.selected = !_focusBtn.selected;
+    WEAKSELF
+    if(weakSelf.focusBtnClickedBlock)
+    {
+        weakSelf.focusBtnClickedBlock(!_focusBtn.selected);
+    }
 }
 
 - (IBAction)likeBtnClicked:(id)sender {
@@ -172,6 +200,34 @@
     {
         weakSelf.commitBtnClickedBlock();
     }
+}
+
+// MARK: API
+
+- (void)getFocusUser:(NSNumber *) followerId{
+    WEAKSELF
+    NSDictionary *dic = @{
+        @"userId":_userId,
+        @"followerId":followerId
+    };
+    [ENDNetWorkManager getWithPathUrl:@"/user/follow/isFollow" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        NSNumber *data = result[@"data"];
+        
+        BOOL isFocus = NO;
+        if([data isEqualToNumber:@0])
+        {
+            isFocus = NO;
+        }
+        else if([data isEqualToNumber:@1])
+        {
+            isFocus = YES;
+        }
+        
+        weakSelf.focusBtn.selected = isFocus;
+    } failure:^(BOOL failuer, NSError *error) {
+        NSLog(@"%@",error.description);
+        [Toast makeText:weakSelf Message:@"获取关注失败" afterHideTime:DELAYTiME];
+    }];
 }
 
 @end

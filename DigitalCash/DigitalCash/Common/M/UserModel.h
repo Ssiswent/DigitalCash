@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy)NSString *signature;
 @property (nonatomic, strong)NSNumber *userId;
 
+@property (nonatomic, strong)NSNumber *talkCount;
+
 @end
 
 NS_ASSUME_NONNULL_END

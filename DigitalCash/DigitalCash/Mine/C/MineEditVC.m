@@ -262,7 +262,7 @@ NSString *MineProfileCellID = @"MineProfileCell";
     _changedName = changedName;
     [self setUser];
     NSArray *indexPaths = @[[NSIndexPath indexPathForRow:0 inSection:0]];
-    [self.mineEditTableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.mineEditTableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
     [self removeCoverView:mineInformationNameView];
 }
 
@@ -281,7 +281,7 @@ NSString *MineProfileCellID = @"MineProfileCell";
     _changedSignature = changedSignature;
     [self setUser];
     NSArray *indexPaths = @[[NSIndexPath indexPathForRow:3 inSection:0]];
-    [self.mineEditTableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.mineEditTableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
 }
 
 #pragma mark - TableViewDelegate
@@ -441,7 +441,7 @@ NSString *MineProfileCellID = @"MineProfileCell";
 //                [self.mineEditTableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
                 weakSelf.birthday = selectValue;
                 NSArray *indexPaths = @[[NSIndexPath indexPathForRow:2 inSection:0]];
-                [self.mineEditTableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+                [self.mineEditTableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
             };
             // 设置自定义样式
             BRPickerStyle *customStyle = [[BRPickerStyle alloc]init];
