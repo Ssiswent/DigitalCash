@@ -20,6 +20,8 @@ typedef void(^FocusBtnClickedBlock)(BOOL isFocus);
 @property (nonatomic, copy) FocusBtnClickedBlock focusBtnClickedBlock;
 @property (strong, nonatomic) NSNumber *userId;
 
+//@property (nonatomic, copy) void(^refreshBlock)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

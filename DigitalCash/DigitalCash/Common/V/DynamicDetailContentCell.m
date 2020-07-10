@@ -224,6 +224,7 @@
         }
         
         weakSelf.focusBtn.selected = isFocus;
+       
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
         [Toast makeText:weakSelf Message:@"获取关注失败" afterHideTime:DELAYTiME];

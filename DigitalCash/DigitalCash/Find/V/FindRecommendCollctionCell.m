@@ -73,7 +73,6 @@
         {
             isFocus = YES;
         }
-        
         weakSelf.focusBtn.selected = isFocus;
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);

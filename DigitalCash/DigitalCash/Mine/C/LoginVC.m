@@ -109,8 +109,17 @@
     NSDictionary *dic = @{@"phone":_accountTextF.text,@"password":_pwdTextF.text,@"type":@(1),@"project":ProjectCategory};
     [ENDNetWorkManager getWithPathUrl:@"/system/login" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
         NSError *error;
+        
         MineUserModel *mineUser = [MineUserModel sharedMineUserModel];
-        mineUser = [MTLJSONAdapter modelOfClass:[MineUserModel class] fromJSONDictionary:result[@"data"] error:&error];
+        UserModel *user = [MTLJSONAdapter modelOfClass:[UserModel class] fromJSONDictionary:result[@"data"] error:&error];
+        mineUser.userId = user.userId;
+        mineUser.nickName = user.nickName;
+        mineUser.followCount = user.followCount;
+        mineUser.fansCount = user.fansCount;
+        mineUser.head = user.head;
+        mineUser.signature = user.signature;
+        mineUser.talkCount = user.talkCount;
+        
         //获取用户偏好
         NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
         //记录userId

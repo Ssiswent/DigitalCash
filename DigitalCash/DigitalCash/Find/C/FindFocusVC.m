@@ -164,16 +164,7 @@ NSString *FindRecommendFocusCellID = @"FindRecommendFocusCell";
         weakSelf.numberOfSections = 1;
         [weakSelf.tableView deleteSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
     };
-    focusCell.needToLoginBlock = ^{
-        LoginVC *loginVC = [LoginVC new];
-        loginVC.loginVCDidGetUserBlock = ^{
-            [self getUserDefault];
-            [Toast makeText:weakSelf.view Message:@"登录成功" afterHideTime:DELAYTiME];
-        };
-        [self presentViewController:loginVC animated:YES completion:nil];
-        [Toast makeText:loginVC.view Message:@"请先登录" afterHideTime:DELAYTiME];
-    };
-    
+
     if(_numberOfSections == 2)
     {
         if(indexPath.section == 0)

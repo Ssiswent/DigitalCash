@@ -84,7 +84,7 @@ NSString *FindRecommendCollctionCellID = @"FindRecommendCollctionCell";
         
         //关注
         cell.focusBtnClickedBlock = ^(BOOL isFocus) {
-            
+            [weakSelf getUserDefault];
             if(weakSelf.userId != nil)
             {
                 weakSelf.followerId = recommendUserModel.userId;
@@ -94,10 +94,13 @@ NSString *FindRecommendCollctionCellID = @"FindRecommendCollctionCell";
             }
             else
             {
-                if(weakSelf.needToLoginBlock)
-                {
-                    weakSelf.needToLoginBlock();
-                }
+                LoginVC *loginVC = [LoginVC new];
+                loginVC.loginVCDidGetUserBlock = ^{
+                    [weakSelf getUserDefault];
+                    [Toast makeText:weakSelf Message:@"登录成功" afterHideTime:DELAYTiME];
+                };
+                [[weakSelf getControllerFromView:weakSelf] presentViewController:loginVC animated:YES completion:nil];
+                [Toast makeText:loginVC.view Message:@"请先登录" afterHideTime:DELAYTiME];
             }
         };
     }
@@ -111,6 +114,18 @@ NSString *FindRecommendCollctionCellID = @"FindRecommendCollctionCell";
     //读取userId
     NSNumber *userId = [userDefault objectForKey:@"userId"];
     _userId = userId;
+}
+
+- (UIViewController *)getControllerFromView:(UIView *)view {
+    // 遍历响应者链。返回第一个找到视图控制器
+    UIResponder *responder = view;
+    while ((responder = [responder nextResponder])){
+        if ([responder isKindOfClass: [UIViewController class]]){
+            return (UIViewController *)responder;
+        }
+    }
+    // 如果没有找到则返回nil
+    return nil;
 }
 
 
