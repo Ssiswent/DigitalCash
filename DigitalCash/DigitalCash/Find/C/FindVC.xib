@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FindVC">
             <connections>
+                <outlet property="publishBtn" destination="L2n-hS-pFR" id="DmS-Sz-GwS"/>
+                <outlet property="publishBtnBottom" destination="jtb-JV-MvB" id="EPE-rz-8bq"/>
                 <outlet property="searchBar" destination="zWh-ug-Rs7" id="IPf-VR-JHy"/>
                 <outlet property="view" destination="iN0-l3-epB" id="UyI-6r-qTk"/>
             </connections>
@@ -28,18 +30,32 @@
                     </constraints>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2n-hS-pFR" userLabel="PublishBtn">
+                    <rect key="frame" x="342" y="776" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="B96-38-y5t"/>
+                        <constraint firstAttribute="height" constant="60" id="qI0-yU-WCN"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="ic_fabu"/>
+                    <connections>
+                        <action selector="publishBtnClicked:" destination="-1" eventType="touchUpInside" id="hFt-6h-CDt"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="L2n-hS-pFR" secondAttribute="trailing" constant="12" id="BQh-lx-o7C"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zWh-ug-Rs7" secondAttribute="trailing" constant="16" id="DfJ-ba-CRf"/>
                 <constraint firstItem="zWh-ug-Rs7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16.670000000000002" id="fix-iW-NCO"/>
+                <constraint firstAttribute="bottom" secondItem="L2n-hS-pFR" secondAttribute="bottom" constant="60" id="jtb-JV-MvB"/>
             </constraints>
             <point key="canvasLocation" x="-364" y="139"/>
         </view>
     </objects>
     <resources>
         <image name="bg_search" width="150" height="30"/>
+        <image name="ic_fabu" width="59.5" height="59.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

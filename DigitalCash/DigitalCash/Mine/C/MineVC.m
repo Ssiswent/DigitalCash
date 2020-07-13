@@ -247,9 +247,17 @@
     {
         MineDynamicVC *mineDynamicVC = MineDynamicVC.new;
         MineUserModel *mineUser = [MineUserModel sharedMineUserModel];
-        mineDynamicVC.user = mineUser;
-        mineDynamicVC.isMineDynamic = YES;
-        [self.navigationController pushViewController:mineDynamicVC animated:YES];
+        if(mineUser.userId != nil)
+        {
+            mineDynamicVC.user = mineUser;
+            mineDynamicVC.talksCount = mineUser.talkCount;
+            mineDynamicVC.isMineDynamic = YES;
+            [self.navigationController pushViewController:mineDynamicVC animated:YES];
+        }
+        else
+        {
+            [self getUser];
+        }
     }
     else
     {

@@ -208,6 +208,29 @@ NSString *FindRecommendFocusCellID = @"FindRecommendFocusCell";
     }
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGPoint translation = [scrollView.panGestureRecognizer translationInView:scrollView.superview];
+    
+    WEAKSELF
+    //下滑
+    if (translation.y>0)
+    {
+        if(weakSelf.showBlock)
+        {
+            weakSelf.showBlock();
+        }
+    }
+    //上滑
+    else if(translation.y<0)
+    {
+        if(weakSelf.hideBlock)
+        {
+            weakSelf.hideBlock();
+        }
+    }
+}
+
 #pragma mark - API
 
 - (void)getTalks{

@@ -10,6 +10,8 @@
 #import "FindRecommendVC.h"
 #import "FindFocusVC.h"
 
+#import "PublishVC.h"
+
 #import <JXCategoryTitleView.h>
 
 @interface FindVC ()<YPNavigationBarConfigureStyle>
@@ -17,6 +19,10 @@
 @property (nonatomic, strong) JXCategoryTitleView *myCategoryView;
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIButton *publishBtn;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *publishBtnBottom;
+
+@property (nonatomic, assign) CGFloat publishBtnBottomConstant;
 
 @end
 
@@ -24,8 +30,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initialSetUp];
+}
+
+- (void)initialSetUp
+{
     [self setNavBar];
     [self setSearchBar];
+    [self.view bringSubviewToFront:_publishBtn];
+    
+    _publishBtnBottomConstant = 60;
+    
+    //8(SE2)
+    if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 667)
+    {
+        _publishBtnBottomConstant = 60;
+    }
+    //11 Pro
+    else if(SCREEN_WIDTH == 375 && SCREEN_HEIGHT == 812)
+    {
+        _publishBtnBottomConstant = 100;
+    }
+    //8 Plus
+    else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 736)
+    {
+        _publishBtnBottomConstant = 80;
+    }
+    //11 Pro Max
+    else if (SCREEN_WIDTH == 414 && SCREEN_HEIGHT == 896)
+    {
+        _publishBtnBottomConstant = 120;
+    }
+    _publishBtnBottom.constant = _publishBtnBottomConstant;
 }
 
 - (void)setNavBar
@@ -41,6 +77,18 @@
     self.myCategoryView.titleLabelZoomEnabled = YES;
     self.myCategoryView.selectedAnimationEnabled = YES;
     self.myCategoryView.titleLabelAnchorPointStyle = JXCategoryTitleLabelAnchorPointStyleBottom;
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    if(kIsIPhoneX_Series)
+    {
+        self.myCategoryView.frame = CGRectMake(7, 64, kScaleFrom_iPhone8_Width(100), 24);
+    }
+    else
+    {
+        self.myCategoryView.frame = CGRectMake(7, 40, kScaleFrom_iPhone8_Width(100), 24);
+    }
 }
 
 - (void)setSearchBar
@@ -60,16 +108,33 @@
     [self.view bringSubviewToFront:_searchBar];
 }
 
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    if(kIsIPhoneX_Series)
-    {
-        self.myCategoryView.frame = CGRectMake(7, 64, kScaleFrom_iPhone8_Width(100), 24);
-    }
-    else
-    {
-        self.myCategoryView.frame = CGRectMake(7, 40, kScaleFrom_iPhone8_Width(100), 24);
-    }
+- (IBAction)publishBtnClicked:(id)sender {
+    PublishVC *publishVC = [PublishVC new];
+    YPNavigationController *navC = [[YPNavigationController alloc]initWithRootViewController:publishVC];
+    //    PublishVC.delegate = self;
+    navC.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:navC animated:YES completion:nil];
+}
+
+- (void)hidePublishBtn
+{
+    CGRect hideFrame = _publishBtn.frame;
+    hideFrame.origin.y = SCREEN_HEIGHT;
+    [UIView animateWithDuration:0.5 animations:^{
+        WEAKSELF
+        weakSelf.publishBtn.frame = hideFrame;
+    }];
+}
+
+- (void)showPublishBtn
+{
+    CGRect showFrame = _publishBtn.frame;
+    CGFloat showY = SCREEN_HEIGHT - (_publishBtnBottomConstant + 60);
+    showFrame.origin.y = showY;
+    [UIView animateWithDuration:0.5 animations:^{
+        WEAKSELF
+        weakSelf.publishBtn.frame = showFrame;
+    }];
 }
 
 - (JXCategoryTitleView *)myCategoryView {
@@ -89,14 +154,28 @@
 }
 
 - (id<JXCategoryListContentViewDelegate>)listContainerView:(JXCategoryListContainerView *)listContainerView initListForIndex:(NSInteger)index {
+    
+    WEAKSELF
     if (index == 0)
     {
         FindRecommendVC *findRecommendVC = [FindRecommendVC new];
+        findRecommendVC.hideBlock = ^{
+            [weakSelf hidePublishBtn];
+        };
+        findRecommendVC.showBlock = ^{
+            [weakSelf showPublishBtn];
+        };
         return findRecommendVC;
     }
     else
     {
         FindFocusVC *findFocusVC = [FindFocusVC new];
+        findFocusVC.hideBlock = ^{
+            [weakSelf hidePublishBtn];
+        };
+        findFocusVC.showBlock = ^{
+            [weakSelf showPublishBtn];
+        };
         return findFocusVC;
     }
 }

@@ -52,6 +52,8 @@
 		CBAF972024AC701D00C9C98B /* FindRecommendFocusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAF971E24AC701D00C9C98B /* FindRecommendFocusCell.xib */; };
 		CBAF972424AC7AEC00C9C98B /* FindRecommendCollctionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAF972224AC7AEC00C9C98B /* FindRecommendCollctionCell.m */; };
 		CBAF972524AC7AEC00C9C98B /* FindRecommendCollctionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAF972324AC7AEC00C9C98B /* FindRecommendCollctionCell.xib */; };
+		CBB3BE6424BC056A006B80F2 /* PublishVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB3BE6224BC056A006B80F2 /* PublishVC.m */; };
+		CBB3BE6524BC056A006B80F2 /* PublishVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBB3BE6324BC056A006B80F2 /* PublishVC.xib */; };
 		CBB4827724B2F4A5000F5BC5 /* MineLogoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB4827424B2F4A4000F5BC5 /* MineLogoutView.m */; };
 		CBB4827824B2F4A5000F5BC5 /* MineLogoutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBB4827524B2F4A5000F5BC5 /* MineLogoutView.xib */; };
 		CBB4827C24B315FB000F5BC5 /* AccountSafeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB4827A24B315FB000F5BC5 /* AccountSafeVC.m */; };
@@ -250,6 +252,9 @@
 		CBAF972124AC7AEC00C9C98B /* FindRecommendCollctionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindRecommendCollctionCell.h; sourceTree = "<group>"; };
 		CBAF972224AC7AEC00C9C98B /* FindRecommendCollctionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindRecommendCollctionCell.m; sourceTree = "<group>"; };
 		CBAF972324AC7AEC00C9C98B /* FindRecommendCollctionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindRecommendCollctionCell.xib; sourceTree = "<group>"; };
+		CBB3BE6124BC056A006B80F2 /* PublishVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishVC.h; sourceTree = "<group>"; };
+		CBB3BE6224BC056A006B80F2 /* PublishVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishVC.m; sourceTree = "<group>"; };
+		CBB3BE6324BC056A006B80F2 /* PublishVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublishVC.xib; sourceTree = "<group>"; };
 		CBB4827424B2F4A4000F5BC5 /* MineLogoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineLogoutView.m; sourceTree = "<group>"; };
 		CBB4827524B2F4A5000F5BC5 /* MineLogoutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineLogoutView.xib; sourceTree = "<group>"; };
 		CBB4827624B2F4A5000F5BC5 /* MineLogoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineLogoutView.h; sourceTree = "<group>"; };
@@ -925,6 +930,9 @@
 				CBFF801924AB440500E8B527 /* FindFocusVC.h */,
 				CBFF801A24AB440500E8B527 /* FindFocusVC.m */,
 				CBFF801B24AB440500E8B527 /* FindFocusVC.xib */,
+				CBB3BE6124BC056A006B80F2 /* PublishVC.h */,
+				CBB3BE6224BC056A006B80F2 /* PublishVC.m */,
+				CBB3BE6324BC056A006B80F2 /* PublishVC.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -1162,6 +1170,7 @@
 				CBB4829124B35450000F5BC5 /* UpToDateView.xib in Resources */,
 				CBFF7FFC24AB1A4000E8B527 /* CashHeaderView.xib in Resources */,
 				CBFF7FCC24AAD46200E8B527 /* CashVC.xib in Resources */,
+				CBB3BE6524BC056A006B80F2 /* PublishVC.xib in Resources */,
 				CBD5E1A824AF17A800A51D31 /* CheckInVC.xib in Resources */,
 				CB66182724B40BFC006A250D /* MineEditProfileCell.xib in Resources */,
 				CB66184324B44B87006A250D /* HomeCalendarVC.xib in Resources */,
@@ -1341,6 +1350,7 @@
 				CBA399A924AECBAB00CC0DBE /* MineTalkCell.m in Sources */,
 				CBDCF22D24B55AA600B5469B /* TalkDetailVC.m in Sources */,
 				CBFF7FB124AAD1FF00E8B527 /* ContentBaseViewController.m in Sources */,
+				CBB3BE6424BC056A006B80F2 /* PublishVC.m in Sources */,
 				CBC76AB924B47A6300A9C236 /* HomeNewsHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

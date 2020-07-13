@@ -187,12 +187,7 @@ NSString *DynamicDetailCommentCellID = @"DynamicDetailCommentCell";
 {
     [_replyTextF resignFirstResponder];
     
-    CGRect hideFrame = _replyView.frame;
-    hideFrame.origin.y = SCREEN_HEIGHT;
-    [UIView animateWithDuration:0.5 animations:^{
-        WEAKSELF
-        weakSelf.replyView.frame = hideFrame;
-    }];
+    [self hideReplyView];
 }
 
 - (IBAction)sendBtnClicked:(id)sender {
