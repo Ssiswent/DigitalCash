@@ -27,6 +27,10 @@
 
 #import "CustomTBC.h"
 
+#import "NetWork.h"
+
+#import "CashModel.h"
+
 @interface HomeVC ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -36,6 +40,8 @@
 @property (nonatomic, strong) NSArray *cashImgsArray;
 @property (nonatomic, strong) NSArray *quotesArray;
 @property (strong , nonatomic) NSArray *newsArray;
+
+@property (nonatomic, strong) NSArray *cashArray;
 
 @end
 
@@ -106,6 +112,7 @@ NSString *NewsCellID = @"NewsCell";
 {
     [super viewWillAppear:animated];
     [self getTalks];
+    [self getCashData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -156,7 +163,7 @@ NSString *NewsCellID = @"NewsCell";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    NSInteger numbers[4] = {1,3,6,self.newsArray.count};
+    NSInteger numbers[4] = {1,self.cashArray.count,6,self.newsArray.count};
     return numbers[section];
 }
 
@@ -189,7 +196,8 @@ NSString *NewsCellID = @"NewsCell";
             return fourBtnCell;
             break;
         case 1:
-            cashCell.numberImgView.image = [UIImage imageNamed:self.cashImgsArray[indexPath.row]];
+            cashCell.numberImgView.image = [UIImage imageNamed:self.cashImgsArray[indexPath.row % 3]];
+            cashCell.cashModel = self.cashArray[indexPath.row];
             return cashCell;
             break;
         case 2:
@@ -211,6 +219,10 @@ NSString *NewsCellID = @"NewsCell";
 {
     CashHeaderView *cashHeaderView = [CashHeaderView cashHeaderView];
     QuotesHeaderView *quotesHeaderView = [QuotesHeaderView quotesHeaderView];
+    quotesHeaderView.seeAllBtnClickedBlock = ^{
+        HomeCashVC *cashVC = HomeCashVC.new;
+        [self.navigationController pushViewController:cashVC animated:YES];
+    };
     NewsHeaderView *newsHeaderView = [NewsHeaderView newsHeaderView];
     switch (section) {
         case 1:
@@ -263,6 +275,40 @@ NSString *NewsCellID = @"NewsCell";
     } failure:^(BOOL failuer, NSError *error) {
         NSLog(@"%@",error.description);
         [Toast makeText:weakSelf.view Message:@"请求行业风暴失败" afterHideTime:DELAYTiME];
+    }];
+}
+
+- (void)getCashData
+{
+    NSString *URLStr = @"http://data.api51.cn/apis/integration/rank/?market_type=cryptocurrency&limit=13&order_by=desc&fields=prod_name%2Cprod_code%2Clast_px%2Cpx_change%2Cpx_change_rate%2Chigh_px%2Clow_px%2Cupdate_time&token=3f39051e89e1cea0a84da126601763d8";
+    
+    [NetWork requestGet:URLStr Success:^(NSDictionary * _Nonnull dic) {
+        WEAKSELF
+        
+        NSDictionary *dataD = [dic objectForKey:@"data"];
+        
+        NSArray *dataArr = NSArray.new;
+        
+        dataArr = [NSArray arrayWithArray:(NSArray *)dataD[@"candle"]];
+        
+        if (dataArr.count == 0) {
+            [Toast makeText:self.view Message:@"请求货币信息失败" afterHideTime:DELAYTiME];
+            return;
+        }
+        
+        NSMutableArray *temp = NSMutableArray.new;
+        for (NSArray *cashArr in dataArr) {
+            CashModel *cashModel = [CashModel cashWithArray:cashArr];
+            [temp addObject:cashModel];
+        }
+        weakSelf.cashArray = temp;
+        
+        [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+    } ERROR:^(NSError * _Nonnull error) {
+//         [Toast makeText:self.view Message:@"网络开小差了，在刷新试试😢" afterHideTime:DELAYTiME];
+//        [SVProgressHUD  showWithStatus:@"网络开小差了，在刷新试试😢"];
+        
     }];
 }
 

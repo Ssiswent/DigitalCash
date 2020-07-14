@@ -18,7 +18,7 @@
 
 #import "UIImage+OriginalImage.h"
 
-
+#import "CustomTBC.h"
 
 //推迟执行
 CG_INLINE void dispatch_queue_after_S(CGFloat time ,dispatch_block_t block) {
@@ -112,12 +112,12 @@ CG_INLINE void dispatch_queue_after_S(CGFloat time ,dispatch_block_t block) {
     UILabel *titleLabel = UILabel.new;
     titleLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightMedium];
     titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.textColor = [UIColor whiteColor];
+    titleLabel.textColor = [UIColor blackColor];
     titleLabel.text = self.title;
     [titleLabel sizeToFit];
     self.navigationItem.titleView = titleLabel;
 //    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18], NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage originalImageWithName:@"ic_back"] style:0 target:self action:@selector(backBtnClicked)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage originalImageWithName:@"ic_back_black"] style:0 target:self action:@selector(backBtnClicked)];
    // [self.navigationController setNavigationBarHidden:NO];
     //    saveB = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
     //    [saveB setBackgroundImage:UIImageWithName(@"J") forState:UIControlStateNormal];
@@ -203,7 +203,7 @@ CG_INLINE void dispatch_queue_after_S(CGFloat time ,dispatch_block_t block) {
     }
     //    }
     
-    
+    [CustomTBC setTabBarHidden:YES TabBarVC:self.tabBarController];
 }
 
 - (UIView *)headView{
@@ -365,7 +365,7 @@ CG_INLINE void dispatch_queue_after_S(CGFloat time ,dispatch_block_t block) {
         
         //在这里可设置背景色
         
-        _navBackView.backgroundColor = [UIColor clearColor];
+        _navBackView.backgroundColor = [UIColor whiteColor];
         
     }else if ([superView isKindOfClass:NSClassFromString(@"_UIVisualEffectSubview")])
          {

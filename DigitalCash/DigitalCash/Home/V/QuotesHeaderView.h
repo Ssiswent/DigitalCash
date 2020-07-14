@@ -9,9 +9,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^SeeAllBtnClickedBlock)(void);
+
 @interface QuotesHeaderView : UIView
 
 + (instancetype)quotesHeaderView;
+
+@property (nonatomic, copy) SeeAllBtnClickedBlock seeAllBtnClickedBlock;
 
 @end
 

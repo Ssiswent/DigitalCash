@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,15 +18,18 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_yigongbu_rili" translatesAutoresizingMaskIntoConstraints="NO" id="uIz-Ts-2qt" userLabel="BgImgView">
-                        <rect key="frame" x="8" y="0.0" width="359" height="134.5"/>
+                        <rect key="frame" x="8" y="0.0" width="358.5" height="134.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="uIz-Ts-2qt" secondAttribute="height" multiplier="358.5:134.5" id="IqB-Lg-Mx9"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJY-0a-kYZ">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJY-0a-kYZ" userLabel="TimeLabel">
                         <rect key="frame" x="25.5" y="17.5" width="34" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.15321186179999999" green="0.15324017409999999" blue="0.15320569279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag_of_Australia" translatesAutoresizingMaskIntoConstraints="NO" id="WSz-Sa-qWt">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag_of_Australia" translatesAutoresizingMaskIntoConstraints="NO" id="WSz-Sa-qWt" userLabel="FlagImgView">
                         <rect key="frame" x="25.5" y="53" width="36" height="19"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="19" id="bhi-Pz-7d1"/>
@@ -144,6 +147,16 @@
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="bgImgView" destination="uIz-Ts-2qt" id="9ed-3t-VwM"/>
+                <outlet property="contentLabel" destination="2zP-7S-Z0N" id="9Ak-et-hxm"/>
+                <outlet property="expectLabel" destination="btT-VA-oQe" id="xwG-d0-vVm"/>
+                <outlet property="flagImgView" destination="WSz-Sa-qWt" id="WE3-sT-efk"/>
+                <outlet property="previousLabel" destination="Vhj-HW-6xm" id="peb-ut-H8m"/>
+                <outlet property="star1" destination="Krw-Th-3YO" id="5e9-Hy-FKg"/>
+                <outlet property="star2" destination="Bha-Hx-0aR" id="Kcc-0D-JSB"/>
+                <outlet property="star3" destination="e2o-Nx-3ZZ" id="3rz-7K-cxp"/>
+                <outlet property="star4" destination="Mr4-Ec-oZa" id="pfk-cW-mvb"/>
+                <outlet property="star5" destination="ezh-zS-hEO" id="ui6-za-z5W"/>
+                <outlet property="timeLabel" destination="gJY-0a-kYZ" id="iuX-PY-fpd"/>
             </connections>
             <point key="canvasLocation" x="129" y="136"/>
         </tableViewCell>

@@ -232,7 +232,7 @@
 
 - (void)pushTZImagePickerController {
     TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:1 columnNumber:4 delegate:self pushPhotoPickerVc:YES];
-    imagePickerVc.naviBgColor = [UIColor colorWithHexString:@"#293AFF"];
+    imagePickerVc.naviBgColor = [UIColor colorWithHexString:@"#F88945"];
     imagePickerVc.navigationBar.translucent = NO;
     
     imagePickerVc.isSelectOriginalPhoto = YES;

@@ -14,6 +14,8 @@
 
 #import <FSCalendar.h>
 
+#import "FinanceCalenderModel.h"
+
 @interface HomeCalendarVC ()<FSCalendarDataSource, FSCalendarDelegate, YPNavigationBarConfigureStyle, UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet FSCalendar *calendar;
@@ -21,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *calendarWidth;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) NSArray *financeCalenderArray;
 
 @end
 
@@ -39,6 +43,8 @@ NSString *HomeCalendarCellID = @"HomeCalendarCell";
     [super viewWillAppear:animated];
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     [CustomTBC setTabBarHidden:YES TabBarVC:self.tabBarController];
+    
+    [self getFinanceCalender];
 }
 
 - (void)initialSetUp
@@ -82,20 +88,13 @@ NSString *HomeCalendarCellID = @"HomeCalendarCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 12;
+    return self.financeCalenderArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     HomeCalendarCell *calendarCell = [tableView dequeueReusableCellWithIdentifier:HomeCalendarCellID];
-    if(indexPath.row % 2 == 0)
-    {
-        calendarCell.bgImgView.image = [UIImage imageNamed:@"bg_yigongbu_rili"];
-    }
-    else
-    {
-        calendarCell.bgImgView.image = [UIImage imageNamed:@"bg_weigongbu_rili"];
-    }
+    calendarCell.financeCalenderModel = self.financeCalenderArray[indexPath.row];
     return calendarCell;
 }
 
@@ -123,6 +122,20 @@ NSString *HomeCalendarCellID = @"HomeCalendarCell";
 
 - (UIColor *) yp_navigationBarTintColor {
     return [UIColor whiteColor];
+}
+
+#pragma mark - API
+
+-(void)getFinanceCalender{
+    WEAKSELF
+    NSDate *todayDate = [NSDate date];
+    NSDictionary *dic = @{@"date":todayDate};
+    [ENDNetWorkManager getWithPathUrl:@"/admin/getFinanceCalender" parameters:nil queryParams:dic Header:nil success:^(BOOL success, id result) {
+        NSError *error;
+        weakSelf.financeCalenderArray = [MTLJSONAdapter modelsOfClass:[FinanceCalenderModel class] fromJSONArray:result[@"data"] error:&error];
+        [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+    } failure:^(BOOL failuer, NSError *error) {
+    }];
 }
 
 @end

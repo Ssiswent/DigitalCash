@@ -14,4 +14,12 @@
     return [[[NSBundle mainBundle]loadNibNamed:NSStringFromClass([QuotesHeaderView class]) owner:nil options:nil] firstObject];
 }
 
+- (IBAction)seeAllBtnClicked:(id)sender {
+    WEAKSELF
+    if(weakSelf.seeAllBtnClickedBlock)
+    {
+        weakSelf.seeAllBtnClickedBlock();
+    }
+}
+
 @end

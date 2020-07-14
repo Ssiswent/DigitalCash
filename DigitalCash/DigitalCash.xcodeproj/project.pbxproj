@@ -40,6 +40,7 @@
 		CB877D0624ADC09300D43AFE /* MineCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB877D0424ADC09300D43AFE /* MineCodeView.xib */; };
 		CB877D0A24ADDDDB00D43AFE /* MineDynamicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CB877D0824ADDDDB00D43AFE /* MineDynamicVC.m */; };
 		CB877D0B24ADDDDB00D43AFE /* MineDynamicVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB877D0924ADDDDB00D43AFE /* MineDynamicVC.xib */; };
+		CB87F5A224BDABEF008F83FD /* FinanceCalenderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB87F5A124BDABEF008F83FD /* FinanceCalenderModel.m */; };
 		CBA399A524AEBFC500CC0DBE /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA399A424AEBFC500CC0DBE /* UIImage+Alpha.m */; };
 		CBA399A924AECBAB00CC0DBE /* MineTalkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA399A724AECBAB00CC0DBE /* MineTalkCell.m */; };
 		CBA399AA24AECBAB00CC0DBE /* MineTalkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA399A824AECBAB00CC0DBE /* MineTalkCell.xib */; };
@@ -48,6 +49,7 @@
 		CBA411CF24AC32C2005065B1 /* TalkListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA411CE24AC32C2005065B1 /* TalkListModel.m */; };
 		CBA411D324AC38E4005065B1 /* FindTalkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA411D124AC38E4005065B1 /* FindTalkCell.m */; };
 		CBA411D424AC38E4005065B1 /* FindTalkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA411D224AC38E4005065B1 /* FindTalkCell.xib */; };
+		CBA65E7924BDE14900CDADA7 /* CashModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA65E7824BDE14900CDADA7 /* CashModel.m */; };
 		CBAF971F24AC701D00C9C98B /* FindRecommendFocusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAF971D24AC701D00C9C98B /* FindRecommendFocusCell.m */; };
 		CBAF972024AC701D00C9C98B /* FindRecommendFocusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBAF971E24AC701D00C9C98B /* FindRecommendFocusCell.xib */; };
 		CBAF972424AC7AEC00C9C98B /* FindRecommendCollctionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAF972224AC7AEC00C9C98B /* FindRecommendCollctionCell.m */; };
@@ -233,6 +235,8 @@
 		CB877D0724ADDDDB00D43AFE /* MineDynamicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineDynamicVC.h; sourceTree = "<group>"; };
 		CB877D0824ADDDDB00D43AFE /* MineDynamicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineDynamicVC.m; sourceTree = "<group>"; };
 		CB877D0924ADDDDB00D43AFE /* MineDynamicVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineDynamicVC.xib; sourceTree = "<group>"; };
+		CB87F5A024BDABEF008F83FD /* FinanceCalenderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinanceCalenderModel.h; sourceTree = "<group>"; };
+		CB87F5A124BDABEF008F83FD /* FinanceCalenderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinanceCalenderModel.m; sourceTree = "<group>"; };
 		CBA399A324AEBFC500CC0DBE /* UIImage+Alpha.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
 		CBA399A424AEBFC500CC0DBE /* UIImage+Alpha.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
 		CBA399A624AECBAB00CC0DBE /* MineTalkCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineTalkCell.h; sourceTree = "<group>"; };
@@ -246,6 +250,8 @@
 		CBA411D024AC38E4005065B1 /* FindTalkCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindTalkCell.h; sourceTree = "<group>"; };
 		CBA411D124AC38E4005065B1 /* FindTalkCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindTalkCell.m; sourceTree = "<group>"; };
 		CBA411D224AC38E4005065B1 /* FindTalkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindTalkCell.xib; sourceTree = "<group>"; };
+		CBA65E7724BDE14900CDADA7 /* CashModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CashModel.h; sourceTree = "<group>"; };
+		CBA65E7824BDE14900CDADA7 /* CashModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CashModel.m; sourceTree = "<group>"; };
 		CBAF971C24AC701D00C9C98B /* FindRecommendFocusCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindRecommendFocusCell.h; sourceTree = "<group>"; };
 		CBAF971D24AC701D00C9C98B /* FindRecommendFocusCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindRecommendFocusCell.m; sourceTree = "<group>"; };
 		CBAF971E24AC701D00C9C98B /* FindRecommendFocusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindRecommendFocusCell.xib; sourceTree = "<group>"; };
@@ -890,6 +896,10 @@
 				CB66186224B44EFB006A250D /* HomeNewsModel.m */,
 				CBFF800724AB2A6E00E8B527 /* HomeQuotesModel.h */,
 				CBFF800824AB2A6E00E8B527 /* HomeQuotesModel.m */,
+				CB87F5A024BDABEF008F83FD /* FinanceCalenderModel.h */,
+				CB87F5A124BDABEF008F83FD /* FinanceCalenderModel.m */,
+				CBA65E7724BDE14900CDADA7 /* CashModel.h */,
+				CBA65E7824BDE14900CDADA7 /* CashModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -1244,6 +1254,7 @@
 				CBB4828A24B351CF000F5BC5 /* UpToDateView.m in Sources */,
 				CBFF7F9724AAD1FE00E8B527 /* YPNavigationController+Configure.m in Sources */,
 				CB66186824B45B4A006A250D /* HomeCalendarCell.m in Sources */,
+				CBA65E7924BDE14900CDADA7 /* CashModel.m in Sources */,
 				CBFF7FA124AAD1FE00E8B527 /* QHDHHeadCollectionViewCell.m in Sources */,
 				CBFF801324AB33F200E8B527 /* TalkModel.m in Sources */,
 				CBC76AB524B4714700A9C236 /* HomeFastNewsCell.m in Sources */,
@@ -1269,6 +1280,7 @@
 				CBFF7F8D24AAD1FE00E8B527 /* Reachability.m in Sources */,
 				CBDCF23B24B5601D00B5469B /* DynamicDetailCommentCell.m in Sources */,
 				CBFF7FAF24AAD1FF00E8B527 /* CustomTBC.m in Sources */,
+				CB87F5A224BDABEF008F83FD /* FinanceCalenderModel.m in Sources */,
 				CBFF7F9C24AAD1FE00E8B527 /* YKLineDataSet.m in Sources */,
 				CBFF801C24AB440500E8B527 /* FindFocusVC.m in Sources */,
 				CBFF7F8324AAD1FE00E8B527 /* EGHImagePickerVCManager.m in Sources */,

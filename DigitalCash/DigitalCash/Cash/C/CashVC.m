@@ -29,6 +29,12 @@
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [CustomTBC setTabBarHidden:NO TabBarVC:self.tabBarController];
+}
+
 - (void)setBottomView
 {
     _bottomView.backgroundColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];

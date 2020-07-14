@@ -9,8 +9,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class FinanceCalenderModel;
+
 @interface HomeCalendarCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UIImageView *bgImgView;
+@property(strong, nonatomic) FinanceCalenderModel *financeCalenderModel;
 
 @end
 

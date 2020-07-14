@@ -72,8 +72,6 @@ NSString *MineProfileCellID = @"MineProfileCell";
     [super viewDidLoad];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage originalImageWithName:@"ic_back"] style:0 target:self action:@selector(backBtnClicked)];
     
-    self.tabBarController.tabBar.hidden = YES;
-    
     [self.mineEditTableView registerNib:[UINib nibWithNibName:NSStringFromClass([MineEditProfileCell class]) bundle:nil] forCellReuseIdentifier:MineProfileCellID];
     
     [self setAvatarImg];
@@ -196,8 +194,10 @@ NSString *MineProfileCellID = @"MineProfileCell";
 
 - (void)pushTZImagePickerController {
     TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:1 columnNumber:4 delegate:self pushPhotoPickerVc:YES];
-    imagePickerVc.naviBgColor = [UIColor colorWithHexString:@"#293AFF"];
+    imagePickerVc.naviBgColor = [UIColor colorWithHexString:@"#F88945"];
     imagePickerVc.navigationBar.translucent = NO;
+    
+//    imagePickerVc.preferredLanguage = @"zh-Hans";
     
     imagePickerVc.isSelectOriginalPhoto = YES;
 //    imagePickerVc.needShowStatusBar = NO;

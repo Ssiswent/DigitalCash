@@ -9,9 +9,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class CashModel;
+
 @interface CashCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *numberImgView;
+@property (nonatomic, strong) CashModel *cashModel;
 
 @end
 

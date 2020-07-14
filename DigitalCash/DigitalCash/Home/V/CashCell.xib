@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,26 +24,26 @@
                             <constraint firstAttribute="height" constant="14" id="pSp-aW-nME"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIc-mM-Bxc">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIc-mM-Bxc" userLabel="CodeLabel">
                         <rect key="frame" x="47.5" y="15" width="37" height="22"/>
                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                         <color key="textColor" red="0.15323174000000001" green="0.15322431919999999" blue="0.15322935579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$9476.24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hb-4W-kPj">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$9476.24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hb-4W-kPj" userLabel="MoneyLabel">
                         <rect key="frame" x="47.5" y="46" width="62" height="15"/>
                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="12"/>
                         <color key="textColor" red="0.37494260070000002" green="0.37492731210000002" blue="0.37493768329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1.638" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pn-sD-NOA">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1.638" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pn-sD-NOA" userLabel="UpDownMoneyLabel">
                         <rect key="frame" x="160.5" y="17" width="54" height="18"/>
                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                         <color key="textColor" red="0.89440596100000003" green="0.40052115919999998" blue="0.3785283566" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+0.04%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvK-Y6-iXK">
-                        <rect key="frame" x="160.5" y="45.5" width="51" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+0.04%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvK-Y6-iXK" userLabel="UpDownPercentLabel">
+                        <rect key="frame" x="162.5" y="45.5" width="50.5" height="15"/>
                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="12"/>
                         <color key="textColor" red="0.37494260070000002" green="0.37492731210000002" blue="0.37493768329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
@@ -61,9 +61,9 @@
                     <constraint firstItem="7CF-lH-olY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14.5" id="2di-90-win"/>
                     <constraint firstItem="7CF-lH-olY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="19" id="5hP-9e-4mm"/>
                     <constraint firstItem="jIc-mM-Bxc" firstAttribute="leading" secondItem="7CF-lH-olY" secondAttribute="trailing" constant="20" id="BSc-bn-QG4"/>
-                    <constraint firstItem="rvK-Y6-iXK" firstAttribute="leading" secondItem="8pn-sD-NOA" secondAttribute="leading" id="Fz2-df-M9k"/>
                     <constraint firstItem="7hb-4W-kPj" firstAttribute="top" secondItem="jIc-mM-Bxc" secondAttribute="bottom" constant="9" id="J1o-zP-RaN"/>
                     <constraint firstItem="rvK-Y6-iXK" firstAttribute="centerY" secondItem="7hb-4W-kPj" secondAttribute="centerY" constant="-0.5" id="MMB-3a-pse"/>
+                    <constraint firstItem="rvK-Y6-iXK" firstAttribute="centerX" secondItem="8pn-sD-NOA" secondAttribute="centerX" id="Tpy-u3-SDl"/>
                     <constraint firstAttribute="bottom" secondItem="el3-HV-LmS" secondAttribute="bottom" constant="24" id="V2J-6F-vdO"/>
                     <constraint firstItem="el3-HV-LmS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="ZHd-fs-JeM"/>
                     <constraint firstItem="8pn-sD-NOA" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="gFC-LM-CDj"/>
@@ -75,7 +75,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="codeLabel" destination="jIc-mM-Bxc" id="GcE-Wf-tIy"/>
+                <outlet property="moneyLabel" destination="7hb-4W-kPj" id="beB-oc-Iub"/>
                 <outlet property="numberImgView" destination="7CF-lH-olY" id="0KB-mn-Tn8"/>
+                <outlet property="upDownMoneyLabel" destination="8pn-sD-NOA" id="By5-jc-HKJ"/>
+                <outlet property="upDownPercentLabel" destination="rvK-Y6-iXK" id="8R3-fW-L3r"/>
             </connections>
             <point key="canvasLocation" x="59" y="136"/>
         </tableViewCell>
