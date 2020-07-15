@@ -201,13 +201,7 @@ NSString *NewsCellID = @"NewsCell";
             break;
         case 1:
             cashCell.numberImgView.image = [UIImage imageNamed:self.cashImgsArray[indexPath.row]];
-            NSInteger cashCount = self.cashArray.count;
-            NSInteger cashIndex = indexPath.row;
-            if(cashCount < 3)
-            {
-                cashIndex %= cashCount;
-            }
-            cashCell.cashModel = self.cashArray[cashIndex];
+            cashCell.cashModel = self.cashArray[indexPath.row];
             return cashCell;
             break;
         case 2:
