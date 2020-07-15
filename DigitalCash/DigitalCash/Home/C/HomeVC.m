@@ -162,8 +162,12 @@ NSString *NewsCellID = @"NewsCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
-    NSInteger numbers[4] = {1,self.cashArray.count,6,self.newsArray.count};
+    NSInteger cashCount = self.cashArray.count;
+    if(cashCount >= 3)
+    {
+        cashCount = 3;
+    }
+    NSInteger numbers[4] = {1,cashCount,6,self.newsArray.count};
     return numbers[section];
 }
 
@@ -196,8 +200,14 @@ NSString *NewsCellID = @"NewsCell";
             return fourBtnCell;
             break;
         case 1:
-            cashCell.numberImgView.image = [UIImage imageNamed:self.cashImgsArray[indexPath.row % 3]];
-            cashCell.cashModel = self.cashArray[indexPath.row];
+            cashCell.numberImgView.image = [UIImage imageNamed:self.cashImgsArray[indexPath.row]];
+            NSInteger cashCount = self.cashArray.count;
+            NSInteger cashIndex = indexPath.row;
+            if(cashCount < 3)
+            {
+                cashIndex %= cashCount;
+            }
+            cashCell.cashModel = self.cashArray[cashIndex];
             return cashCell;
             break;
         case 2:
