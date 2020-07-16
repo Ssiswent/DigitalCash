@@ -36,6 +36,12 @@ NSString *FindRecommendCollctionCellID = @"FindRecommendCollctionCell";
     
     [self getUserDefault];
     [self setCollectonView];
+//    [self getRecommendUsers];
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
     [self getRecommendUsers];
 }
 
@@ -63,6 +69,27 @@ NSString *FindRecommendCollctionCellID = @"FindRecommendCollctionCell";
     {
         weakSelf.closeBlock();
     }
+}
+
+- (void)getUserDefault
+{
+    //获取用户偏好
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    //读取userId
+    NSNumber *userId = [userDefault objectForKey:@"userId"];
+    _userId = userId;
+}
+
+- (UIViewController *)getControllerFromView:(UIView *)view {
+    // 遍历响应者链。返回第一个找到视图控制器
+    UIResponder *responder = view;
+    while ((responder = [responder nextResponder])){
+        if ([responder isKindOfClass: [UIViewController class]]){
+            return (UIViewController *)responder;
+        }
+    }
+    // 如果没有找到则返回nil
+    return nil;
 }
 
 // MARK: - UICollectionViewDataSource
@@ -106,28 +133,6 @@ NSString *FindRecommendCollctionCellID = @"FindRecommendCollctionCell";
     }
     return cell;
 }
-
-- (void)getUserDefault
-{
-    //获取用户偏好
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    //读取userId
-    NSNumber *userId = [userDefault objectForKey:@"userId"];
-    _userId = userId;
-}
-
-- (UIViewController *)getControllerFromView:(UIView *)view {
-    // 遍历响应者链。返回第一个找到视图控制器
-    UIResponder *responder = view;
-    while ((responder = [responder nextResponder])){
-        if ([responder isKindOfClass: [UIViewController class]]){
-            return (UIViewController *)responder;
-        }
-    }
-    // 如果没有找到则返回nil
-    return nil;
-}
-
 
 #pragma mark - API
 

@@ -68,6 +68,11 @@
 //    mineNav.tabBarItem.titlePositionAdjustment = UIOffsetMake(kScaleFrom_iPhone8_Width(-20), 0);
 }
 
+/// TBC添加子控制器
+/// @param nav 导航控制器
+/// @param title 按钮文字
+/// @param imgName 按钮图片
+/// @param selectedImgName 按钮选择图片
 - (void)addChildVC:(YPNavigationController *)nav title:(NSString *)title imgName:(NSString *)imgName selectedImgName:(NSString *)selectedImgName
 {
     nav.tabBarItem.title = title;
